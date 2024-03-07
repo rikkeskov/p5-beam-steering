@@ -1,0 +1,50 @@
+\pdfbookmark[0]{Front page}{label:frontpage}%
+\begin{titlepage}
+\vspace*{\fill}
+    % \backgroundsetup{
+    % scale=1.1,
+    % angle=0,
+    % opacity=1.0,  %% adjust
+    % contents={\includegraphics[width=\paperwidth,height=\paperheight]{AAUgraphics/aau_waves}}
+    % }
+  \AddToHook{shipout/background}{%
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{AAUgraphics/aau_waves}}%
+}
+  %\addtolength{\hoffset}{0.5\evensidemargin-0.5\oddsidemargin} %set equal margins on the frontpage - remove this line if you want default margins
+  \noindent%
+  {\color{white}\fboxsep0pt\colorbox{aaublue}{\begin{tabular}{@{}p{\textwidth}@{}}
+    \begin{center}
+    \Huge{\textbf{
+      Network Selection Algorithm% insert your title here
+    }}
+    \end{center}
+    \begin{center}
+      \Large{
+        Development of NB-IoT vs Cat-M1 Algorithm for LE Devices  % insert your subtitle here
+      }
+    \end{center}
+    \vspace{0.2cm}
+   \begin{center}
+    {\Large
+      Rikke Udengaard% insert names separated by comma
+    }\\
+    \vspace{0.2cm}
+    {\large
+      Bachelor of Engineering in Electronics, Autumn 23% insert name of study, group number, year-month
+    }
+   \end{center}
+   \vspace{0.2cm}
+%% Comment this section in if you are doing Bachelor or Master Project   
+   \begin{center}
+    {\Large
+      Bachelor Project
+    }
+   \end{center}
+  \end{tabular}}}
+  \vfill
+  \begin{center}
+    \includegraphics[width=0.2\paperwidth]{AAUgraphics/aau_logo_circle_en}% comment this line in for English version
+  \end{center}
+\end{titlepage}
+\clearpage
+\RemoveFromHook{shipout/background}
