@@ -16,5 +16,34 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ant_eng_hk}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ef3612dc001f53c63a8cdba2fe8c18a6}{%
+           family={Volakis},
+           familyi={V\bibinitperiod},
+           given={John\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Professional}%
+      }
+      \strng{namehash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \strng{fullhash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \strng{bibnamehash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \strng{authorbibnamehash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \strng{authornamehash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \strng{authorfullhash}{ef3612dc001f53c63a8cdba2fe8c18a6}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Antenna Engineering Handbook}
+      \field{year}{2007}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
