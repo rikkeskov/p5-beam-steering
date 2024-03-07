@@ -1,9 +1,43 @@
-<mxfile host="app.diagrams.net" modified="2024-03-07T08:09:39.894Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" version="24.0.2" etag="-lThjvFm8cpE4Q3CFMeW" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-07T09:24:42.234Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="t2wPgiFYQh4ctZ6Y3vUi" version="24.0.2" type="github">
   <diagram name="Side-1" id="SIGaC76bwjNIU0-80xgf">
-    <mxGraphModel>
+    <mxGraphModel dx="467" dy="236" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="rKwODy03U0U58oZxakWH-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-2" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="440" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-7" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="80" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-9" value="turntable" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="rKwODy03U0U58oZxakWH-7">
+          <mxGeometry x="20" y="-30" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-12" value="" style="group" vertex="1" connectable="0" parent="rKwODy03U0U58oZxakWH-7">
+          <mxGeometry width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-6" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=none;" vertex="1" parent="rKwODy03U0U58oZxakWH-12">
+          <mxGeometry width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-5" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;container=0;" vertex="1" parent="rKwODy03U0U58oZxakWH-12">
+          <mxGeometry x="10" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-11" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="rKwODy03U0U58oZxakWH-12">
+          <mxGeometry x="47.5" y="47.5" width="5" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="rKwODy03U0U58oZxakWH-10" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.9;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="rKwODy03U0U58oZxakWH-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="111" y="177" as="sourcePoint" />
+            <mxPoint x="151" y="127" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="170" />
+              <mxPoint x="160" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
