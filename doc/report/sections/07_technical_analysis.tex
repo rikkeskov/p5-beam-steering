@@ -1,0 +1,70 @@
+\chapter{Technical Analysis}
+
+\section{Radio Wave Transmission}
+
+\subsection{Polarization}
+
+\subsection{Propagation}
+Propagation of radio vawes can be described with Maxwell's equations using the polar coordinate system $\left( r, \theta, \phi, t \right)$ for antennas. 
+
+
+
+
+\subsubsection{Multipath propagation}
+
+
+\section{Radiation Characteristics}
+The radio waves are radiated to the near field and then far field free space. The far field is mathematically described as the distance $r>R_2$, with $R_2$ defined as
+\begin{equation} \label{eq:far_field}
+    R_2 = \frac{2 D^2}{\lambda}
+\end{equation}
+
+with $D$ being the largest dimension of the antenna or antenna array and $\lambda$ being the wavelength of the carrier frequency~\cite[p. 4]{ant_beam_form}.
+
+The radiation characterstics of an antenna can be described by the directivity, which doesn't depend on the distance $r$ in the far field meaning that at the receiver the relation $r \gg  R_2$ is assumed. Then the directivity is
+\begin{equation} \label{eq:directivity}
+    D_t = 4 \pi r^2 \frac{S_t \left(\theta, \phi\right)_{max}}{P_{t,r}}
+\end{equation}
+
+with $S_ t\left(\theta, \phi\right)_{max}$ being the maximum power density and $P_{t,r}$ being the radiated power of the antenna. The fraction $\frac{P_{t,s}}{4 \pi r^2}$ is also called the power density of the isotropic radiation of the antenna. The power of the source $P_{t,s}$ to the antenna might not equal the radiated power $P_{t,r}$ due to power loss $p_{t,l}$. Power loss can happen because of reflection loss in the input medium (typically cable), conductor loss and inductor loss. The efficiency of the antenna $\eta$ is described as the ratio of the radiated power and the sourced power
+\begin{equation} \label{eq:antenna_efficiency}
+    \eta = \frac{P_{t,r}}{P_{t,s}} = \frac{P_{t,r}}{P_{t,r}+P_{t,l}}
+\end{equation}
+
+The gain $G \left( \theta, \phi \right)$ of the antenna is defined as the efficiency $\eta$ times the directivity $D$ and can be calculated as
+\begin{equation} \label{eq:gain}
+    G \left( \theta, \phi \right) = \eta  D = 4 \pi r^2 \frac{S_t \left(\theta, \phi\right)_{max}}{P_{t,s}}
+\end{equation}
+
+or expressed in decibel with respect to the isotropic radiator
+\begin{equation} \label{eq:gain_dbi}
+    g_{dBi} = 10 \log_{10}\left(G\right)
+\end{equation}
+
+The isotropic radiator is a theoretical antenna which radiates homogeneously in all directions, meaning that the magnitude of the power density vector \textbf{S} at a distance vector \textbf{r} is constant as
+\begin{equation} \label{eq:isotropic_radiation}
+    \left| \frac{S \left(r, \theta, \phi \right)}{S_{max}} \right|=1
+\end{equation}
+
+It is this theoretical isotropic radiator that the gain of antennas are in respect to. The gain of a directive antenna in a certain direction is called the antenna gain $G$~\cite[pp. 10-12]{ant_beam_form}.
+
+\section{Friis Transmission Equation}
+The Friis transmission equation explains how the received power at a receiver antenna is related to the power of the transmitting antenna. The receiver antenna receives energy from the transmitting antenna and the effectiveness of this is described as the effective area $A_r\left( \theta, \phi \right)$ assuming that the antenna is placed in the origin of the polar coordinate system. If the antenna has the property of reciprocity, the effective area and the gain of the receiver antenna is related by 
+\begin{equation} \label{eq:effectivate_area}
+    A_r \left( \theta, \phi \right) = \frac{\lambda^2}{4 \pi} G_r \left( \theta, \phi \right)
+\end{equation}
+
+If the gain of the transmitting antenna $G_t$ is in the direction of the receiver antenna $G_r$ then the angular dependencies of the antenna properties can be surpressed. The power of the receiving antenna is equal to the power density $S_t$ multiplied by the effective area of the receiver antenna $A_r$, expressed as
+\begin{equation} \label{eq:receiver_power}
+    P_r = S_t A_r
+\end{equation} 
+
+As previously mentioned the directivity of an antenna does not depend on the distance $r$ from the antenna, and likewise so with the power density $S_t$, so the value of $S_t$ is equal regardless of the distance from the antenna in the far field with respects to the angular dependencies. Substituting $S_t$ and $A_r$ in equation \ref{eq:receiver_power} for $S_t$ equation isolated in \ref{eq:gain} and equation \ref{eq:effectivate_area} yields
+\begin{equation} \label{eq:friis}
+    \begin{split}
+        P_r & = \frac{G_t P_t}{4 \pi r^2} \frac{\lambda^2 G_r}{4 \pi} \\
+        & = G_t  G_r P_t \left( \frac{\lambda}{4 \pi r} \right)^2
+    \end{split}
+\end{equation} 
+
+Also called Friis transmission equation~\cite[pp. 8-10]{ant_eng_hk}.

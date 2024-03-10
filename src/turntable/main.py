@@ -7,8 +7,7 @@
 
 """
 
-import usb.core
-import usb.util
+from serial import rs485
 from network_analyzer.main import NetworkAnalyzer
 
 RIGHT_LIMIT = 180
@@ -16,21 +15,17 @@ LEFT_LIMIT = 270
 
 
 class TurntableController():
-    def __init__(self, device) -> None:
-        self.device = device
+    def __init__(self) -> None:
         self.network_analyzer = NetworkAnalyzer()
-
-    def establish_connection(self) -> None:
-        self.device = usb.core.find()
-        if self.device is None:
-            raise ValueError('Device not found')
-        else:
-            self.device.set_configuration()
+        self.turntable = rs485.RS485()
+        self.turntable.rs485_mode = rs485.RS485Settings()
     
     def turn_clockwise(self, rotation: float) -> None:
+        self.turntable.write()
         print('turning clockwise')
 
     def turn_counter_clockwise(self, rotation: float) -> None:
+        self.turntable.write()
         print('turning counter-clockwise')
 
     def scan_area(self, right_limit: float = RIGHT_LIMIT, left_limit: float = LEFT_LIMIT) -> list:
@@ -54,7 +49,7 @@ class TurntableController():
     def run(self) -> None:
         location: float = 0.0
         index: float = self.find_transmitter()
-        self.focus_beam( location, index)
+        self.focus_beam(location, index)
 
 def main():
     print("Hello World!")

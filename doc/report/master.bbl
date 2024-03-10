@@ -19,6 +19,53 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{hrt_i_data_sheet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=491a6d47a7ca8c6377007a4d504dffe2}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={HEAD\bibnamedelima Acoustics},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{fullhash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{bibnamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authorbibnamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authornamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authorfullhash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{cdn.head-acoustics.com/fileadmin/data/global/Datasheets/Data_Acquisition/HRT-I-Turntable-6498-Data-Sheet.pdf}}
+      \field{note}{{Online; accessed 09-March-2024}}
+      \field{title}{Data Sheet HRT I}
+      \field{year}{2023}
+    \endentry
+    \entry{ant_beam_form}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3913b0004a35680d941c9ff47f0a6000}{%
+           family={Shun-Ping\bibnamedelima Chen},
+           familyi={S\bibinithyphendelim P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Heinz\bibnamedelima Schmiedel},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Cham}%
+      }
+      \strng{namehash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{fullhash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{bibnamehash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{authorbibnamehash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{authornamehash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{authorfullhash}{3913b0004a35680d941c9ff47f0a6000}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{RF Antenna Beam Forming}
+      \field{year}{2023}
+    \endentry
     \entry{ant_eng_hk}{book}{}
       \name{author}{1}{}{%
         {{hash=ef3612dc001f53c63a8cdba2fe8c18a6}{%
