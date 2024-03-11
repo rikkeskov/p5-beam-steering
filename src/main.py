@@ -26,6 +26,6 @@ if __name__ == "__main__":
     thread_turntable.start()
     thread_network_analyzer.start()
 
-        
+#https://realpython.com/intro-to-python-threading/
 
 

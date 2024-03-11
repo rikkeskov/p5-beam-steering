@@ -19,6 +19,70 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{maxwell_theory}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9c9b1779e2df5d1a13ddf5468932e5b5}{%
+           family={Ebert},
+           familyi={E\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2c39aabb3601d86865124e593de2da97}{%
+           family={Raskmark},
+           familyi={R\bibinitperiod},
+           given={Povl},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Aalborg Universitet}%
+      }
+      \strng{namehash}{0442c31a4c6761cc8fe01258c57e6128}
+      \strng{fullhash}{0442c31a4c6761cc8fe01258c57e6128}
+      \strng{bibnamehash}{0442c31a4c6761cc8fe01258c57e6128}
+      \strng{authorbibnamehash}{0442c31a4c6761cc8fe01258c57e6128}
+      \strng{authornamehash}{0442c31a4c6761cc8fe01258c57e6128}
+      \strng{authorfullhash}{0442c31a4c6761cc8fe01258c57e6128}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Fourth edition}
+      \field{title}{Grundlæggende Maxwellsk Feltteori}
+      \field{year}{1998}
+    \endentry
+    \entry{ieee_microchip_beam_steering}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ff4cd045f735b6d240766c850e90bad4}{%
+           family={G},
+           familyi={G\bibinitperiod},
+           given={Sujanth\bibnamedelimb Narayan.\bibnamedelimi K.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=1f5493fb8b2f0581b5ac2854f34c303c}{%
+           family={V},
+           familyi={V\bibinitperiod},
+           given={Velavikneshwaran.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=54473456d5d2fd60d387927af908a631}{%
+           family={Baskaradas},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3dab306a13f0544e419f097e2d47f9d2}
+      \strng{fullhash}{3dab306a13f0544e419f097e2d47f9d2}
+      \strng{bibnamehash}{3dab306a13f0544e419f097e2d47f9d2}
+      \strng{authorbibnamehash}{3dab306a13f0544e419f097e2d47f9d2}
+      \strng{authornamehash}{3dab306a13f0544e419f097e2d47f9d2}
+      \strng{authorfullhash}{3dab306a13f0544e419f097e2d47f9d2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2021 IEEE Indian Conference on Antennas and Propagation (InCAP)}
+      \field{title}{Design of Electronically Steerable Direction Shifting Microstrip Antenna Array using Beam Steering Technique}
+      \field{year}{2021}
+      \field{pages}{60\bibrangedash 63}
+      \range{pages}{4}
+    \endentry
     \entry{hrt_i_data_sheet}{misc}{}
       \name{author}{1}{}{%
         {{hash=491a6d47a7ca8c6377007a4d504dffe2}{%
@@ -43,28 +107,78 @@
       \field{year}{2023}
     \endentry
     \entry{ant_beam_form}{book}{}
-      \name{author}{1}{}{%
-        {{hash=3913b0004a35680d941c9ff47f0a6000}{%
-           family={Shun-Ping\bibnamedelima Chen},
-           familyi={S\bibinithyphendelim P\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Heinz\bibnamedelima Schmiedel},
-           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      \name{author}{2}{}{%
+        {{hash=cdd0307f7bdf7a730493a6d5e016da3c}{%
+           family={Shun-Ping},
+           familyi={S\bibinithyphendelim P\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7cc401b9b05a308f5ff79de3ed84f0ca}{%
+           family={Schmiedel},
+           familyi={S\bibinitperiod},
+           given={Heinz},
+           giveni={H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer Cham}%
       }
-      \strng{namehash}{3913b0004a35680d941c9ff47f0a6000}
-      \strng{fullhash}{3913b0004a35680d941c9ff47f0a6000}
-      \strng{bibnamehash}{3913b0004a35680d941c9ff47f0a6000}
-      \strng{authorbibnamehash}{3913b0004a35680d941c9ff47f0a6000}
-      \strng{authornamehash}{3913b0004a35680d941c9ff47f0a6000}
-      \strng{authorfullhash}{3913b0004a35680d941c9ff47f0a6000}
+      \strng{namehash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
+      \strng{fullhash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
+      \strng{bibnamehash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
+      \strng{authorbibnamehash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
+      \strng{authornamehash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
+      \strng{authorfullhash}{0f6d6f6afadbf6af8fd7e05b023f2ce9}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{edition}{First edition}
       \field{title}{RF Antenna Beam Forming}
       \field{year}{2023}
+    \endentry
+    \entry{ieee_beam_steering}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=ccb093aaa95682ed54e54ae269e3c46d}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Ankit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fdac29683eb8897db4a029583528dcac}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ankit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4db583021033c588350af2961d7b6531}{%
+           family={Ranjan},
+           familyi={R\bibinitperiod},
+           given={Abhishek},
+           giveni={A\bibinitperiod}}}%
+        {{hash=289daf2b5ec47591d9056ecb8fbc57a7}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Arvind},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3aecf2a0d37debb8b53de0473eeb718b}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Arun},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{42dd7ae299d56d727c90a9feb0b3ac9b}
+      \strng{fullhash}{4bc44d70ad401977aa5437f7b461b765}
+      \strng{bibnamehash}{42dd7ae299d56d727c90a9feb0b3ac9b}
+      \strng{authorbibnamehash}{42dd7ae299d56d727c90a9feb0b3ac9b}
+      \strng{authornamehash}{42dd7ae299d56d727c90a9feb0b3ac9b}
+      \strng{authorfullhash}{4bc44d70ad401977aa5437f7b461b765}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 International Conference on Innovations in Information, Embedded and Communication Systems (ICIIECS)}
+      \field{title}{Beam steering in antenna}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
     \endentry
     \entry{ant_eng_hk}{book}{}
       \name{author}{1}{}{%
@@ -87,6 +201,7 @@
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{edition}{Fourth edition}
       \field{title}{Antenna Engineering Handbook}
       \field{year}{2007}
     \endentry
