@@ -4,7 +4,7 @@ The purpose of beam steering is to increase the antenna gain in a specific direc
 %https://ieeexplore-ieee-org.zorac.aub.aau.dk/document/8275895
 
 \section{Fundamentals of Antennas}
-\todo[color=blue]{make short introduction}
+In order to develop a beam steering device for antennas it is necessary to understand antennas and their properties. Propagation, polarization, radiation characteristics are all properties of antennas that can vary based on the type of antenna.
 
 \subsection{Propagation}
 Propagation of radio waves can be described with Maxwell's equations using the polar coordinate system $\left( r, \theta, \phi, t \right)$ for antennas. In differential form, the Maxwell equations are as follows
@@ -16,7 +16,8 @@ Propagation of radio waves can be described with Maxwell's equations using the p
         \nabla \cdot \textbf{D} & = \rho
     \end{split}
 \end{equation}
-\todo[color=blue]{explain each letter}
+
+with \textbf{E} being the electric field with unit [\SI{}{\volt\per\meter}], \textbf{B} being induction [\SI{}{\tesla}], \textbf{H} is magnetic field [\SI{}{\ampere\per\meter}], \textbf{D} being dielectric displacement [\SI{}{\ampere\second\per\meter\squared}], \textbf{J} being the current density [\SI{}{\ampere\per\meter\squared}] and $\rho$ being electric charge density [\SI{}{\coulomb\per\meter\cubed}].
 
 The electric field and the magnetic field are always connected; the electric field is created by the magnetic field and vice versa. The electric field and the magnetic field in polar coordinates are illustrated on figure \ref{fig:em_field} below.
 \begin{figure}[h]
@@ -26,22 +27,38 @@ The electric field and the magnetic field are always connected; the electric fie
 \end{figure}
 
 As visualised on figure \ref{fig:em_field} the electric field only depends on the $\theta$-component and the magnetic field only on the $\phi$-component when in the far field. Assuming that $\theta$ is kept approximately constant, that the electromagnetic waves propagate in free space and that the point of observation is at a large value of $r$, the electric and magnetic fields can be approximated with the planar coordinates $\left( x, y, z, t \right)$.
-\todo[color=blue]{insert figure of planar coordinates and explain}
+\todo[inline,color=blue]{insert figure of planar coordinates and explain}
 
 The Poynting vector describes the power density and direction of the Electromagnetic flux and is the cross product of the electric and magnetic field 
 \begin{equation}
     \textbf{S} = \textbf{E} \times \textbf{H}
 \end{equation}
 which points in the same direction as the wave propagation. 
-\todo[color=blue]{add p4 rf antenna beam forming eq of power through area}
-\todo[color=blue]{expand maxwell eqs with frequency dependencies p4 rf antenna beam forming}
+\todo[inline,color=blue]{add p4 rf antenna beam forming eq of power through area}
+\todo[inline,color=blue]{expand maxwell eqs with frequency dependencies p4 rf antenna beam forming}
 
 \subsubsection{Multipath propagation}
-\todo[color=red]{describe multipath propagation and what issues it brings and how to mitigate. Also any advantages}
+\todo[inline,color=red]{describe multipath propagation and what issues it brings and how to mitigate. Also any advantages}
 
 \subsection{Polarization}
-\todo[color=red]{describe polarization and what issues it brings and how to mitigate. Also any advantages}
+\todo[inline,color=red]{describe polarization and what issues it brings and how to mitigate. Also any advantages}
+Different antenna designs have different radiation patterns and polarization. Table \ref{tab:antenna_types} lists a number of different antenna designs and their polarization
 %https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electro-Optics/Direct_Energy_(Mitofsky)/04%3A_Antennas/4.04%3A_Antenna_Characteristics
+\begin{table}
+    \centering
+    \begin{tabular}[h]{l|l} 
+        \textbf{Type} & \textbf{Polarization} \\
+        \hline
+        Isotropic antenna & \\
+        Dipole antenna & Linear \\
+        Patch antenna & Linear, circular \\
+        Horn antenna & Linear \\
+        Helix antenna & Circular \\
+    \end{tabular}
+    \caption{Table showing polarization of some typical antenna designs.}
+    \label{tab:antenna_types}
+\end{table}
+
 
 \subsection{Radiation Characteristics}
 The radio waves are radiated to the near field and then far field free space. The far field is mathematically described as the distance $r>R_2$, with $R_2$ defined as
@@ -100,14 +117,15 @@ As previously mentioned the directivity of an antenna does not depend on the dis
 Also called Friis transmission equation~\cite[pp. 8-10]{ant_eng_hk}. $G_t$ is the gain of the transmitting antenna in the direction of the receiver and $G_r$ is the gain of the receiving antenna in the direction of the transmitter. The radiation characterstics of an antenna in the far field is called the antenna radiation pattern and will look different depending on the design of the antenna. The radiatation pattern is dependent on the anglular properties $\theta$ and $\phi$ and is usually visualised in a plane parallel to the electric field and called a \textbf{E} plane pattern or parallel to the magnetic field and called a \textbf{H} plane pattern.
 
 \subsubsection{Antenna Design Types}
-Different antenna designs have different radiation patterns. 
-\todo[color=red]{describe typical antenna designs. see p11 rf antenna beam forming}
 
+\todo[inline,color=red]{describe typical antenna designs. see p11 rf antenna beam forming}
+
+%Because the directive antennas have areas in the radiation pattern that have very little to no gain, there are areas of the antenna radiation area that do not receive power from a transmitter. If such areas must be covered by a directive antenna, the beam of the antenna must be steered to said area. 
 
 \section{Beam Steering Methods}
 
 \subsection{Manual and Mechanical Steering}
-\todo[color=green]{explain motor control and types of motors with type of control loops}
+\todo[inline,color=green]{explain motor control and types of motors with type of control loops}
 %https://eu.aspina-group.com/en/learning-zone/columns/what-is/017/
 
 \subsection{Electrical Steering}
