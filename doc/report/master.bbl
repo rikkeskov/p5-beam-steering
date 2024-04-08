@@ -19,6 +19,29 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{concurrency}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=52924e13744c3830c41b18e8e7ab2bcb}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \strng{fullhash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \strng{bibnamehash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \strng{authorbibnamehash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \strng{authornamehash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \strng{authorfullhash}{52924e13744c3830c41b18e8e7ab2bcb}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{realpython.com/python-concurrency/}}
+      \field{note}{{Online; accessed 05-April-2024}}
+      \field{title}{Speed Up Your Python Program With Concurrency}
+      \field{year}{u.a.}
+    \endentry
     \entry{maxwell_theory}{book}{}
       \name{author}{2}{}{%
         {{hash=9c9b1779e2df5d1a13ddf5468932e5b5}{%
@@ -105,6 +128,82 @@
       \field{note}{{Online; accessed 09-March-2024}}
       \field{title}{Data Sheet HRT I}
       \field{year}{2023}
+    \endentry
+    \entry{direct_energy}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6d695c0d8669ba2433c1fbf684326161}{%
+           family={Mitofsky},
+           familyi={M\bibinitperiod},
+           given={Andrea\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Trine University}%
+      }
+      \strng{namehash}{6d695c0d8669ba2433c1fbf684326161}
+      \strng{fullhash}{6d695c0d8669ba2433c1fbf684326161}
+      \strng{bibnamehash}{6d695c0d8669ba2433c1fbf684326161}
+      \strng{authorbibnamehash}{6d695c0d8669ba2433c1fbf684326161}
+      \strng{authornamehash}{6d695c0d8669ba2433c1fbf684326161}
+      \strng{authorfullhash}{6d695c0d8669ba2433c1fbf684326161}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{First edition}
+      \field{title}{Direct Energy Conversion}
+      \field{year}{2018}
+    \endentry
+    \entry{itu_multipath}{report}{}
+      \name{author}{1}{}{%
+        {{hash=59a5bb71ecc66695d3644d1d5d60f451}{%
+           family={Radiocommunication\bibnamedelima Sector},
+           familyi={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={ITU},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {International Telecommunication Union}%
+      }
+      \strng{namehash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \strng{fullhash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \strng{bibnamehash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \strng{authorbibnamehash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \strng{authornamehash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \strng{authorfullhash}{59a5bb71ecc66695d3644d1d5d60f451}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Multipath Propagation And Parameterization Of Its Characteristics}
+      \field{type}{techreport}
+      \field{year}{2021}
+    \endentry
+    \entry{vna_data_sheet_descrip}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=44040e8b804c77cc6316e1524ff75a94}{%
+           family={Rohde},
+           familyi={R\bibinitperiod}}}%
+        {{hash=ff09600c41ade3e65a403c0a48776064}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={Schwarz},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \strng{fullhash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \strng{bibnamehash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \strng{authorbibnamehash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \strng{authornamehash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \strng{authorfullhash}{25c2e4fa2935e7dc08462d1f54bb2cb6}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{testequipmenthq.com/datasheets/Rohde-Schwarz-ZVB8-Datasheet.pdf}}
+      \field{note}{{Online; accessed 05-April-2024}}
+      \field{title}{ZVB Vector Network Analyzers}
+      \field{year}{2007}
     \endentry
     \entry{ant_beam_form}{book}{}
       \name{author}{2}{}{%
