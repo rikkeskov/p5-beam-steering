@@ -17,7 +17,7 @@ class NetworkAnalyzer(object):
         logger.info('Initialised network analyzer...')
         self.vna = Vna()
         try:
-            self.vna.open_tcp()
+            self.vna.open_tcp(ip_address='192.196.0.1')
         except Exception:
             logger.error('Cannot connect to VNA.')
         else:
@@ -36,3 +36,4 @@ class NetworkAnalyzer(object):
     def stop(self) -> None:
         """Close connection."""
         self.vna.close()
+
