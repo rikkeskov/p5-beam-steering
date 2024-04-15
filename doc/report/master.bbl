@@ -19,6 +19,31 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{pywin32}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ff4a4527681dca693e42d02b7b4d2c92}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Mark\bibnamedelima Hammond},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \strng{fullhash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \strng{bibnamehash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \strng{authorbibnamehash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \strng{authornamehash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \strng{authorfullhash}{ff4a4527681dca693e42d02b7b4d2c92}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{pypi.org/project/pywin32}}
+      \field{note}{{Online; accessed 15-April-2024}}
+      \field{title}{Pywin32}
+      \field{year}{u.a.}
+    \endentry
     \entry{concurrency}{misc}{}
       \name{author}{1}{}{%
         {{hash=52924e13744c3830c41b18e8e7ab2bcb}{%
@@ -37,7 +62,7 @@
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{realpython.com/python-concurrency/}}
+      \field{howpublished}{\url{realpython.com/python-concurrency}}
       \field{note}{{Online; accessed 05-April-2024}}
       \field{title}{Speed Up Your Python Program With Concurrency}
       \field{year}{u.a.}
@@ -120,6 +145,7 @@
       \strng{authorbibnamehash}{491a6d47a7ca8c6377007a4d504dffe2}
       \strng{authornamehash}{491a6d47a7ca8c6377007a4d504dffe2}
       \strng{authorfullhash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \field{extraname}{1}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -128,6 +154,28 @@
       \field{note}{{Online; accessed 09-March-2024}}
       \field{title}{Data Sheet HRT I}
       \field{year}{2023}
+    \endentry
+    \entry{hrt_i_manual}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=491a6d47a7ca8c6377007a4d504dffe2}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={HEAD\bibnamedelima Acoustics},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{fullhash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{bibnamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authorbibnamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authornamehash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \strng{authorfullhash}{491a6d47a7ca8c6377007a4d504dffe2}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{HRT I Manual}
+      \field{year}{2019}
     \endentry
     \entry{direct_energy}{book}{}
       \name{author}{1}{}{%
