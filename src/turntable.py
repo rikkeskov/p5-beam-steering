@@ -36,11 +36,10 @@ def ExceptionDecorator(func):
             return func(*args, **kwargs)
         except pythoncom.com_error as err:
             raise RuntimeError(err.excepinfo[2])
-
     return y
 
 # event support
-class TurnTableControlEvents:
+class TurnTableControlEvents(object):
     def OnUSBConnected(self, FTDISerialNumber: str):
         print("[TurnTableControlEvents.OnUSBConnected] %s" % FTDISerialNumber)
 
@@ -50,7 +49,7 @@ class TurnTableControlEvents:
     def OnError(self, Msg: str):
         print("[TurnTableControlEvents.OnError] %s" % Msg)
 
-class TurnTableEvents:
+class TurnTableEvents(object):
     def __init__(self, movingEventStart, movingEventStop):
         self.movingEventStart = movingEventStart
         self.movingEventStop = movingEventStop
@@ -76,19 +75,18 @@ class TurnTableEvents:
 
         print("[TurnTableEvents.OnHRTStateChanged] %s" % (newState.name))
 
-class TurnTable:
+# turntable class
+class TurnTable(object):
     # Helper function to generate event support
     @staticmethod
     def __getEventInstance(comObj, progId, user_event_class, *user_event_class_args, **user_event_class_kwargs):
         disp_class = gencache.GetClassForProgID(progId)
         clsid = disp_class.CLSID
         events_class = getevents(clsid)
-        print(type(disp_class))
-        print(type(events_class))
-        print(type(user_event_class))
-        result_class = type("COMEventClass", (disp_class, events_class, user_event_class),
+        result_class = type("COMEventClass", (disp_class, user_event_class),
                             {"__setattr__": _event_setattr_})
         instance = result_class(comObj._oleobj_)  # This only calls the first base class __init__.
+        inst_id = pythoncom.CoMarshalInterThreadInterfaceInStream(pythoncom.IID_IDispatch, instance)
         events_class.__init__(instance, instance)
         user_event_class.__init__(instance, *user_event_class_args, **user_event_class_kwargs)
         return EventsProxy(instance)
@@ -119,7 +117,7 @@ class TurnTable:
             self.__TT = self.__getEventInstance(self.__TTControl.TurnTables(ttIndex), "TurnTableControlLib.TurnTable",
                                                 TurnTableEvents, self.movingEventStart, self.movingEventStop)
 
-            if stopIfDriving and self.IsMoving:
+            if stopIfDriving and self.GetIsMoving():
                 self.MoveAbort()
         else:
             raise Exception('No Turntable found for index %d' % ttIndex)
@@ -143,7 +141,7 @@ class TurnTable:
             # check for successful wait:
             waitResult = nbrLoops > 0
             if raiseExceptionOnTimeOut and not waitResult:
-                raise Exception('Timeout while wait for turntable to %s' % eventName)
+                raise Exception(f'Timeout while wait for turntable to {eventName}')
 
         return waitResult
 
@@ -174,14 +172,14 @@ class TurnTable:
             self.WaitWhileDriving()
 
     @ExceptionDecorator
+    def GetPosition(self) -> float:
+        return self.__TT.Position
+
+    @ExceptionDecorator
     def GotoPosition(self, Position: float, WaitWhileDriving:bool=True):
         self.__TT.GotoPosition(Position)
         if WaitWhileDriving:
             self.WaitWhileDriving()
-
-    @ExceptionDecorator
-    def GetPosition(self) -> float:
-        return self.__TT.Position
 
     @ExceptionDecorator
     def SetAsOrigin(self):
@@ -219,12 +217,3 @@ class TurnTable:
     @ExceptionDecorator
     def SetVelocity(self, Val: float):
         self.__TT.Velocity = Val
-
-    # Properties
-    AccelerationFunction = property(GetAccelerationFunction, SetAccelerationFunction)
-    Position = property(GetPosition, GotoPosition)
-    Velocity = property(GetVelocity, SetVelocity)
-    IsMoving = property(GetIsMoving)
-
-if __name__ == "__main__":
-    tt = TurnTable()
