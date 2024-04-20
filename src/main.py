@@ -16,8 +16,8 @@ from network_analyzer import NetworkAnalyzer
 from turntable import TurnTableController
 
 START_POS = 0.0
-END_POS = 90.0
-INCREASE = 10.0
+END_POS = 350.0
+INCREASE = 5.0
 
 lock = Lock()
 cur_pos: int = 0
@@ -57,13 +57,13 @@ def run_vna_in_thread(vna: NetworkAnalyzer, tt_event: Event, vna_event: Event, e
     while not end.is_set(): # run only when end == false meaning stop when tt thread closes
         tt_event.wait() # wait for turntable to signal ready
         freq, pow = vna.run()
+        vna_event.set() # signal finished to turntable
+        vna_event.clear()
         logging.info(f'Power measurements: {pow}.')
         with lock: # read current position
             data.append(cur_pos)
             data.append(list(freq))
             data.append(list(pow))
-        vna_event.set() # signal finished to turntable
-        vna_event.clear()
         count += 1
     with open(f'./tests/test-{time.strftime("%Y%m%d-%H%M")}.txt', 'w') as file: # save data when turning is finished
         file.write(str(data))
@@ -87,6 +87,9 @@ def main():
     tt_ready = Event()
     vna_ready = Event()
     end = Event()
+
+    # bending the cable during turning will change the phase
+    time.sleep(5)
 
     # start turntable thread
     tt_thread = Thread(target=run_tt_in_thread, kwargs={'ttc_id': ttc_id, 'ttc': ttc, 'tt_event': tt_ready, 'vna_event': vna_ready, 'end': end})
