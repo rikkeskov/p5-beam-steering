@@ -38,6 +38,15 @@ which points in the same direction as the wave propagation~\cite[p. 3]{ant_beam_
 \subsubsection{Multipath propagation}
 Because electromagnetic waves can reflect on surrounding surfaces, be changed by condition of the transmission medium or be Doppler shifted due to movement of objects, receiver or transmitter, the signal that reaches the receiving antenna can have travelled other paths than the direct line-of-sight path from the transmitter. The received signal is a summation of all input signals regardless of phase angles, phase shifts or direction and therefore the received signal might be distorted~\cite[pp. 1-2]{itu_multipath}. 
 
+\subsubsection{Aliasing} \label{sss:aliasing}
+\todo[inline, color=red]{write about this}
+To prevent aliasing there must be a certain distance between the test device and the transmitting device, or in case of reflection measurement, half this length. The alias-free range is calculated as
+\begin{equation}
+    Range = \frac{1}{\Delta f} V_f c 
+    \tagaddtext{[\si{\meter}]}
+\end{equation}
+where $\Delta f$ is frequency step size, $V_f$ is the velocity factor in the transmission line which is $1$ for free space and c is the speed of light (\SI{300E6}{\meter\per\second}). The frequency step size is equal to the measured frequency span divided by the number of discrete points in the span and is therefore dependent on the settings made on the network analyzer~\cite[p. 27]{ks_td_analysis}. 
+
 \subsection{Polarization}
 Different antenna designs have different radiation patterns and polarization. Table \ref{tab:antenna_types} lists a number of different antenna designs and their polarization
 \begin{table}[H]

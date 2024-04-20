@@ -5,9 +5,17 @@
 % Kunne opstille krav til realtidskommunikation mellem computersystemer og implementere dette.
 
 \section{Antenna Design}
-\todo[inline,color=red]{explain design of patch antenna and why}
+\todo[inline,color=red]{explain design of horn antenna and why}
 % Kunne forstå behandling og udveksling af analoge og digitale signaler mellem (del-)systemer, herunder frekvensresponser, fase- og gainkarakteristikker, sampling, analog og digital filtrering etc.
 % Have grundlæggende viden om trådløs kommunikation. 
+
+In order to prevent aliasing the alias-free range must be calculated. As described in section \ref{sss:aliasing} the range depends on the settings on the network analyzer. The frequency span together with the number of points also affect how fast each measurement of the entire span can be made. 
+\todo[inline, color=red]{describe what happens with each setting + what sweep frequency(?) does}
+The frequency span is chosen from \SI{5}{\giga\hertz} to \SI{7}{\giga\hertz} which is most of the range of which the horn antenna is designed to work in. The number of points is chosen to be \SI{1001}{} because lowering this value by a couple factors will affect the measurement speed negatively. Therefore the alias-free range is
+\begin{equation}
+    Range = \frac{1001-1}{\SI{5E9}{\hertz}-\SI{7E9}{\hertz}} \SI{300E6}{\meter\per\second} = 150
+    \tagaddtext{[\si{\meter}]}
+\end{equation}
 
 \section{Choice of Turntable}
 \todo[inline,color=red]{explain choice of turntable and how it meets reqs}
@@ -45,3 +53,9 @@ The communication interfaces of the program is limited by the choice of the turn
 % kunne forstå realtidsaspekter i forhold til digitale systemer der kommunikerer med andre analoge og/eller digitale systemer.
 As previously written, the turntable is controlled via serial communication while the data from the VNA is read via a network cable and TCP. Python serial communication and the communication with the VNA are both I/O bound tasks. Therefore, in order to achieve real-time communication and data processing the wait time of the I/O bound operations is exploited by use of the Python module \textit{Threading}. \textit{Threading} uses a single processor and pre-emptive multitasking to acheive concurrency~\cite{concurrency}. 
 \todo[inline,color=red]{explain how program runs}
+
+% band width
+% channel base power = 10 dbm but what is max?
+% aliasing
+% invers fft
+% s params ?

@@ -327,6 +327,27 @@
       \field{pages}{1\bibrangedash 4}
       \range{pages}{4}
     \endentry
+    \entry{ks_td_analysis}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=53db971e8574a8fca5f4bfc3675960b3}{%
+           family={Technologies},
+           familyi={T\bibinitperiod},
+           given={Keysight},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{53db971e8574a8fca5f4bfc3675960b3}
+      \strng{fullhash}{53db971e8574a8fca5f4bfc3675960b3}
+      \strng{bibnamehash}{53db971e8574a8fca5f4bfc3675960b3}
+      \strng{authorbibnamehash}{53db971e8574a8fca5f4bfc3675960b3}
+      \strng{authornamehash}{53db971e8574a8fca5f4bfc3675960b3}
+      \strng{authorfullhash}{53db971e8574a8fca5f4bfc3675960b3}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Time Domain Analysis Using a Network Analyzer}
+      \field{year}{2017}
+    \endentry
     \entry{ant_eng_hk}{book}{}
       \name{author}{1}{}{%
         {{hash=ef3612dc001f53c63a8cdba2fe8c18a6}{%

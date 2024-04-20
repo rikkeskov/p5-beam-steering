@@ -46,7 +46,10 @@ class NetworkAnalyzer(object):
         return x, y
 
     def reset(self):
-        """ Preset the VNA. MUST manually redo setup from file on VNA. """
+        """ Preset the VNA. MUST manually redo setup from file on VNA. 
+        Consider valibration. Done manually: Press cal -> start cal -> 
+        two port -> normalize both directions -> choose ideal kit, 
+        check in box 'through' -> apply"""
         self.vna.preset()
 
     def set(self):
@@ -72,9 +75,3 @@ class NetworkAnalyzer(object):
         settings['meas bw'] = str(self.ch.if_bandwidth_Hz)
         settings['power dbm'] = str(self.ch.power_dBm)
         return settings
-
-# band width
-# channel base power = 10 dbm but what is max?
-# aliasing
-# invers fft
-# cal -> start cal -> two port -> normalize both directions -> choose ideal kit, check in box 'through' -> apply
