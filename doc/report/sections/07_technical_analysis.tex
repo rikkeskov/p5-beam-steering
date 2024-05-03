@@ -116,7 +116,7 @@ or expressed in decibel with respect to the isotropic radiator~\cite[p. 10]{ant_
     \tagaddtext{[\si{\decibel}]}
 \end{equation}
 
-\subsubsection{Friis Transmission Equation}
+\subsection{Friis Transmission Equation}
 The Friis transmission equation explains how the received power at a receiver antenna is related to the power of the transmitting antenna. The receiver antenna receives energy from the transmitting antenna and the effectiveness of this is described as the effective area $A_r\left( \theta, \phi \right)$ assuming that the antenna is placed in the origin of the spherical coordinate system. If the antenna has the property of reciprocity, the effective area and the gain of the receiver antenna is related by 
 \begin{equation} \label{eq:effectivate_area}
     A_r \left( \theta, \phi \right) = \frac{\lambda^2}{4 \pi} G_r \left( \theta, \phi \right)
@@ -140,8 +140,57 @@ As previously mentioned the directivity of an antenna does not depend on the dis
 
 Also called Friis transmission equation~\cite[pp. 1.10-1.11]{ant_eng_hk}. $G_t$ is the gain of the transmitting antenna in the direction of the receiver and $G_r$ is the gain of the receiving antenna in the direction of the transmitter. The radiation characteristics of an antenna in the far field is called the antenna radiation pattern and will look different depending on the design of the antenna. The radiatation pattern is dependent on the anglular properties $\theta$ and $\phi$ and is usually visualised in a plane parallel to the electric field and called an \textbf{E} plane pattern or elevation plane pattern, or parallel to the magnetic field and called a \textbf{H} plane pattern or Azimuth plane pattern~\cite[p. 79-80]{direct_energy}\cite[p. 13-14]{ant_beam_form}.
 
-\subsubsection{Antenna Design}
+\subsection{S-Parameters}
+S-parameters are used to describe the input and output relationship of a system's ports at microwave frequency~\cite{s_params}. S-parameters are used because voltages and currents can be difficult to measure directly in the microwave frequency spectrum. S-parameters describe a network in waves instead of voltages and currents~\cite{ming_notes}. S-parameters can be used to describe a \textit{n}-port, $n\geq1$, system and are dependent on frequency~\cite{s_params}. Some typical systems are one-port and two-port systems, visualised in figures \ref{fig:1p_sys} and \ref{fig:2p_sys}.
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/1p_system.png} % first figure itself
+        \caption{One-port system.} \label{fig:1p_sys}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/2p_systen.png} % second figure itself
+        \caption{Two-port system.} \label{fig:2p_sys}
+    \end{minipage}
+\end{figure}
+
+The parameters \textit{a} and \textit{b} represent the wave flow in the system and they are a linear combination of the voltages and currents at the ports~\cite{ming_notes}.Looking at a two-port system, such as a system with a receiver antenna and transmitter antenna, the S-parameter matrix looks as follows:
+\begin{align} \label{eq:s_matrix}
+    \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = 
+    \begin{bmatrix} s_{11} & s_{12} \\ s_{21} & s_{22} \\ \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}
+\end{align}
+
+The S-parameters represent different information about the system.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{0.15\textwidth}|p{0.6\textwidth}}
+        \textbf{Parameter} & \textbf{Description} \\
+        \hline
+        \hline
+        $S_{11}$ & $S_{11}=\frac{b_1}{a_1}$. Forward reflection coefficient. Describes the input return loss $\Gamma$ i.e. what is reflected from the port rather than radiated or absorbed. \\
+        $S_{12}$ & $S_{12}=\frac{b_1}{a_2}$. Reverse transmission coefficient i.e. how much is transmitted from port 2 to port 1. \\
+        $S_{21}$ & $S_{21}=\frac{b_2}{a_1}$. The forward transmission coefficient i.e. how much is transmitted from port 1 to port 2. \\
+        $S_{22}$ & $S_{22}=\frac{b_2}{a_2}$. Reverse reflection coefficient i.e. output matching. \\
+    \end{tabular}
+    \caption{Explanation of S-parameters~\cite{s_params}.}
+    \label{tab:s_params}
+\end{table}
+
+Ideally, an electrical load is designed to have the least possible absorbtion. This means the power transfer is maximised or the signal reflection is minimised, depending on the use case. This is done by matching the input impedance of the electrical load to the output impedance of the signal source, such as a cable. Minimal reflection is achieved when the complex output impedance is equal to the complex input impedance and maximum power transfer is achieved when the complex output impedance is equal to the complex conjugate of the input impedance. If the input impedance of an electrical load is denoted $Z_L$ and the characteristics output impedance of a signal source is denoted $Z_0$~\cite{s_params}\cite{ming_notes}, the return loss can be calculated as
+\begin{equation} \label{return_loss}
+    \Gamma = \frac{Z_L-Z_0}{Z_L+Z_0}
+\end{equation}
+
+Using the reflection coefficient the output flow of the system's port one is equal to $b_1=\Gamma a_1$~\cite{ming_notes}. $S_{11}$ and the reflection coefficient $\gamma$ are related as follows:
+\begin{equation}
+    S_{11} = 20 \log_{10}\left(\left|\Gamma\right|\right)
+    \tagaddtext{[\si{\decibel}]}
+\end{equation}
+
+\subsection{Antenna Designs}
 The design of the antenna affect the radiation characteristics, the bandwidth and the range of frequencies that the antenna is able to transmit or receive~\cite[p. 76]{direct_energy}. The antenna types described in table \ref{tab:antenna_types} are some of the typical design types along with the isotropic antenna which is a theoretical antenna~\cite[p. 11]{ant_beam_form}. 
+\todo[inline, color=red]{add information about 3db bandwidth and bandwidth in general}
 
 A dipole antenna is two wires or rods pointing at the opposite direction of each other, for example towards positive and negative \textit{z} in the spherical coordinate system. In the Azimuth plane the radiation pattern is a circle centered at the centre of the dipole antenna, whereas in the elevation plane, the radiation pattern is two ears extending from the centre to either side (see figure \ref{fig:dipole_1} and \ref{fig:dipole_2})~\cite[pp. 12-14]{ant_beam_form}.
 \begin{figure}[H]

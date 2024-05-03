@@ -1,13 +1,67 @@
 \chapter{Tests}
 This chapter includes test descriptions and results to validate the design against the requirements. First, the two directional antennas are tested to find their gain and ensure, that the transmitter and receiver have their maximum gain at the same frequency. Finally, the full test of the beam steering and transmitter locator is tested with the transmitter fixed at a known location in the test area.
 
-\section{Test of Gain in Frequency Spectrum} 
-The aim of this test is to test both directive antennas in a frequency spectrum to ensure they operate at the same frequency.
+\section{Test of S-Parameters} \label{s:sparam_test}
+The aim of this test is to test the reflection coefficient of the receiving antenna. The measurement will be used to choose the resonance frequency for the acceptance test.
+
+\subsubsection{Equipment}
+To perform the test the following equipment is needed:
+\begin{itemize}
+    \item Rohde \& Schwarz ZNA Vector Network Analyzer (\SI{10}{\mega\hertz}-\SI{43.5}{\giga\hertz})
+    \item Rohde \& Schwarz ZN-Z54 Calibration Unit (\SI{9}{\kilo\hertz}-\SI{40}{\giga\hertz})
+    \item Antenna cable
+\end{itemize}
+
+\subsubsection{Procedure}
+The test is performed once. The following explains the procedure for the test:
+\begin{enumerate}
+    \item Add power to VNA, connect antenna cable to VNA and Calibration unit.
+    \item Make calibration test by choosing \textit{Cal $\rightarrow$ Quick Start Calibration $\rightarrow$ Apply} on the VNA.
+    \item Disconnect antenna cable and reconnect to DUT.
+    \item Set start and stop frequencies. 
+    \item Ensure that VNA measures $S_{11}$-parameter by choosing \textit{Meas $\rightarrow$ $S_{11}$}.
+\end{enumerate}
+The receiver antenna is a horn antenna which is designed to work in the spectrum from \SI{4}{\giga\hertz} to \SI{7}{\giga\hertz}. The measurement is performed in the spectrum \SI{3}{\giga\hertz} to \SI{8}{\giga\hertz} in order to encaosulate the entire antenna frequency spectrum, with steps of \SI{25}{\mega\hertz}. 
+
+\subsubsection{Result}
+The following figure shows $S_{11}$ at the measured frequencies
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/s11_meas.png}
+    \caption{Measured $S_{11}$-parameter from \SI{3}{\giga\hertz} to \SI{8}{\giga\hertz}.} \label{fig:s11_meas}
+\end{figure}
+It can be seen that the antenna has a maximum $S_{11}$ magnitude of \SI{-19.56}{\decibel} at \SI{5.65}{\giga\hertz}. This gives a reflection coefficient of $\Gamma = 10^{-19.56/20} = 0.11$. Almost \SI{1}{\giga\hertz} away at \SI{4.75}{\giga\hertz} the magnitude of $S_{11}$ is \SI{-15.71}{\decibel} which equals a reflection coefficient of $\Gamma = 10^{-15.71/20} = 0.16$.
+
+\section{Test of Radiation Pattern} \label{s:rad_test}
+The aim of this test is to know the directiveness of the receiving antenna. The measurement is used in the evaluation of the angle step of the turntable.
+
+\subsubsection{Equipment}
+The test is performed in the anechoic chamber at Aalborg University with the provided setup equipment at the site. This includes
+\begin{itemize}
+    \item Computer with relevant \textit{MVG software}
+    \item \textit{MVG StarMIMO} in anechoic chamber
+\end{itemize}
+The \textit{MVG StarMIMO} has a measurement bandwidth of \SI{400}{\mega\hertz} to \SI{6}{\giga\hertz}. As seen in the results in the test of S-parameters in section \ref{s:sparam_test} the maximum reflection coefficient magnitude is at \SI{5.65}{\giga\hertz}, therefore the step size of frequency spectrum for the radiation characteristics measurement is chosen to be \SI{0.05}{\giga\hertz}.
+
+\subsubsection{Procedure}
+The following explains the procedure for the test:
+\begin{enumerate}
+    \item Measure known antenna \textit{(MVG SH800)} with known radiation characteristics. Use for gain reference.
+    \item Secure DUT to test platform.
+    \item Perform automated test by activating the measurement equipment outside the chamber.
+\end{enumerate}
+Since the antenna is not designed for use below \SI{4}{\giga\hertz}, this is set as the start frequency. The measurement equipment cannot measure above \SI{6}{\giga\hertz}, therefore this is the end frequency. The StarMIMO measures at angles of \SI{15}{\degree} in both planes.
+
+\subsubsection{Result}
+The data collected is imported into \textit{Matlab}. The following figure shows the
 \todo[inline,color=blue]{elaborate and do test}
 
-\section{Test of Radiation Pattern}
-The aim of this test is to know the directiveness of the two directional antennas.
-\todo[inline,color=blue]{elaborate and do test}
+The figure \ref{fig:gain_meas} below shows the maximum gain of the antenna over the frequency spectrum at any measured angle.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/gain_meas.png}
+    \caption{Measured maximum gain at any measured angle in the frequency spectrum from \SI{4}{\giga\hertz} to \SI{6}{\giga\hertz}.} \label{fig:gain_meas}
+\end{figure}
 
 \section{Accept Test}
 The aim of this test is to test the full function of the developed product. The test must show that the receiver antenna on the turntable is able to scan the test area and measure the received power at fixed angles, before selection the location with the maximum received power and focusing its beam on that location.
@@ -22,7 +76,7 @@ To perform the test, the following equipment is needed:
     \item PC with one USB-A port and one LAN port
     \item Rohde \& Schwarz ZVB 8 Vector Network Analyzer
     \item Network cable (8-pin RJ-45 connector)
-    \item Two \SI{50}{\ohm} directional antennas with XX frenquecy
+    \item Two \SI{50}{\ohm} directional antennas with XX frequency
     \item power supplies to the antennas ????
 \end{itemize}
 \todo[inline,color=blue]{find exact values and names}
@@ -38,15 +92,17 @@ The following steps outline how to perform the test:
 \end{enumerate}
 \todo[inline,color=blue]{elaborate on the how}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/accept-test-setup.eps}
     \caption{Setup for test of functionality of beam steering device.} \label{fig:experiment-setup}
 \end{figure}
 \todo[inline,color=blue]{improve this figure because it is ugly. Needs more names}
 
-\section{Test Results}
+\subsubsection{Test Results}
 \todo[inline,color=blue]{add table for test results and describe}
 
-\subsection{Test errors}
+\subsubsection{Test errors}
 While the turntable is turning the cable connected to the horn antenna will move with it. This will affect the phase of the signal. However, since the purpose of the test is to measure magnitude, this error is will not effect the test result.
+
+\section{Summary of Tests}
