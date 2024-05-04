@@ -9,13 +9,13 @@
 % Kunne forstå behandling og udveksling af analoge og digitale signaler mellem (del-)systemer, herunder frekvensresponser, fase- og gainkarakteristikker, sampling, analog og digital filtrering etc.
 % Have grundlæggende viden om trådløs kommunikation. 
 
-In order to prevent aliasing the alias-free range must be calculated. As described in section \ref{sss:aliasing} the range depends on the settings on the network analyzer. The frequency span together with the number of points also affect how fast each measurement of the entire span can be made. 
-\todo[inline, color=red]{describe what happens with each setting + what sweep frequency(?) does}
-The frequency span is chosen from \SI{5}{\giga\hertz} to \SI{7}{\giga\hertz} which is most of the range of which the horn antenna is designed to work in. The number of points is chosen to be \SI{1001}{} because lowering this value by a couple factors will affect the measurement speed negatively. Therefore the alias-free range is
-\begin{equation}
-    Range = \frac{1001-1}{\SI{5E9}{\hertz}-\SI{7E9}{\hertz}} \SI{300E6}{\meter\per\second} = 150
-    \tagaddtext{[\si{\meter}]}
-\end{equation}
+%In order to prevent aliasing the alias-free range must be calculated. As described in section \ref{sss:aliasing} the range depends on the settings on the network analyzer. The frequency span together with the number of points also affect how fast each measurement of the entire span can be made. 
+%\todo[inline, color=red]{describe what happens with each setting + what sweep frequency(?) does}
+%The frequency span is chosen from \SI{5}{\giga\hertz} to \SI{7}{\giga\hertz} which is most of the range of which the horn antenna is designed to work in. The number of points is chosen to be \SI{1001}{} because lowering this value by a couple factors will affect the measurement speed negatively. Therefore the alias-free range is
+%\begin{equation}
+%    Range = \frac{1001-1}{\SI{5E9}{\hertz}-\SI{7E9}{\hertz}} \SI{300E6}{\meter\per\second} = 150
+%    \tagaddtext{[\si{\meter}]}
+%\end{equation}
 
 \section{Choice of Turntable}
 \todo[inline,color=red]{explain choice of turntable and how it meets reqs}

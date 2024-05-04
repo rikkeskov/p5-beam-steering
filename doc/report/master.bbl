@@ -67,6 +67,54 @@
       \field{title}{Speed Up Your Python Program With Concurrency}
       \field{year}{u.a.}
     \endentry
+    \entry{bandwidth}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5cae3cdaeab4201487962ef4aa7cbf3a}{%
+           family={Bevelacqua},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{fullhash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{bibnamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authorbibnamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authornamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authorfullhash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{antenna-theory.com/basics/bandwidth.php}}
+      \field{note}{{Online; accessed 04-May-2024}}
+      \field{title}{Bandwidth}
+      \field{year}{2015}
+    \endentry
+    \entry{dipole}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5cae3cdaeab4201487962ef4aa7cbf3a}{%
+           family={Bevelacqua},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{fullhash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{bibnamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authorbibnamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authornamehash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \strng{authorfullhash}{5cae3cdaeab4201487962ef4aa7cbf3a}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{antenna-theory.com/antennas/dipole.php}}
+      \field{note}{{Online; accessed 04-May-2024}}
+      \field{title}{The Dipole Antenna}
+      \field{year}{2015}
+    \endentry
     \entry{maxwell_theory}{book}{}
       \name{author}{2}{}{%
         {{hash=9c9b1779e2df5d1a13ddf5468932e5b5}{%
@@ -371,27 +419,6 @@
       \field{note}{{Online; accessed 3-May-2024}}
       \field{title}{S-Parameters and the Reflection Coefficient}
       \field{year}{u.a.}
-    \endentry
-    \entry{ks_td_analysis}{manual}{}
-      \name{author}{1}{}{%
-        {{hash=53db971e8574a8fca5f4bfc3675960b3}{%
-           family={Technologies},
-           familyi={T\bibinitperiod},
-           given={Keysight},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{53db971e8574a8fca5f4bfc3675960b3}
-      \strng{fullhash}{53db971e8574a8fca5f4bfc3675960b3}
-      \strng{bibnamehash}{53db971e8574a8fca5f4bfc3675960b3}
-      \strng{authorbibnamehash}{53db971e8574a8fca5f4bfc3675960b3}
-      \strng{authornamehash}{53db971e8574a8fca5f4bfc3675960b3}
-      \strng{authorfullhash}{53db971e8574a8fca5f4bfc3675960b3}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Time Domain Analysis Using a Network Analyzer}
-      \field{year}{2017}
     \endentry
     \entry{ant_eng_hk}{book}{}
       \name{author}{1}{}{%
