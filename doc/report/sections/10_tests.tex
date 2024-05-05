@@ -53,10 +53,23 @@ The following explains the procedure for the test:
 Since the antenna is not designed for use below \SI{4}{\giga\hertz}, this is set as the start frequency. The measurement equipment cannot measure above \SI{6}{\giga\hertz}, therefore this is the end frequency. The StarMIMO measures at angles of \SI{15}{\degree} in both planes.
 
 \subsubsection{Result}
-The data collected is imported into \textit{Matlab}. The following figure shows the
-\todo[inline,color=blue]{elaborate and do test}
+The data collected is imported into \textit{Matlab}. The figure \ref{fig:horn_elevation} shows the elevation plane of the measured horn antenna in the anechoic chamber. The red line shows the radiation pattern for the horn antenna at $f=\SI{4.75}{\giga\hertz}$. The blue line shows the radiation pattern for the horn antenna at $f=\SI{5.65}{\giga\hertz}$. The antenna has a higher gain at $f=\SI{5.65}{\giga\hertz}$ of \SI{12.99}{\decibel}, whereas at $f=\SI{4.75}{\giga\hertz}$ the highest gain is \SI{11.41}{\decibel}. The \SI{3}{\decibel}-bandwidths are also plotted at \SI{19}{\degree} for $f=\SI{5.65}{\giga\hertz}$ and at \SI{22.5}{\degree} for $f=\SI{4.75}{\giga\hertz}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/horn_elevation.png}
+    \caption{Measured gain in the farfield at \SI{4.75}{\giga\hertz} and \SI{5.65}{\giga\hertz} (elevation plane).} 
+    \label{fig:horn_elevation}
+\end{figure}
 
-The figure \ref{fig:gain_meas} below shows the maximum gain of the antenna over the frequency spectrum at any measured angle.
+The figure \ref{fig:horn_azimuth} below shows the azimuth plane of the horn antenna as measured in the anechoic chamber. The red line shows the gain for the antenna at $f=\SI{4.75}{\giga\hertz}$ and the blue line shows the gain for the antenna at $f=\SI{5.65}{\giga\hertz}$. The maximum gain is \SI{12.99}{\decibel} at \SI{0}{\degree}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/horn_azimuth.png}
+    \caption{Measured gain in the farfield at \SI{4.75}{\giga\hertz} and \SI{5.65}{\giga\hertz} (azimuth plane).} 
+    \label{fig:horn_azimuth}
+\end{figure}
+
+Simultaneously the maximum gain of the antenna over the frequency spectrum at any measured angle was measured as seen on the figure \ref{fig:gain_meas}. The measurement shows that the gain, generally, increases as the frequency increases.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/gain_meas.png}

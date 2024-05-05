@@ -191,36 +191,32 @@ Using the reflection coefficient the output flow of the system's port one is equ
 \subsection{Antenna Designs}
 The design of the antenna affect the radiation characteristics, the bandwidth and the range of frequencies that the antenna is able to transmit or receive~\cite[p. 76]{direct_energy}. Bandwidth is the range of frequencies on which the antenna is expected to operate in the wanted manner. There are several criterias that can be used to decide on the bandwidth for an antenna, for example the range where the reflection coefficient (see \ref{ss:s_params}) is less than a specified value or when the polarization fits a certain shape (see \ref{ss:polarization}). The antenna design affects the operating frequency range of the antenna and so an antenna can also be designed to operate with a given bandwidth. The radiation pattern of an antenna varies with the frequency but the general shape is primarily decided by the design of the antenna~\cite{bandwidth}. The antenna types described in table \ref{tab:antenna_types} are some typical design types along with the isotropic antenna which is a theoretical antenna~\cite[p. 11]{ant_beam_form}.
 
-A center-driven dipole antenna is two wires or rods pointing at the opposite direction of each other, for example towards positive and negative \textit{z} in the spherical coordinate system. In the Azimuth plane the radiation pattern is a circle centered at the centre of the dipole antenna, whereas in the elevation plane, the radiation pattern is two ears extending from the centre to either side (see figure \ref{fig:dipole_1} and \ref{fig:dipole_2})~\cite[pp. 12-14]{ant_beam_form}. The figures \ref{fig:dipole_1} and \ref{fig:dipole_2} show a typical radiation pattern for a one-wavelength dipole antenna. As seen, the dipole antenna has a very uniform pattern, but increasing the length of the dipole can increase the directiveness. However, the length also affects the input impedance. The dipole antenna will always have linear polarization~\cite{dipole}. 
+A center-driven dipole antenna is two wires or rods pointing at the opposite direction of each other, for example towards positive and negative \textit{z} in the spherical coordinate system. In the Azimuth plane the radiation pattern is a circle centered at the centre of the dipole antenna, whereas in the elevation plane, the radiation pattern is two ears extending from the centre to either side (see figure \ref{fig:dipole_1})~\cite[pp. 12-14]{ant_beam_form}. The figure \ref{fig:dipole_1} shows a typical radiation pattern for a one-wavelength dipole antenna. As seen, the dipole antenna has a very uniform pattern, but increasing the length of the dipole can increase the directiveness. However, the length also affects the input impedance. The dipole antenna will always have linear polarization~\cite{dipole}. 
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) dipole.png} % first figure itself
-        \caption{Dipole antenna radiation pattern in the Azimuth plane.} 
-        \label{fig:dipole_1}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) dipole_1.png} % second figure itself
-        \caption{Dipole antenna radiation pattern in the elevation plane. Figures generated with \textit{CST Studio} dipole antenna example ($f=\SI{2.4}{\giga\hertz}$).}
-        \label{fig:dipole_2}
     \end{minipage}
+    \caption{Dipole antenna radiation pattern. Figures generated with \textit{CST Studio} dipole antenna example ($f=\SI{2.4}{\giga\hertz}$).}
+    \label{fig:dipole_1}
 \end{figure}
 
-A patch antenna is in its simplest form a piece of metal on top of a grounded surface. The metal can have different shape and size to accomodate different operating frequencies, bandwidths and gains. The feeding of the patch can also affect the antenna parameters such as the impedance match. The patch antenna is usually only used for UHF applications, because the flatness of the antenna allows it to fit into narrow areas, where the patch size must also be small. The operating frequencies depend on the size of the patch. The patch antenna has lower efficiency than many other antenna design types, and a small bandwidth. The radiatation pattern depends, as in all cases, on the design of the patch, and can have a large variety of shape~\cite[p. 7.1-7.5]{ant_eng_hk}. An example can be seen in \ref{fig:patch_1} and \ref{fig:patch_2}.
+A patch antenna is in its simplest form a piece of metal on top of a grounded surface. The metal can have different shape and size to accomodate different operating frequencies, bandwidths and gains. The feeding of the patch can also affect the antenna parameters such as the impedance match. The patch antenna is usually only used for UHF applications, because the flatness of the antenna allows it to fit into narrow areas, where the patch size must also be small. The operating frequencies depend on the size of the patch. The patch antenna has lower efficiency than many other antenna design types, and a small bandwidth. The radiatation pattern depends, as in all cases, on the design of the patch, and can have a large variety of shape~\cite[p. 7.1-7.5]{ant_eng_hk}. An example can be seen in \ref{fig:patch_1}.
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) patch.png} % first figure itself
-        \caption{Patch antenna radiation pattern in the Azimuth plane.} 
-        \label{fig:patch_1}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) patch_1.png} % second figure itself
-        \caption{Patch antenna radiation pattern in the elevation plane. Figures generated with \textit{CST Studio} ($f=\SI{2.4}{\giga\hertz}$).}
-        \label{fig:patch_2}
     \end{minipage}
+    \caption{Patch antenna radiation pattern. Figures generated with \textit{CST Studio} ($f=\SI{2.4}{\giga\hertz}$).}
+    \label{fig:patch_1}
 \end{figure}
 
 Horn antennas come in many shapes and sizes which affect the radiation pattern and gain but common amongst the different designs is high beam directivity. A pyramidal, rectangular horn antenna is a common horn antenna, and has a fan-shaped radiation pattern. The gain can be calculated by knowing its dimensions and the beamwidths of the fan can be changed by the varying the aperture dimensions. Horn antennas can be designed to cover both wide and narrow bandwidths, linear or circular polarization and have a certain gain. It is therefore that horn antennas are regarded as being able to fulfill many different applications~\cite[p. 14.1-14.3]{ant_eng_hk}.  
@@ -228,15 +224,13 @@ Horn antennas come in many shapes and sizes which affect the radiation pattern a
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) horn.png} % first figure itself
-        \caption{Pyramidal horn antenna radiation pattern in the Azimuth plane.} 
-        \label{fig:horn_1}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) horn_1.png} % second figure itself
-        \caption{Horn antenna radiation pattern in the elevation plane. Figures generated with \textit{CST Studio} horn antenna example ($f=\SI{2.4}{\giga\hertz}$).}
-        \label{fig:horn_2}
     \end{minipage}
+    \caption{Horn antenna radiation pattern. Figures generated with \textit{CST Studio} horn antenna example ($f=\SI{2.4}{\giga\hertz}$).}
+    \label{fig:horn_1}
 \end{figure}
 
 A helical antenna is one or several conductors in a helical shape connected to a ground plane and can be configured in many modes, usually \textit{normal} or \textit{axial} mode. Normal mode is achieved when the diameter of the helix is smaller than a wavelength and axial mode is when the circumference is close to the wavelength. A helix antenna has circular polarization in either right-hand or left-hand direction. A helix antenna has a wide spectrum for which impedance characteristics can be matched~\cite[p. 12.2]{ant_eng_hk}.
@@ -244,15 +238,13 @@ A helical antenna is one or several conductors in a helical shape connected to a
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) helical.png} % first figure itself
-        \caption{Helical antenna radiation pattern in the Azimuth plane.} 
-        \label{fig:helical_1}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/farfield (f=2.4) helical_1.png} % second figure itself
-        \caption{Helical antenna radiation pattern in the elevation plane. Figures generated with \textit{CST Studio} ($f=\SI{2.4}{\giga\hertz}$).}
-        \label{fig:helical_2}
     \end{minipage}
+    \caption{Helical antenna radiation pattern. Figures generated with \textit{CST Studio} ($f=\SI{2.4}{\giga\hertz}$).}
+    \label{fig:helical_1}
 \end{figure}
 
 Antennas can also be put together in arrays. This changes the characteristics of the radiation pattern and ??
