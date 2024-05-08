@@ -1,0 +1,71 @@
+2024-05-08 16:25:05:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-05-08 16:25:05:root: VNA with trace id trc1 is created. Measuring s21.
+2024-05-08 16:25:05:root: Settings are: {'sweep type': 'LIN', 'start freq': '4750000000.0', 'stop freq': '4750000000.0', 'points': '1', 'meas bw': '1.0', 'power dbm': '10.0'}
+2024-05-08 16:25:10:turntable: Turntable hrt i (64980128) connected.
+2024-05-08 16:25:10:turntable: Current position is 70 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:15:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:16:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:16:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:16:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:16:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:16:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:17:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:17:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:17:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:17:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:17:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:18:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:18:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:18:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:18:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:18:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:19:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:19:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:19:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:19:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:19:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:20:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:20:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:20:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:20:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:20:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:21:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:21:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:21:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:21:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:21:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:22:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:22:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:22:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:22:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:22:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:23:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:23:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:23:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:23:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:23:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:24:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:24:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:24:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:24:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:24:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:25:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:25:turntable: Current position is 12 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 16:25:25:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-05-08 16:25:25:turntable: Current position for hrt i (64980128) is 10.
+2024-05-08 16:25:27:root: Power measurement is [-61.96980827].
+2024-05-08 16:25:30:root: Current position for hrt i (64980128) is 30.
+2024-05-08 16:25:32:root: Power measurement is [-66.59553437].
+2024-05-08 16:25:34:root: Current position for hrt i (64980128) is 50.
+2024-05-08 16:25:36:root: Power measurement is [-53.65892155].
+2024-05-08 16:25:39:root: Current position for hrt i (64980128) is 70.
+2024-05-08 16:25:41:root: Power measurement is [-50.92097196].
+2024-05-08 16:25:43:root: Current position for hrt i (64980128) is 90.
+2024-05-08 16:25:45:root: Power measurement is [-54.97918647].
+2024-05-08 16:25:48:root: Current position for hrt i (64980128) is 110.
+2024-05-08 16:25:50:root: Power measurement is [-66.98481035].
+2024-05-08 16:25:52:root: Current position for hrt i (64980128) is 130.
+2024-05-08 16:25:54:root: Power measurement is [-69.57808457].
+2024-05-08 16:25:54:root: Max gain measured is [-50.92097196] at position 70.
+2024-05-08 16:25:54:root: VNA thread is closed. 7 measurements made.
+2024-05-08 16:26:00:root: Turntable thread is closed. 7 positions measured.

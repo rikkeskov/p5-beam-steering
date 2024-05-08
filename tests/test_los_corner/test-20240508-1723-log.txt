@@ -1,0 +1,25 @@
+2024-05-08 17:23:43:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-05-08 17:23:43:root: VNA with trace id trc1 is created. Measuring s21.
+2024-05-08 17:23:44:root: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '1.0', 'power dbm': '10.0'}
+2024-05-08 17:23:49:turntable: Turntable hrt i (64980128) connected.
+2024-05-08 17:23:49:turntable: Current position is 70 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:23:55:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-05-08 17:23:55:turntable: Current position for hrt i (64980128) is 10.
+2024-05-08 17:23:57:root: Power measurement is [-45.37869937].
+2024-05-08 17:23:59:root: Current position for hrt i (64980128) is 30.
+2024-05-08 17:24:01:root: Power measurement is [-43.79335355].
+2024-05-08 17:24:03:root: Current position for hrt i (64980128) is 50.
+2024-05-08 17:24:05:root: Power measurement is [-33.96637056].
+2024-05-08 17:24:08:root: Current position for hrt i (64980128) is 70.
+2024-05-08 17:24:10:root: Power measurement is [-32.10935271].
+2024-05-08 17:24:12:root: Current position for hrt i (64980128) is 90.
+2024-05-08 17:24:14:root: Power measurement is [-37.23206795].
+2024-05-08 17:24:17:root: Current position for hrt i (64980128) is 110.
+2024-05-08 17:24:19:root: Power measurement is [-51.63079326].
+2024-05-08 17:24:21:root: Current position for hrt i (64980128) is 130.
+2024-05-08 17:24:23:root: Power measurement is [-68.02349653].
+2024-05-08 17:24:26:root: Current position for hrt i (64980128) is 150.
+2024-05-08 17:24:28:root: Power measurement is [-56.66449279].
+2024-05-08 17:24:28:root: Max gain measured is [-32.10935271] at position 70.
+2024-05-08 17:24:28:root: VNA thread is closed. 8 measurements made.
+2024-05-08 17:24:35:root: Turntable thread is closed. 8 positions measured.

@@ -1,0 +1,41 @@
+\chapter{Requirements and Delimitations} \label{ch:req}
+The purpose of this project is to develop a setup where a receiving antenna is able to detect a transmitting antenna at a abitrary point in space and testing this setup. Detection of radio waves can for example be used for intruder detection or can be further developed to include data transmission and thereby achieving higher troughput if the transmitting antenna is able to locate and focus on the receiving device. 
+
+Concluding on these two scenarios, it is required that the receiving antenna must be able to be controlled ie. steered in any direction and the electromagnetic radiation in the area must be read. 
+
+\section{Delimitations} \label{sec:delimitations}
+The setup developed in this project will only be designed to be able to work in a two-dimensional plane. Moreover, in order to be able to reproduce the test results, the environmental variables such as objects in the space, size of space, temperature and humidity must be controlled and measurable. 
+
+\section{Functional Requirements}
+The following table \ref{tab:func_req} outlines the functional requirements:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{0.1\textwidth}|>{\raggedright}p{0.4\textwidth}|p{0.3\textwidth}}
+        \textbf{ID} & \textbf{Requirement} & \textbf{Traceability} \\
+        \hline
+        \hline
+        F.1 & Mechanically controlled turning along Azimuth angle $\phi$ & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
+        F.2 & Data reading of electromagnetic radiation in the surrounding space & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
+        F.3 & Controlled test environmental variables & Section \ref{sec:delimitations} \\
+    \end{tabular}
+    \caption{Table of functional requirements.}
+    \label{tab:func_req}
+\end{table}
+
+\section{Technical Requirements}
+\todo[inline,color=orange]{outline in table technical requirements. Remember environmental requirements temp and hum}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{0.1\textwidth}|>{\raggedright}p{0.4\textwidth}|p{0.3\textwidth}}
+        \textbf{ID} & \textbf{Requirement} & \textbf{Traceability} \\
+        \hline
+        \hline
+        T.1 & Operating temperature of ?? & ? \\
+        T.2 & Operating humidity of ?? & ? \\
+        T.3 & Matching antenna polarization & ? \\
+        T.4 & Automatic, (speed?) control & ? \\
+    \end{tabular}
+    \caption{Table of technical requirements.}
+    \label{tab:tech_req}
+\end{table}
+

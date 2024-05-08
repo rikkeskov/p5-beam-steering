@@ -1,0 +1,36 @@
+2024-05-08 17:45:54:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-05-08 17:45:54:root: VNA with trace id trc1 is created. Measuring s21.
+2024-05-08 17:45:54:root: Settings are: {'sweep type': 'LIN', 'start freq': '4750000000.0', 'stop freq': '4750000000.0', 'points': '1', 'meas bw': '1.0', 'power dbm': '10.0'}
+2024-05-08 17:45:59:turntable: Turntable hrt i (64980128) connected.
+2024-05-08 17:46:00:turntable: Current position is 50 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:03:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:04:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:04:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:04:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:04:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:04:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:05:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:05:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:05:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:05:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:06:turntable: Current position is 11 not start position 10. Moving hrt i (64980128) to start position.
+2024-05-08 17:46:06:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-05-08 17:46:06:turntable: Current position for hrt i (64980128) is 10.
+2024-05-08 17:46:08:root: Power measurement is [-51.33390883].
+2024-05-08 17:46:10:root: Current position for hrt i (64980128) is 30.
+2024-05-08 17:46:12:root: Power measurement is [-46.82352318].
+2024-05-08 17:46:14:root: Current position for hrt i (64980128) is 50.
+2024-05-08 17:46:16:root: Power measurement is [-46.96350987].
+2024-05-08 17:46:19:root: Current position for hrt i (64980128) is 70.
+2024-05-08 17:46:21:root: Power measurement is [-49.0734641].
+2024-05-08 17:46:23:root: Current position for hrt i (64980128) is 90.
+2024-05-08 17:46:25:root: Power measurement is [-55.30104719].
+2024-05-08 17:46:28:root: Current position for hrt i (64980128) is 110.
+2024-05-08 17:46:30:root: Power measurement is [-70.33178878].
+2024-05-08 17:46:32:root: Current position for hrt i (64980128) is 130.
+2024-05-08 17:46:34:root: Power measurement is [-67.81634537].
+2024-05-08 17:46:37:root: Current position for hrt i (64980128) is 150.
+2024-05-08 17:46:39:root: Power measurement is [-66.84939988].
+2024-05-08 17:46:39:root: Max gain measured is [-46.82352318] at position 30.
+2024-05-08 17:46:39:root: VNA thread is closed. 8 measurements made.
+2024-05-08 17:46:49:root: Turntable thread is closed. 8 positions measured.

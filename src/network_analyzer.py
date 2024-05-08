@@ -12,7 +12,7 @@ from rohdeschwarz.instruments.vna import Vna, TraceFormat, Channel
 logger = logging.getLogger(__name__)
 
 class NetworkAnalyzer(object):
-    def __init__(self, trace_id: str, s_param: str, ip_address = '172.0.0.1', port: int = 5025, channel = 1) -> None:
+    def __init__(self, trace_id: str, s_param: str, freq: float, ip_address = '172.0.0.1', port: int = 5025, channel = 1) -> None:
         """ Initalize instance variables and connect.
         Instrument Type: ZVB8 with 2 Ports
         Part Number: 1145.1010k08
@@ -26,6 +26,10 @@ class NetworkAnalyzer(object):
         self.ch: Channel = out[1]
         self.trace_id = trace_id
         self.s_param = s_param
+        self.ch.start_frequency_Hz = freq, 'GHz'
+        self.ch.stop_frequency_Hz = freq, 'GHz'
+        self.ch.points = 1
+        self.ch.if_bandwidth_Hz = 1, 'Hz'
 
     def connect(self, ip_address: str, port: int, ch: int) -> Vna:
         """ Try to connect to VNA with TCP. """
