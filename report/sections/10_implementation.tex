@@ -1,0 +1,42 @@
+\chapter{Implementation} \label{ch:implementation}
+In this chapter the implementation of the software to control the turntable and the VNA is described based on the design principles laid out in chapter \ref{ch:design}. The bacjground for the implmentation is to fulfill the requirements set out in chapter \ref{ch:req}. In the project a Windows computer is used to interface to the turntable and VNA, and the software implementation is heavily influenced by this choice.
+% Kunne anvende metoder til at konstruere distribuerede systemer ved brug af kommunikationshardware, multi-programming og basale netværksprotokoller.
+
+\section{Software Implementation}
+The VNA and the turntable are controlled in Python. The code is set up to have a module for each device and a main control program.
+
+\subsection{Turntable Control}
+
+\begin{lstlisting}[language=Python, caption=Python example]
+    def set(self, rpm: int, func: EAccelerationFunction, start_pos: float) -> None:
+    """ Establish basic settings: rpm, acceleration function and start position. """
+    cur_pos: int = round(self.position)
+    try:
+        self.tt.Velocity = rpm
+        self.tt.AccelerationFunction = func.value
+    except Exception as e:
+        logger.error(f"Unable to set settings for turntable {self.instance}, exiting with error code {e}.")
+        exit()
+    if self.tt.DisplayPolarity == EPolarity.epolBipolar.value:
+        try:
+            self.tt.DisplayPolarity = EPolarity.epolUnipolar.value
+        except Exception:
+            self.angle_max = 180.0
+            logger.error(f"Unable to set polarity to unipolar for turntable {self.instance}.")
+    while cur_pos != round(start_pos):
+        logger.info(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
+        if self.clockwise:
+            self.go_to_CW(start_pos)
+            self.wait_while_driving()
+        else:
+            self.go_to_CCW(start_pos)
+            self.wait_while_driving()
+        cur_pos = round(self.position)
+    logger.info(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
+    logger.info(f"Current position for {self.instance} is {cur_pos}.")
+\end{lstlisting}
+
+\section{VNA Control}
+
+
+\section{Concurrency in Main Control Flow}

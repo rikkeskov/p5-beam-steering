@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" modified="2024-05-10T10:26:09.698Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="7_VCeVaI9JVx2Nm4oOYz" version="24.3.1" type="device">
+  <diagram name="Side-1" id="uLUrF2YCvfydl0TDTF1-">
+    <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="220" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="K61ZtF2F-3vLizpXjQvI-1" target="K61ZtF2F-3vLizpXjQvI-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-13" value="&lt;font face=&quot;Times New Roman&quot;&gt;Control signal&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="K61ZtF2F-3vLizpXjQvI-7">
+          <mxGeometry x="0.2704" relative="1" as="geometry">
+            <mxPoint x="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;verticalAlign=bottom;" edge="1" parent="1" source="K61ZtF2F-3vLizpXjQvI-1" target="K61ZtF2F-3vLizpXjQvI-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-9" value="&lt;font face=&quot;Times New Roman&quot;&gt;Control signal&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="K61ZtF2F-3vLizpXjQvI-8">
+          <mxGeometry x="0.0637" y="2" relative="1" as="geometry">
+            <mxPoint x="4" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-1" value="&lt;font face=&quot;Times New Roman&quot;&gt;Computer&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="K61ZtF2F-3vLizpXjQvI-2" target="K61ZtF2F-3vLizpXjQvI-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-11" value="&lt;font face=&quot;Times New Roman&quot;&gt;RF signal&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="K61ZtF2F-3vLizpXjQvI-10">
+          <mxGeometry x="-0.2649" y="2" relative="1" as="geometry">
+            <mxPoint x="7" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-14" value="&lt;font face=&quot;Times New Roman&quot;&gt;Measured signal&lt;br&gt;&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="K61ZtF2F-3vLizpXjQvI-2" target="K61ZtF2F-3vLizpXjQvI-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-2" value="&lt;font face=&quot;Times New Roman&quot;&gt;VNA&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="240" y="20" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-12" value="&lt;font face=&quot;Times New Roman&quot;&gt;Position signal&lt;br&gt;&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="K61ZtF2F-3vLizpXjQvI-16" target="K61ZtF2F-3vLizpXjQvI-1">
+          <mxGeometry x="-0.2726" relative="1" as="geometry">
+            <mxPoint x="240" y="220" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-6" value="&lt;font face=&quot;Times New Roman&quot;&gt;Transmitter&lt;/font&gt;" style="verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;shape=mxgraph.electrical.radio.aerial_-_antenna_1;labelPosition=center;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="410" y="30" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-16" value="&amp;nbsp;&lt;font face=&quot;Times New Roman&quot;&gt;Turntable&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="180" y="120" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-15" value="&lt;font face=&quot;Times New Roman&quot;&gt;Measured signal&lt;br&gt;&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="K61ZtF2F-3vLizpXjQvI-2">
+          <mxGeometry x="0.0539" relative="1" as="geometry">
+            <mxPoint x="290" y="160" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="286" y="160" />
+              <mxPoint x="400" y="160" />
+              <mxPoint x="400" y="80" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K61ZtF2F-3vLizpXjQvI-5" value="&lt;font face=&quot;Times New Roman&quot;&gt;Receiver&lt;/font&gt;" style="verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;shape=mxgraph.electrical.radio.aerial_-_antenna_1;labelPosition=center;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="260" y="130" width="50" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

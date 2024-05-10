@@ -1,7 +1,12 @@
-\chapter{Design of Antenna Beam Steering} 
-\todo[inline,color=red]{short introduction}
+\chapter{Design of Antenna Beam Steering} \label{ch:design}
+The full system that will be designed includes a VNA, a turntable, two antennas and a computer. This chapter will describe the interfaces between these and their individual functionalities. In order to get an overview of the full system consider the figure \ref{fig:system_design}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/system_design.png}
+    \caption{Overview of system design.} \label{fig:system_design}
+\end{figure}
+The system composes of three integrated modules and two antennas. The first antenna is a transmitter antenna and the second antenna is a receiver antenna, which is meant to be able to measure the gain in a wide area. This wide area is determined by the turning of the turntable on which the receiver antenna is mounted. Both the transmitter antenna and receiver antenna are connected to a VNA, but for the transmitter antenna, the functionality of the VNA used is the RF generator. For the receiver antenna, the received signal measured is then further sent to the computer for data analysis. The computer controls the turntable and the VNA. This includes defining settings before the analysis and taking decisions based on the returned data: the position of the turntable and the measured antenna signal from the VNA. 
 % Kunne konstruere systemer der består af et eller flere computerbaserede systemer indlejret i fysiske omgivelser, der involverer transformation mellem analoge og digitale signaler således at en a priori defineret opførsel af systemet bliver opnået.
-% Kunne anvende feedback til at reducere påvirkningen af forstyrrelser, usikkerheder etc. samt kunne opstille krav til en ønsket systemrespons for lineære systemer og opnå denne.
 % Kunne opstille krav til realtidskommunikation mellem computersystemer og implementere dette.
 
 \section{Antenna Design}
@@ -25,37 +30,29 @@
 
 \section{Choice of Vector Network Analyzer}
 \todo[inline,color=red]{explain choice of vna and how it meets reqs}
-% Have kendskab til forskellige metoder til at designe analoge og digitale filtre
-% Kunne anvende Fouriertransformationen til at analysere digitale signaler.
+
 
 
 \section{Design of Software Control Program}
-\todo[inline,color=red]{explain design principles of software}
+Using one computer for the control of every aspect of the system allows for the devices to be programmed to work concurrently. Both the VNA and the turntable are known to be able to be controlled in Python, there the control of the turntable and VNA is programmed in Python. The control of the turntable is implemented as adviced by the manual (see \cite{hrt_i_manual}), with the supplied software \textit{RC-HRT I}. However, in order to control the turntable concurrently with the VNA, the \textit{RC-HRT I} software is interfaced via Python with the module \textit{pywin32}, which provides access to the Windows APIs~\cite{pywin32}. \textit{Rohde \& Schwarz} have published a Python module for control of the VNA which is used. The module adds an API for the remote control of the VNA, which is communicated with over TCP using SCPI-commands \textit{(Standard Commands for Programmable Instruments)}. Finally, thread parallelism is achieved with the module \textit{threading}, which is what allows for the design of the control flow to work more efficiently.
+
+\subsection{Communication Interfaces}
+The communication interfaces of the program is limited by the choice of the VNA and the turntable. The \textit{HEAD Acoustics, HRT I} turntable that has been chosen can be controlled by serial communication using the RS485-standard~\cite{hrt_i_data_sheet}. However, it can also be controlled by its accompanying Windows driver and software control program, which can be interfaced to Python with the \textit{Pywin32}-module that accesses the Windows APIs. This requires the Windows registry to be updated with the UUID found in the control interface manual. With the Windows APIs accessible, the turntable can be controlled with predefined methods~\cite{hrt_control_api_manual}. 
+
+The \textit{R\&S ZVB8} VNA has a LAN type interface for control and data transfer~\cite{vna_data_sheet_descrip}. LAN allows for mutual communication between devices. LAN covers both the physical layer in the form of cabling and network cards, the latter which also contains part of the link layer in the form of logic decisions, and the link layer which includes the link protocol~\cite[p. 153]{tcp_ip}. In order to communicate across a LAN the computers must be connected to the same network and know each other's addresses. Using the TCP/IP protocol the communication can be extended further outside the LAN to the wider internet. Even on the same LAN, two computers can communication with each other using their IP addresses~\cite[p. 174-175]{tcp_ip}. On top of this, TCP ensures a connection between the two applications running on the computer and the VNA. At each end of the connection a port number is used to identify the applications. Moreover, the TCP header includes an acknowledgement number which the applications use to acknowledge to each other, that the previous message was correctly received~\cite[p. 313]{tcp_ip}. The content of the TCP packets is SCPI commands and device-specific commands that follow the SCPI-standard~\cite[p. 5.4]{vna_operating_manual}.
+% Have viden om OSI netværksmodellen.
+% Have viden om protokoller i forskellige lag i systemer der kommunikerer med andre systemer.
+
+
+\subsection{Concurrency}
+% kunne forstå realtidsaspekter i forhold til digitale systemer der kommunikerer med andre analoge og/eller digitale systemer.
+The turntable is controlled via serial communication while the data from the VNA is read via a network cable. Because communication with the turntable and the turning process and communication with the VNA are both I/O bound tasks, there is a possibility for some waiting time instead of CPU time in a control program. Therefore, in order to achieve real-time communication and data processing, the wait time is exploited by use of the Python module \textit{Threading}. \textit{Threading} uses a single processor and pre-emptive multitasking to acheive concurrency~\cite{concurrency}. This means that at any time one thread is not using CPU computation the processor can switch to another thread and continue computation here. The processor also saves the current state of each thread so that it can return to the exact same place. However, this also means that reading and writing to global variables must be protected, because the processor can switch in the middle of a statement~\cite{concurrency}. Likewise, if a thread needs to wait for another thread to execute a specific task, it is necessary that the user defines a wait flag, which synchronises the wait between relevant threads.
+
 % Have viden om teorier og metoder til spektralestimering. 
 % HVILKET BETYDER:
 % Anvende relevante værktøjer som f.eks. Matlab eller Python til spektralestimering.
 % Teori og metoder til non-parametrisk spektralestimering, herunder f.eks. Diskret Fourier Transformation (DFT) og dennes realisation i form af Fast Fourier Transformation (FFT) og Short Time Fourier Transformation (STFT).
 % Kunne anvende relevante softwareværktøjer til at simulere ovenstående systemer.
-The control of the turntable and VNA is programmed in Python. The control of the turntable is implemented as adviced by the manual (see \cite{hrt_i_manual}), with the supplied software \textit{RC-HRT I}. However, in order to control the turntable concurrently with the VNA, the \textit{RC-HRT I} software is controlled via Python with the module \textit{pywin32}, which provides access to the Microsoft Windows APIs~\cite{pywin32} and therefore makes the \textit{RC-HRT I} software controllable in Python. \textit{Rohde \& Schwarz} have published a Python module for control of the VNA which is used. Finally, thread parallelism is achieved with the module \textit{threading}.
-%here more about the "main" control software 
-
-The communication with the turntable and the VNA are handled internally in the Python modules that instead provide a functional, high-level interface. However, the communication protocols and interfaces that the turntable and VNA require, do affect the design of the control software. %More about why this is
-
-\subsection{Communication Interfaces}
-\todo[inline,color=red]{explain communication to and from vna and tt in depth}
-% Have viden om OSI netværksmodellen.
-The communication interfaces of the program is limited by the choice of the turntable and VNA. The \textit{HEAD Acoustics, HRT I} turntable that has been chosen can be controlled by serial communication using the RS485 standard~\cite{hrt_i_data_sheet}. The \textit{R\&S ZVB8} VNA has a LAN type interface for control and data transfer and ??~\cite{vna_data_sheet_descrip}.
-% Have viden om protokoller i forskellige lag i systemer der kommunikerer med andre systemer.
-% Kunne anvende metoder til at konstruere distribuerede systemer ved brug af kommunikationshardware, multi-programming og basale netværksprotokoller.
-
-
-\subsection{Concurrency}
-% kunne forstå realtidsaspekter i forhold til digitale systemer der kommunikerer med andre analoge og/eller digitale systemer.
-As previously written, the turntable is controlled via serial communication while the data from the VNA is read via a network cable and TCP. Python serial communication and the communication with the VNA are both I/O bound tasks. Therefore, in order to achieve real-time communication and data processing the wait time of the I/O bound operations is exploited by use of the Python module \textit{Threading}. \textit{Threading} uses a single processor and pre-emptive multitasking to acheive concurrency~\cite{concurrency}. 
-\todo[inline,color=red]{explain how program runs}
-
-% band width
-% channel base power = 10 dbm but what is max?
-% aliasing
-% invers fft
-% s params ?
+% Have kendskab til forskellige metoder til at designe analoge og digitale filtre
+% Kunne anvende Fouriertransformationen til at analysere digitale signaler.
+% Kunne anvende feedback til at reducere påvirkningen af forstyrrelser, usikkerheder etc. samt kunne opstille krav til en ønsket systemrespons for lineære systemer og opnå denne.

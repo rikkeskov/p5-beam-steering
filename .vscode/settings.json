@@ -27,8 +27,7 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "%DOC%",
-                "--shell-escape"
+                "%DOC%"
             ]
         },
         {
