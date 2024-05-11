@@ -6,46 +6,48 @@ The full system that will be designed includes a VNA, a turntable, two antennas 
     \caption{Overview of system design.} \label{fig:system_design}
 \end{figure}
 The system composes of three integrated modules and two antennas. The first antenna is a transmitter antenna and the second antenna is a receiver antenna, which is meant to be able to measure the gain in a wide area. This wide area is determined by the turning of the turntable on which the receiver antenna is mounted. Both the transmitter antenna and receiver antenna are connected to a VNA, but for the transmitter antenna, the functionality of the VNA used is the RF generator. For the receiver antenna, the received signal measured is then further sent to the computer for data analysis. The computer controls the turntable and the VNA. This includes defining settings before the analysis and taking decisions based on the returned data: the position of the turntable and the measured antenna signal from the VNA. 
-% Kunne konstruere systemer der består af et eller flere computerbaserede systemer indlejret i fysiske omgivelser, der involverer transformation mellem analoge og digitale signaler således at en a priori defineret opførsel af systemet bliver opnået.
-% Kunne opstille krav til realtidskommunikation mellem computersystemer og implementere dette.
+
+% --------------------------------------------------------------------------
 
 \section{Antenna Design}
-\todo[inline,color=red]{explain design of horn antenna and why}
-% Kunne forstå behandling og udveksling af analoge og digitale signaler mellem (del-)systemer, herunder frekvensresponser, fase- og gainkarakteristikker, sampling, analog og digital filtrering etc.
-% Have grundlæggende viden om trådløs kommunikation. 
+The most important characteristics of the antenna chosen for the design is that it is directional. The antenna must be directional in order to detect transmission from another antenna. The receiver and transmitter antenna must have the same phase characteristics to ensure that this does not introduce loss in the system. Therefore, both antennas must be designed to match in this aspect. The receiver antenna and the transmitter antenna is chosen to be the same type of antenna with the exact same shape. This means that all antenna parameters are the same. 
 
-%In order to prevent aliasing the alias-free range must be calculated. As described in section \ref{sss:aliasing} the range depends on the settings on the network analyzer. The frequency span together with the number of points also affect how fast each measurement of the entire span can be made. 
-%\todo[inline, color=red]{describe what happens with each setting + what sweep frequency(?) does}
-%The frequency span is chosen from \SI{5}{\giga\hertz} to \SI{7}{\giga\hertz} which is most of the range of which the horn antenna is designed to work in. The number of points is chosen to be \SI{1001}{} because lowering this value by a couple factors will affect the measurement speed negatively. Therefore the alias-free range is
-%\begin{equation}
-%    Range = \frac{1001-1}{\SI{5E9}{\hertz}-\SI{7E9}{\hertz}} \SI{300E6}{\meter\per\second} = 150
-%    \tagaddtext{[\si{\meter}]}
-%\end{equation}
+The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cross-section, straight curvature of the side walls and therefore a linear polarization. The aperture of the antenna is XX by XX.
+\todo[inline,color=red]{make figure of antenna+insert image}
+\todo[inline,color=red]{consider adding calculations of gaina at different frequencies}
+
+
+% --------------------------------------------------------------------------
 
 \section{Choice of Turntable}
-\todo[inline,color=red]{explain choice of turntable and how it meets reqs}
-% Kunne forstå digitale og analoge overføringsfunktioner beskrevet via hhv. z-operatoren og Laplace-operatoren, herunder elementer som poler, nulpunkter, analoge og digitale implementeringer, overføringsfunktionsmatricer etc.
-% kunne linearisere ikke-lineære systemmodeller med henblik på at approksimere dem med lineære modeller.
-% Kunne anvende metoder til at modellere fysiske systemer, herunder elektriske, elektromekaniske, termiske og hydrodynamiske systemer, på et niveau hvor modellerne kan bruges i designet af elektroniske systemer der interagerer med deres omgivelser.
+The turntable must be able to be remotely controlled and precise, so that the angular position of the antenna can be determined confidently. The turntable must be able to turn to a remotely specified angle at each turn. 
+
+The \textit{Head Acoustics GmbH HRT I} turntable was available and fulfills the requirements. It has the ability to turn \SI{360}{\degree} with angle steps of \SI{0.1}{\degree}. It can be manually controlled and remotely controlled with software tools. It is able to turn at a maximum speed of \SI{2}{rpm} by a stepper motor~\cite{hrt_i_data_sheet}. 
+
+
+% --------------------------------------------------------------------------
 
 \section{Choice of Vector Network Analyzer}
-\todo[inline,color=red]{explain choice of vna and how it meets reqs}
+The VNA must have a minimum of two ports, one for input and one for output, be able to be calibrated to normalize the transmission lines to the antennas and must be able to be remotely controlled. Moreover, it must cover the frequency range of the horn antennas. The \textit{Rohde \& Schwarz ZVB8} covers the range from \SI{300}{\kilo\hertz} to \SI{8}{\giga\hertz} with down to \SI{1}{\hertz} resolution. It can have a measurement time of $<\SI{4.5}{\milli\second}$ with simultaneous data transfer, which allows for faster execution of tests. The internal noise level is $<-\SI{110}{dBm}$~\cite{vna_data_sheet_descrip}.
 
 
+% --------------------------------------------------------------------------
 
 \section{Design of Software Control Program}
 Using one computer for the control of every aspect of the system allows for the devices to be programmed to work concurrently. Both the VNA and the turntable are known to be able to be controlled in Python, there the control of the turntable and VNA is programmed in Python. The control of the turntable is implemented as adviced by the manual (see \cite{hrt_i_manual}), with the supplied software \textit{RC-HRT I}. However, in order to control the turntable concurrently with the VNA, the \textit{RC-HRT I} software is interfaced via Python with the module \textit{pywin32}, which provides access to the Windows APIs~\cite{pywin32}. \textit{Rohde \& Schwarz} have published a Python module for control of the VNA which is used. The module adds an API for the remote control of the VNA, which is communicated with over TCP using SCPI-commands \textit{(Standard Commands for Programmable Instruments)}. Finally, thread parallelism is achieved with the module \textit{threading}, which is what allows for the design of the control flow to work more efficiently.
+
+
+% --------------------------------------------------------------------------
 
 \subsection{Communication Interfaces}
 The communication interfaces of the program is limited by the choice of the VNA and the turntable. The \textit{HEAD Acoustics, HRT I} turntable that has been chosen can be controlled by serial communication using the RS485-standard~\cite{hrt_i_data_sheet}. However, it can also be controlled by its accompanying Windows driver and software control program, which can be interfaced to Python with the \textit{Pywin32}-module that accesses the Windows APIs. This requires the Windows registry to be updated with the UUID found in the control interface manual. With the Windows APIs accessible, the turntable can be controlled with predefined methods~\cite{hrt_control_api_manual}. 
 
 The \textit{R\&S ZVB8} VNA has a LAN type interface for control and data transfer~\cite{vna_data_sheet_descrip}. LAN allows for mutual communication between devices. LAN covers both the physical layer in the form of cabling and network cards, the latter which also contains part of the link layer in the form of logic decisions, and the link layer which includes the link protocol~\cite[p. 153]{tcp_ip}. In order to communicate across a LAN the computers must be connected to the same network and know each other's addresses. Using the TCP/IP protocol the communication can be extended further outside the LAN to the wider internet. Even on the same LAN, two computers can communication with each other using their IP addresses~\cite[p. 174-175]{tcp_ip}. On top of this, TCP ensures a connection between the two applications running on the computer and the VNA. At each end of the connection a port number is used to identify the applications. Moreover, the TCP header includes an acknowledgement number which the applications use to acknowledge to each other, that the previous message was correctly received~\cite[p. 313]{tcp_ip}. The content of the TCP packets is SCPI commands and device-specific commands that follow the SCPI-standard~\cite[p. 5.4]{vna_operating_manual}.
-% Have viden om OSI netværksmodellen.
-% Have viden om protokoller i forskellige lag i systemer der kommunikerer med andre systemer.
 
+
+% --------------------------------------------------------------------------
 
 \subsection{Concurrency}
-% kunne forstå realtidsaspekter i forhold til digitale systemer der kommunikerer med andre analoge og/eller digitale systemer.
 The turntable is controlled via serial communication while the data from the VNA is read via a network cable. Because communication with the turntable and the turning process and communication with the VNA are both I/O bound tasks, there is a possibility for some waiting time instead of CPU time in a control program. Therefore, in order to achieve real-time communication and data processing, the wait time is exploited by use of the Python module \textit{Threading}. \textit{Threading} uses a single processor and pre-emptive multitasking to acheive concurrency~\cite{concurrency}. This means that at any time one thread is not using CPU computation the processor can switch to another thread and continue computation here. The processor also saves the current state of each thread so that it can return to the exact same place. However, this also means that reading and writing to global variables must be protected, because the processor can switch in the middle of a statement~\cite{concurrency}. Likewise, if a thread needs to wait for another thread to execute a specific task, it is necessary that the user defines a wait flag, which synchronises the wait between relevant threads.
 
 % Have viden om teorier og metoder til spektralestimering. 
@@ -56,3 +58,18 @@ The turntable is controlled via serial communication while the data from the VNA
 % Have kendskab til forskellige metoder til at designe analoge og digitale filtre
 % Kunne anvende Fouriertransformationen til at analysere digitale signaler.
 % Kunne anvende feedback til at reducere påvirkningen af forstyrrelser, usikkerheder etc. samt kunne opstille krav til en ønsket systemrespons for lineære systemer og opnå denne.
+% kunne forstå realtidsaspekter i forhold til digitale systemer der kommunikerer med andre analoge og/eller digitale systemer.
+
+% Kunne forstå digitale og analoge overføringsfunktioner beskrevet via hhv. z-operatoren og Laplace-operatoren, herunder elementer som poler, nulpunkter, analoge og digitale implementeringer, overføringsfunktionsmatricer etc.
+% kunne linearisere ikke-lineære systemmodeller med henblik på at approksimere dem med lineære modeller.
+% Kunne anvende metoder til at modellere fysiske systemer, herunder elektriske, elektromekaniske, termiske og hydrodynamiske systemer, på et niveau hvor modellerne kan bruges i designet af elektroniske systemer der interagerer med deres omgivelser.
+% Have viden om OSI netværksmodellen.
+% Have viden om protokoller i forskellige lag i systemer der kommunikerer med andre systemer.
+
+%In order to prevent aliasing the alias-free range must be calculated. As described in section \ref{sss:aliasing} the range depends on the settings on the network analyzer. The frequency span together with the number of points also affect how fast each measurement of the entire span can be made. 
+%\todo[inline, color=red]{describe what happens with each setting + what sweep frequency(?) does}
+%The frequency span is chosen from \SI{5}{\giga\hertz} to \SI{7}{\giga\hertz} which is most of the range of which the horn antenna is designed to work in. The number of points is chosen to be \SI{1001}{} because lowering this value by a couple factors will affect the measurement speed negatively. Therefore the alias-free range is
+%\begin{equation}
+%    Range = \frac{1001-1}{\SI{5E9}{\hertz}-\SI{7E9}{\hertz}} \SI{300E6}{\meter\per\second} = 150
+%    \tagaddtext{[\si{\meter}]}
+%\end{equation}
