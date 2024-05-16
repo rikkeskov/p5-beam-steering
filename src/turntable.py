@@ -13,7 +13,7 @@ import time
 logger = logging.getLogger(__name__)
 
 ANGLE_MIN = 0.0
-ANGLE_MAX = 270.0
+ANGLE_MAX = 360.0
 
 class EAccelerationFunction(enum.Enum):
     afImpulse = 0
@@ -36,7 +36,7 @@ class EPolarity(enum.Enum):
     epolBipolar = 1
 
 class TurnTableController():
-    def __init__(self, instance: str, ttc, clockwise: bool = True, 
+    def __init__(self, instance: str, ttc, clockwise: bool = False, 
                  start_pos: float = 0.0, angle_min: float = 
                  ANGLE_MIN, angle_max: float = ANGLE_MAX) -> None:
         """ Initalize instance variables, connect and set settings."""
@@ -86,9 +86,9 @@ class TurnTableController():
         while cur_pos != round(start_pos):
             logger.info(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
             if self.clockwise:
-                self.go_to_CW(start_pos)
-            else:
                 self.go_to_CCW(start_pos)
+            else:
+                self.go_to_CW(start_pos)
             cur_pos = round(self.position)
         logger.info(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
         logger.info(f"Current position for {self.instance} is {cur_pos}.")
@@ -97,20 +97,20 @@ class TurnTableController():
         """ Run the turntable. Changes the current position with [inc] degrees. """
         cur_pos: float = self.position
         if self.clockwise:
-            self.step_CCW(inc)
-        else:
             self.step_CW(inc)
+        else:
+            self.step_CCW(inc)
         if (self.angle_min > cur_pos > self.angle_max):
                 logger.error(f"Current position is illegal. Resetting: {self.instance}")
                 self.reset(self.instance, self.clockwise)
 
-    def reset(self, clockwise: bool = True) -> None:
+    def reset(self) -> None:
         """ Reset Turntable to start position. """
         self.stop()
-        if clockwise:
-            self.go_to_CCW(self.start_pos)
-        else:
+        if self.clockwise:
             self.go_to_CW(self.start_pos)
+        else:
+            self.go_to_CCW(self.start_pos)
 
     def stop(self) -> None:
         """ Stop turning. """
@@ -129,27 +129,27 @@ class TurnTableController():
                 logger.warning('Timeout while waiting for turntable to stop')
                 break
 
-    def step_CW(self, degrees, wait: bool = True) -> None:
+    def step_CW(self, degrees, wait: bool = False) -> None:
         """ Step [degrees] in clockwise direction. """
         self.tt.StepSize = float(degrees)
         self.tt.StepCW()
         if wait:
             self.wait_while_driving()
 
-    def step_CCW(self, degrees: float, wait: bool = True) -> None:
+    def step_CCW(self, degrees: float, wait: bool = False) -> None:
         """ Step [degrees] in counter-clockwise direction. """
         self.tt.StepSize = float(degrees)
         self.tt.StepCCW()
         if wait:
             self.wait_while_driving()
 
-    def go_to_CW(self, degrees: float, wait: bool = True) -> None:
+    def go_to_CW(self, degrees: float, wait: bool = False) -> None:
         """ Go to [degrees] while moving in clockwise direction. """
         self.tt.GotoCW(float(degrees))
         if wait:
             self.wait_while_driving()
 
-    def go_to_CCW(self, degrees: float, wait: bool = True) -> None:
+    def go_to_CCW(self, degrees: float, wait: bool = False) -> None:
         """ Go to [degrees] while moving in counter-clockwise direction. """
         self.tt.GotoCCW(degrees)
         if wait:

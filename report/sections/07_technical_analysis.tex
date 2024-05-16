@@ -251,19 +251,34 @@ A helical antenna is one or several conductors in a helical shape connected to a
 Although the design of the antenna or antenna arrays decide the pattern of radiation, it is possible to modify this pattern or the direction of the pattern to achieve different directivities for other applications. The beam of the antenna can be steered in different directions for example, in order to cover a larger physical area with a single or few antennas or to focus a beam in a certain direction. Beam steering can be done manually, mechanically or electrically.
 
 \subsection{Electrical Steering}
-Electrical beam steering is the conventional steering method which builds upon beam forming methods. Beam forming is performed by having an array of multiple antennas and changing their XX
+Electrical beam steering is the conventional steering method which builds upon beam forming methods, which entails forming a single beam from a phased antenna array and controlling the shape and direction of this beam. Beam forming build upon beam forming and is performed by having the array of multiple antennas and changing the phase of the signal in real-time. Electrical beam steering does therefore not require changing the hardware or the setup. Looking at a array of antennas, each element can be fed seperately to be able to change the phase and magnitude of each antenna element. Otherwise, if the antennas are fed with the same signal, the electromagnetic waves will combine and strengthen in the direction perpendicular to the antenna plane~\cite{beamsteering}.
 
 \subsection{Manual and Mechanical Steering}
-Manual or mechanical steering differs from electrical steering in that it is not the beam that is steered but the antenna as a whole. For mechanical steering the antenna can be mounted on a rotating platform that is controlled by a motor. There are several motor types that can rotate a platform holding an antenna, for example a step motor or a servo motor. 
+Manual or mechanical steering differs from electrical steering in that it is not the beam that is steered but the antenna as a whole. For mechanical steering the antenna can be mounted on a rotating platform or arm that is controlled by a motor. There are several motor types that can rotate a platform or arm holding an antenna, for example a step motor or a servo motor. 
 
-A Step motor 
+A Step motor has a rotor with two segments seperated by a permanent magnet. The rotor segments have teeth which become poles of opposite polarity when the permanent magnet is axially magnetized. The rotor segments are also always skewed so that the teeth of one segment aligns with the gap between the teeth of the other rotor segment. The number of teeth determine the number of position steps around the center axis. The stator then generates a rotating magnetic field when the windings in the stator are supplied with current. The driver of the step motor controls the input current with PWM signals. The step motor usually works in an open loop configuration because of the design does not require feedback, however, overloading the motor might cause loss of synchronisation~\cite{servo_step}. The figure \ref{fig:open_loop} below shows a block diagram of an open loop configuration.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/open-loop.png}
+    \caption{Open loop motor control block diagram~\cite{loop}.} \label{fig:open_loop}
+\end{figure}
 
-Servo motors are able to hold their position and rotate precisely to a location. 
+Mathematically, the open loop configuration of the input $R(s)$, controller $G(s)$, driver $D(s)$, motor $M(s)$ and the output $Y(s)$ can be described by the open loop transfer function without feedback.
+\begin{equation}
+    \frac{Y(s)}{R(s)} = G(s)D(s)M(s)
+\end{equation}
 
+Servo motors use a radially magnetized rotor, which means the number of poles determines the number of position steps around the center axis. This usually mean that a servo motor has less available positions than a step motor. The servo motor works much like the step motor but an encoder is also used in the motor to give feedback to minimize error in the position. This makes the servo motor a PID loop configuration, such as seen on figure \ref{fig:closed_loop}~\cite{servo_step}. 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/closed-loop.png}
+    \caption{Closed loop motor control block diagram~\cite{loop}.} \label{fig:closed_loop}
+\end{figure}
 
+Mathematically, the closed loop configuration of the input $R(s)$, controller $G(s)$, driver $D(s)$, motor $M(s)$, feedback $H(s)$ and the output $Y(s)$ can be described by the closed loop transfer function
+\begin{equation}
+    \frac{Y(s)}{R(s)} = \frac{G(s)D(s)M(s)}{1+G(s)D(s)M(s)H(s)}
+\end{equation}
 
-\todo[inline,color=green]{explain motor control and types of motors with type of control loops}
-%https://eu.aspina-group.com/en/learning-zone/columns/what-is/017/
-
-
+The step and servo motor differ when it comes to the relationship between the speed and the torque characteristics. The step motor has high torque at low speeds which drops significantly as the speed increases. The servo motor has a flat torque up until high speeds. Usually, the step motor is most ideal for applications where discrete position accuracy and fast responsiveness is valued whereas the servo motor is most ideal in applications with high or varying loads~\cite{servo_step}.

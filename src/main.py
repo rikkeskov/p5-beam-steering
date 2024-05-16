@@ -91,7 +91,9 @@ def main():
     CoInitialize()
     ttc = Dispatch("TurnTableControlLib.TurnTableControl")
     ttc_id = CoMarshalInterThreadInterfaceInStream(IID_IDispatch, ttc)
+    
     vna = NetworkAnalyzer(trace_id='trc1', s_param='s21', freq=5.65)
+    vna.vna_set()
     logging.info(f'VNA with trace id {vna.trace_id} is created. Measuring {vna.s_param}.')
     logging.info(f'Settings are: {vna.get_settings()}')
 

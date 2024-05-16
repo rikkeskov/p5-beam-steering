@@ -1,13 +1,33 @@
 \chapter{Implementation} \label{ch:implementation}
-In this chapter the implementation of the software to control the turntable and the VNA is described based on the design principles laid out in chapter \ref{ch:design}. The bacjground for the implmentation is to fulfill the requirements set out in chapter \ref{ch:req}. In the project a Windows computer is used to interface to the turntable and VNA, and the software implementation is heavily influenced by this choice.
+In this chapter the implementation of the software to control the turntable and the VNA is described based on the design principles laid out in chapter \ref{ch:design}. The background for the implmentation is to fulfill the requirements set out in chapter \ref{ch:req}. In the project a Windows computer is used to interface to the turntable and VNA, and the software implementation is influenced by this choice.
 
-\section{Software Implementation}
 The VNA and the turntable are controlled in Python. The code is set up to have a module for each device and a main control program. In the main control program the concurrency is also implemented. The software is programmed with an object-oriented approach.
 
-\subsection{Turntable Control}
+\section{Turntable Control}
+As previously mentioned in section \ref{ss:com_interface} the turntable is controlled in Python with the \textit{Pywin32} module that gives simple access to the Windows APIs. The turntable comes with a interface documentation document that further elaborates on the functions that the turntable will accept. These are implemented in the control program. 
 
+First, a \verb+TurnTableController+ class is defined. The initialisation of the class will call the \verb+__init__+ method that creates the instance variables and tries to connect to the turntable. The connection is checked with a if/elif/else statement. If the connection is not possible, the error handler is set to exit the program. Else, if the connection is established the settings for the turntable will be set. The final \verb+else+ statement is used to catch any other state, which is treated as an error and the program is exited.
+
+The turntable has multiple settings that need to be specified in order to ensure correct operation. These settings are set in the method \verb+turntable_set+ defined in the turntable class in the turntable module. The speed of the rotation, the rpm, and the acceleration function are predefined from the manufacturer to be between 0 and 2 rpm and with four different levels of steepness in acceleration to full speed. Likewise the turntable can either turn in a bipolar or unipolar direction. The desired unipolar direction is set, however, if this setting can not be made, the \verb+angle_max+ is updated from 360, the unipolar maximum, to 180, the bipolar maximum value. Lastly, the current position \verb+cur_pos+ is read and compared to the start position \verb+start_pos+ in a while loop, and the turntable is instructed to turn to the start position in the opposite direction of its normal turning direction.
 
 \begin{lstlisting}[language=Python, caption=Method to establish settings for turntable and reach start position.]
+def __init__(self, instance: str, ttc, clockwise: bool = False, start_pos: float = 0.0, angle_min: float = ANGLE_MIN, angle_max: float = ANGLE_MAX) -> None:
+    """ Initalize instance variables, connect and set settings."""
+    self.instance = instance
+    self.ttc = ttc
+    self.clockwise = clockwise
+    self.start_pos = start_pos
+    self.angle_min = angle_min
+    self.angle_max = angle_max
+    if self.ttc.Count == 0:
+        logger.error("No turntable is connected.")
+        exit()
+    elif self.connect() == EConnectionState.ecsConnectedOn.value:
+        self.turntable_set(rpm=2, func=EAccelerationFunction.afImpulse, start_pos=self.start_pos)
+    else:
+        logger.error("Unknown error in startup sequence.")
+        exit()
+
 def turntable_set(self, rpm: int, func: ´\color{blue}EAccelerationFunction´, start_pos: float) -> None:
     """ Establish basic settings: rpm, acceleration function and start position. """
     cur_pos: int = ´\color{red}round´(self.position)
@@ -26,34 +46,38 @@ def turntable_set(self, rpm: int, func: ´\color{blue}EAccelerationFunction´, s
     while cur_pos != ´\color{red}round´(start_pos):
         logger.´\color{red}info´(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
         if self.clockwise:
-            self.´\color{red}go\_to\_CW´(start_pos)
-        else:
             self.´\color{red}go\_to\_CCW´(start_pos)
+        else:
+            self.´\color{red}go\_to\_CW´(start_pos)
         cur_pos = round(self.position)
     logger.´\color{red}info´(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
     logger.´\color{red}info´(f"Current position for {self.instance} is {cur_pos}.")
 \end{lstlisting}
+
+The run method of the turntable takes the value of the increment \verb+inc+ as input argument and accesses the current position \verb+cur_pos+ and the value of the turning direction \verb+clockwise+ to determine and turn either in a clockwise or counter-clockwise direction. Finally the position is checked against the maximum and minimum angle values which are defined in the beginning of the module to be \verb+ANGLE_MIN = 0.0+ and \verb+ANGLE_MAX = 360.0+, effectively making this statement redundant in this specific setup, as the turntable position cannot have any value outside this range.
+
+The \verb+step_CW+ method is equal to the \verb+step_CCW+ method except for the turning direction. First, the size of the step is set before the step is made, according to the definition in the documentation. For the \verb+go_to_CW+ method, the interface method to be called is \verb+GoToCW+ which that a floating point number of degrees as input. Both methods include the option to force the program to execute no other tasks while the turntable is turning which is done by setting the \verb+wait+ flag which will call the \verb+wait_while_driving+ method. This method calls \verb+time.sleep()+ which effectively utilises the single processor fully. The \verb+wait_while_driving+ method also includes a wait time check that will break the wait while loop and allow the code to continue executing. 
 
 \begin{lstlisting}[language=Python, caption=Methods for turning the turntable to the wanted position.]
 def run(self, inc: float) -> None:
     """ Run the turntable. Changes the current position with [inc] degrees. """
     cur_pos: float = self.position
     if self.clockwise:
-        self.´\color{red}step\_CCW´(inc)
-    else:
         self.´\color{red}step\_CW´(inc)
+    else:
+        self.´\color{red}step\_CCW´(inc)
     if (self.angle_min > cur_pos > self.angle_max):
             logger.´\color{red}error´(f"Current position is illegal. Resetting: {self.instance}")
             self.´\color{red}reset´(self.instance, self.clockwise)
 
-def step_CW(self, degrees, wait: bool = True) -> None:
+def step_CW(self, degrees, wait: bool = False) -> None:
     """ Step [degrees] in clockwise direction. """
     self.tt.StepSize = float(degrees)
     self.tt.StepCW()
     if wait:
         self.´\color{red}wait\_while\_driving´()
 
-def go_to_CW(self, degrees: float, wait: bool = True) -> None:
+def go_to_CW(self, degrees: float, wait: bool = False) -> None:
     """ Go to [degrees] while moving in clockwise direction. """
     self.tt.GotoCW(float(degrees))
     if wait:
@@ -66,9 +90,11 @@ def wait_while_driving(self) -> None:
         ´\color{blue}time´.´\color{red}sleep´(0.5)
         seconds_waited += 0.5
         if seconds_waited > 120:
-            logger.´\color{red}warning´('Timeout while waiting for turntable to stop')
+            logger.´\color{red}warning´('Timeout while waiting for stop.')
             break
 \end{lstlisting}
+
+The \verb+reset+ method used in the \verb+run+ method's position check will first call the \verb+stop+ method. This method will force stop the turntable by calling \verb+MoveAbort()+. The \verb+reset+ method then rotates based on the setting of the clockwise boolean variable to the start position \verb+start_pos+.
 
 \begin{lstlisting}[language=Python, caption=Method for resetting the turntable to start position.]
 def stop(self) -> None:
@@ -78,16 +104,27 @@ def stop(self) -> None:
         logger.´\color{red}warning´(f"Turntable was moving while connection was stopped for {self.instance}.")
     logger.´\color{red}info´(f"Turntable {self.instance} is stopped.")
 
-def reset(self, clockwise: bool = True) -> None:
+def reset(self) -> None:
     """ Reset Turntable to start position. """
     self.´\color{red}stop´()
-    if clockwise:
+    if self.clockwise:
         self.´\color{red}go\_to\_CCW´(self.start_pos)
     else:
         self.´\color{red}go\_to\_CW´(self.start_pos)
 \end{lstlisting}
 
+The turntable class includes a single attribute, which is the position of the turntable. The position is established as an attribute by using the \verb+@property+ decorator on the method returning the position variable. By setting the position as an attribute without a \verb+setter+ decorator the position variable becomes read-only. 
+
 \section{VNA Control}
+The VNA is interfaced via a TCP connection. This means the implementation of the VNA is independent on the underlying system. 
+
+The automation of the measurements with the VNA are made with the \textit{Rohde \& Schwarz} instrument library, that provides an easy interface instead of implementing the SCPI commands. Firstly, the connection with the VNA must be established. The IP address of the VNA has been manually set in the settings on the VNA and the assigned port has been extracted from the computer system. 
+
+The VNA control is implemented as a class with a number of method. In the \verb+__init__+ method of the class the connection is  established to the VNA over TCP. Further, relevant settings are provided as class variables. This is for example the frequency on which the measurements must be made. This is provided as a floating point number when the VNA class is instantiated. The number of measurements, also called channel points, is also set in the \verb+__init__+ method to 1, since only one measurement needs to be made at one frequency. If the measurements should've been made over a frequency range, the \verb+start_frequency_Hz+ and \verb+stop_frequency_Hz+ could be modified accordingly and the number of measurements to be made in the range must be set with the \verb+points+ variable.
+
+The \verb+connect+ method implements an exception handler in case the \verb+open_tcp+ method returns an error and exits the program, because it is not possible to execute further without this connection. If the connection is successfully established a single channel with the identifier \verb+ch=1+ is created as well. 
+
+The specific S-parameter to be measured is also set when the class is instantiated. The value is used in the \verb+vna_set+ method that establishes the trace settings, such as which S-parameter to measure and the format of the measurements, which is magnitude in \SI{}{\decibel}.
 
 \begin{lstlisting}[language=Python, caption=Method for initialisation of VNA settings including creating VNA trace.]
 def __init__(self, trace_id: str, s_param: str, freq: float, ip_address = '172.0.0.1', port: int = 5025, channel = 1) -> None:
@@ -107,9 +144,8 @@ def __init__(self, trace_id: str, s_param: str, freq: float, ip_address = '172.0
     self.ch.start_frequency_Hz = freq, 'GHz'
     self.ch.stop_frequency_Hz = freq, 'GHz'
     self.ch.points = 1
-    self.ch.if_bandwidth_Hz = 1, 'Hz'
 
-def connect(self, ip_address: str, port: int, ch: int) -> Vna:
+def connect(self, ip_address: str, port: int, ch: int) -> tuple:
     """ Try to connect to VNA with TCP. """
     try:
         sock = ´\color{blue}Vna´()
@@ -121,7 +157,14 @@ def connect(self, ip_address: str, port: int, ch: int) -> Vna:
         logger.´\color{red}info´(f'Connection established to VNA. Creating channel {ch}.')
         channel = sock.´\color{red}channel´(ch)
         return sock, channel
+
+def vna_set(self) -> None:
+    """ Establish trace for VNA. """
+    self.vna.create_trace(self.trace_id, 1, self.s_param)
+    self.vna.trace(self.trace_id).format = TraceFormat.magnitude_dB
 \end{lstlisting}
+
+The \verb+run+ method returns the data measured formatted as a tuple with frequency at index 0 and power at index 1. The \verb+run+ method calls the \verb+trace+ method from the \verb+Vna+ class from the \textit{Rohde \& Schwarz} instrument library to retrieve the trace ID, to call the \verb+measure_formatted_data+ method on the trace. 
 
 \begin{lstlisting}[language=Python, caption=Method for getting measurements from VNA.]
 def run(self) -> tuple:
@@ -130,14 +173,7 @@ def run(self) -> tuple:
     return x, y
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, caption=Method for resetting the VNA completely.]
-def reset(self) -> None:
-    """ Preset the VNA. MUST manually redo setup from file on VNA. 
-    Consider valibration. Done manually: Press cal -> start cal -> 
-    two port -> normalize both directions -> choose ideal kit, 
-    check in box 'through' -> apply"""
-    self.vna.´\color{red}preset´()
-\end{lstlisting}
+The VNA can be completely reset by calling the \verb+preset+ method from the \textit{Rohde \& Schwarz} instrument library, however, this will also remove the calibration of the VNA that is performed to normalize the transmission line. The calibration data can be saved as a file and reopened for continuous use of the same calibration data. The calibration must therefore be performed manually before the execution of the setup, otherwise the data will be faulty.
 
 \section{Concurrency in Main Control Flow}
 The start and end positions and the angle increase are initialised as constants. The current position \verb+cur_pos+ must be read both from the VNA and the turntable, and must be set by the turntable, therefore this variable is defined globally together with a lock \verb+lock_cur_pos+, so that only one thread will access the variable at a time. Likewise with the variable for maximum position \verb+max_pos+ which also has its own event handler \verb+max_pos_event_handler+, so that the turntable thread will wait for the VNA thread to find the maximum position before reading the variable and turning to that position.
@@ -222,7 +258,7 @@ def run_vna_in_thread(vna: ´\color{blue}NetworkAnalyzer´, turntable_event_hand
     ´\color{blue}logging´.´\color{red}info´(f'VNA thread is closed. {count} measurements made.')
 \end{lstlisting}
 
-The main function has to create the setup for controlling the turntable with the Windows API in a \textit{Python} thread, the VNA instance, the two threads, event handlers, start the threads and ensure that both threads close correctly when finished by using the \verb+.join()+ function on each thread. 
+The main function has to create the setup for controlling the turntable with the Windows API in a \textit{Python} thread, the VNA instance and trace settings, the two threads, event handlers, start the threads and ensure that both threads close correctly when finished by using the \verb+.join()+ function on each thread. 
 \begin{lstlisting}[language=Python, caption=Main function.]
 def main():
     ´\color{blue}logging´.´\color{red}basicConfig´(filename=f'./tests/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
@@ -230,7 +266,9 @@ def main():
     ´\color{red}CoInitialize´()
     ttc = ´\color{red}Dispatch´("TurnTableControlLib.TurnTableControl")
     ttc_id = ´\color{red}CoMarshalInterThreadInterfaceInStream´(IID_IDispatch, ttc)
+
     vna = ´\color{blue}NetworkAnalyzer´(trace_id='trc1', s_param='s21', freq=5.65)
+    vna.´\color{red}vna\_set´()
     ´\color{blue}logging´.´\color{red}info´(f'VNA with trace id {vna.trace_id} is created. Measuring {vna.s_param}.')
     ´\color{blue}logging´.´\color{red}info´(f'Settings are: {vna.get_settings()}')
 

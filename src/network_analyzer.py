@@ -29,9 +29,8 @@ class NetworkAnalyzer(object):
         self.ch.start_frequency_Hz = freq, 'GHz'
         self.ch.stop_frequency_Hz = freq, 'GHz'
         self.ch.points = 1
-        self.ch.if_bandwidth_Hz = 1, 'Hz'
 
-    def connect(self, ip_address: str, port: int, ch: int) -> Vna:
+    def connect(self, ip_address: str, port: int, ch: int) -> tuple:
         """ Try to connect to VNA with TCP. """
         try:
             sock = Vna()
