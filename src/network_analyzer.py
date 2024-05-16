@@ -49,14 +49,14 @@ class NetworkAnalyzer(object):
         x, y = self.vna.trace(self.trace_id).measure_formatted_data()
         return x, y
 
-    def reset(self):
+    def reset(self) -> None:
         """ Preset the VNA. MUST manually redo setup from file on VNA. 
         Consider valibration. Done manually: Press cal -> start cal -> 
         two port -> normalize both directions -> choose ideal kit, 
         check in box 'through' -> apply"""
         self.vna.preset()
 
-    def set(self):
+    def vna_set(self) -> None:
         """ Establish trace for VNA. """
         self.vna.create_trace(self.trace_id, 1, self.s_param)
         self.vna.trace(self.trace_id).format = TraceFormat.magnitude_dB

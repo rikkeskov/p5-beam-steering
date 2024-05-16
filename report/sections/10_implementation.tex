@@ -1,42 +1,252 @@
 \chapter{Implementation} \label{ch:implementation}
 In this chapter the implementation of the software to control the turntable and the VNA is described based on the design principles laid out in chapter \ref{ch:design}. The bacjground for the implmentation is to fulfill the requirements set out in chapter \ref{ch:req}. In the project a Windows computer is used to interface to the turntable and VNA, and the software implementation is heavily influenced by this choice.
-% Kunne anvende metoder til at konstruere distribuerede systemer ved brug af kommunikationshardware, multi-programming og basale netværksprotokoller.
 
 \section{Software Implementation}
-The VNA and the turntable are controlled in Python. The code is set up to have a module for each device and a main control program.
+The VNA and the turntable are controlled in Python. The code is set up to have a module for each device and a main control program. In the main control program the concurrency is also implemented. The software is programmed with an object-oriented approach.
 
 \subsection{Turntable Control}
 
-\begin{lstlisting}[language=Python, caption=Python example]
-    def set(self, rpm: int, func: EAccelerationFunction, start_pos: float) -> None:
+
+\begin{lstlisting}[language=Python, caption=Method to establish settings for turntable and reach start position.]
+def turntable_set(self, rpm: int, func: ´\color{blue}EAccelerationFunction´, start_pos: float) -> None:
     """ Establish basic settings: rpm, acceleration function and start position. """
-    cur_pos: int = round(self.position)
+    cur_pos: int = ´\color{red}round´(self.position)
     try:
         self.tt.Velocity = rpm
         self.tt.AccelerationFunction = func.value
-    except Exception as e:
-        logger.error(f"Unable to set settings for turntable {self.instance}, exiting with error code {e}.")
-        exit()
-    if self.tt.DisplayPolarity == EPolarity.epolBipolar.value:
+    except ´\color{blue}Exception´ as e:
+        logger.´\color{red}error´(f"Unable to set settings for turntable {self.instance}, exiting with error code {e}.")
+        ´\color{red}exit´()
+    if self.tt.DisplayPolarity == ´\color{blue}EPolarity´.epolBipolar.value:
         try:
-            self.tt.DisplayPolarity = EPolarity.epolUnipolar.value
-        except Exception:
+            self.tt.DisplayPolarity = ´\color{blue}EPolarity´.epolUnipolar.value
+        except ´\color{blue}Exception´:
             self.angle_max = 180.0
-            logger.error(f"Unable to set polarity to unipolar for turntable {self.instance}.")
-    while cur_pos != round(start_pos):
-        logger.info(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
+            logger.´\color{red}error´(f"Unable to set polarity to unipolar for turntable {self.instance}.")
+    while cur_pos != ´\color{red}round´(start_pos):
+        logger.´\color{red}info´(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
         if self.clockwise:
-            self.go_to_CW(start_pos)
-            self.wait_while_driving()
+            self.´\color{red}go\_to\_CW´(start_pos)
         else:
-            self.go_to_CCW(start_pos)
-            self.wait_while_driving()
+            self.´\color{red}go\_to\_CCW´(start_pos)
         cur_pos = round(self.position)
-    logger.info(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
-    logger.info(f"Current position for {self.instance} is {cur_pos}.")
+    logger.´\color{red}info´(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
+    logger.´\color{red}info´(f"Current position for {self.instance} is {cur_pos}.")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Methods for turning the turntable to the wanted position.]
+def run(self, inc: float) -> None:
+    """ Run the turntable. Changes the current position with [inc] degrees. """
+    cur_pos: float = self.position
+    if self.clockwise:
+        self.´\color{red}step\_CCW´(inc)
+    else:
+        self.´\color{red}step\_CW´(inc)
+    if (self.angle_min > cur_pos > self.angle_max):
+            logger.´\color{red}error´(f"Current position is illegal. Resetting: {self.instance}")
+            self.´\color{red}reset´(self.instance, self.clockwise)
+
+def step_CW(self, degrees, wait: bool = True) -> None:
+    """ Step [degrees] in clockwise direction. """
+    self.tt.StepSize = float(degrees)
+    self.tt.StepCW()
+    if wait:
+        self.´\color{red}wait\_while\_driving´()
+
+def go_to_CW(self, degrees: float, wait: bool = True) -> None:
+    """ Go to [degrees] while moving in clockwise direction. """
+    self.tt.GotoCW(float(degrees))
+    if wait:
+        self.´\color{red}wait\_while\_driving´()
+
+def wait_while_driving(self) -> None:
+    """ Ensures that the program waits for the turntable to reach position before execution further code. """
+    seconds_waited = 0.0
+    while self.tt.IsMoving:
+        ´\color{blue}time´.´\color{red}sleep´(0.5)
+        seconds_waited += 0.5
+        if seconds_waited > 120:
+            logger.´\color{red}warning´('Timeout while waiting for turntable to stop')
+            break
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Method for resetting the turntable to start position.]
+def stop(self) -> None:
+    """ Stop turning. """
+    if self.tt.IsMoving:
+        self.tt.MoveAbort()
+        logger.´\color{red}warning´(f"Turntable was moving while connection was stopped for {self.instance}.")
+    logger.´\color{red}info´(f"Turntable {self.instance} is stopped.")
+
+def reset(self, clockwise: bool = True) -> None:
+    """ Reset Turntable to start position. """
+    self.´\color{red}stop´()
+    if clockwise:
+        self.´\color{red}go\_to\_CCW´(self.start_pos)
+    else:
+        self.´\color{red}go\_to\_CW´(self.start_pos)
 \end{lstlisting}
 
 \section{VNA Control}
 
+\begin{lstlisting}[language=Python, caption=Method for initialisation of VNA settings including creating VNA trace.]
+def __init__(self, trace_id: str, s_param: str, freq: float, ip_address = '172.0.0.1', port: int = 5025, channel = 1) -> None:
+    """ Initalize instance variables and connect.
+    Instrument Type: ZVB8 with 2 Ports
+    Part Number: 1145.1010k08
+    Serial Number: 100113
+    Device ID: 1145.1010K08-100113-DD
+    IEC Bus Address: 20
+    IP Adresses: IP Address 172.0.0.1 (Localhost) Subnet Mask: 255.0.0.0 """
+    self.port: int = port
+    out: tuple = self.´\color{red}connect´(ip_address, port, channel)
+    self.vna: ´\color{blue}Vna´ = out[0]
+    self.ch: ´\color{blue}Channel´ = out[1]
+    self.trace_id = trace_id
+    self.s_param = s_param
+    self.ch.start_frequency_Hz = freq, 'GHz'
+    self.ch.stop_frequency_Hz = freq, 'GHz'
+    self.ch.points = 1
+    self.ch.if_bandwidth_Hz = 1, 'Hz'
+
+def connect(self, ip_address: str, port: int, ch: int) -> Vna:
+    """ Try to connect to VNA with TCP. """
+    try:
+        sock = ´\color{blue}Vna´()
+        sock.´\color{red}open\_tcp´(ip_address, port)
+    except ´\color{blue}Exception´ as e:
+        logger.´\color{red}error´(f'Cannot connect to VNA because {e}.')
+        ´\color{red}exit´()
+    else:
+        logger.´\color{red}info´(f'Connection established to VNA. Creating channel {ch}.')
+        channel = sock.´\color{red}channel´(ch)
+        return sock, channel
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Method for getting measurements from VNA.]
+def run(self) -> tuple:
+    """Measure S-Parameters for [trace_id]."""
+    x, y = self.vna.´\color{red}trace´(self.trace_id).´\color{red}measure\_formatted\_data´()
+    return x, y
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Method for resetting the VNA completely.]
+def reset(self) -> None:
+    """ Preset the VNA. MUST manually redo setup from file on VNA. 
+    Consider valibration. Done manually: Press cal -> start cal -> 
+    two port -> normalize both directions -> choose ideal kit, 
+    check in box 'through' -> apply"""
+    self.vna.´\color{red}preset´()
+\end{lstlisting}
 
 \section{Concurrency in Main Control Flow}
+The start and end positions and the angle increase are initialised as constants. The current position \verb+cur_pos+ must be read both from the VNA and the turntable, and must be set by the turntable, therefore this variable is defined globally together with a lock \verb+lock_cur_pos+, so that only one thread will access the variable at a time. Likewise with the variable for maximum position \verb+max_pos+ which also has its own event handler \verb+max_pos_event_handler+, so that the turntable thread will wait for the VNA thread to find the maximum position before reading the variable and turning to that position.
+\begin{lstlisting}[language=Python, caption=Global constants and variables.]
+START_POS = 10.0
+END_POS = 150.0
+INCREASE = 20.0
+
+lock_cur_pos = ´\color{blue}Lock´()
+cur_pos: int = None
+
+max_pos_event_handler = ´\color{blue}Event´()
+lock_max_pos = ´\color{blue}Lock´()
+max_pos: int = None
+\end{lstlisting}
+
+The turntable is interfaced with the windows API made available with the \textit{Pywin32} module. The code in line 2 to 3 is the initialisation of this interface communication. Then, the global variables are accessed via \textit{Python}'s \verb+global+ keyword. The current position is read from the \verb+turntable.position+ property defined in the \textit{turntable} module. The while loop turns the turntable from the \verb+START_POS+ to the \verb+END_POS+ in increments of \verb+INCREASE+. In the while loop, the turntable sets its own event handler \verb+turntable_event_handler+ to \verb+true+ to indicate to the VNA thread that it can now run, and then the turntable thread waits for the VNA thread. Hereafter the turntable turns and updates the current position \verb+cur_pos+. Once the end position \verb+END_POS+ is reached, the while loop is exited and this is indicated to the VNA thread with the \verb+end+ event handler. Lastly, the turntable thread turns to the maximum position \verb+max_pos+ when the VNA thread has indicated, that this variable has been set. 
+
+\begin{lstlisting}[language=Python, caption=Thread function for running VNA.]
+def run_tt_in_thread(ttc: ´\color{blue}CDispatch´, turntable_event_handler: ´\color{blue}Event´, vna_event_handler: ´\color{blue}Event´, end: ´\color{blue}Event´, ttc_id) -> None:
+    ´\color{red}CoInitialize´()
+    ttc = ´\color{red}Dispatch´(´\color{red}CoGetInterfaceAndReleaseStream´(ttc_id, IID_IDispatch))
+    turntable = ´\color{blue}TurnTableController´(instance="hrt i (64980128)", ttc=ttc, clockwise=True, start_pos=START_POS)
+    
+    global cur_pos
+    global max_pos
+    count: int = 1
+
+    with lock_cur_pos:
+        cur_pos = ´\color{red}round´(turntable.position)
+
+    while START_POS <= cur_pos < END_POS:
+        turntable_event_handler.´\color{red}set´()
+        turntable_event_handler.´\color{red}clear´()
+        vna_event_handler.´\color{red}wait´()
+        turntable.´\color{red}run´(INCREASE)
+        with lock_cur_pos:
+            cur_pos = ´\color{red}round´(turntable.position) 
+            ´\color{blue}logging´.´\color{red}info´(f"Current position for {turntable.instance} is {cur_pos}.")
+        count += 1
+    turntable_event_handler.´\color{red}set´()
+    turntable_event_handler.´\color{red}clear´()
+    end.´\color{red}set´()
+
+    max_pos_event_handler.´\color{red}wait´()
+    with lock_max_pos:
+        if turntable.clockwise:
+            turntable.go_to_CW(max_pos)
+        else:
+            turntable.go_to_CCW(max_pos)
+
+    ´\color{blue}logging´.´\color{red}info´(f'Turntable thread is closed. {count} positions measured.')
+\end{lstlisting}
+
+Similarly the VNA thread accesses the global variables \verb+cur_pos+ and \verb+max_pos+ but then two lists for measurement position \verb+data_pos+ and power \verb+data_pow+ are defined. The while loop for the VNA is runs as long as the turntable thread has not set the \verb+end+ event handler to true, indicating that turning has finished. The while loop begins with waiting for the turntable to indicate it has finished turning with the \verb+turntable_event_handler+. Then the power measurement is made with the execution of the code in line 10. The two lists containing the measurement data are updated by first calling the current position lock \verb+lock_cur_pos+ before appending to the lists. When the turntable thread has indicated that turning is finished, the VNA thread immediately calculates the maximum position and updates the global \verb+max_pos+ variable.
+
+\begin{lstlisting}[language=Python, caption=Thread function for running VNA.]
+def run_vna_in_thread(vna: ´\color{blue}NetworkAnalyzer´, turntable_event_handler: ´\color{blue}Event´, vna_event_handler: ´\color{blue}Event´, end: ´\color{blue}Event´) -> None:
+    global cur_pos 
+    global max_pos
+    data_pos: list = []
+    data_pow: list = []
+    count: int = 0 
+
+    while not end.´\color{red}is\_set´(): # run only when end == false
+        turntable_event_handler.´\color{red}wait´() 
+        _, pow = vna.´\color{red}run´()
+        vna_event_handler.´\color{red}set´() 
+        vna_event_handler.´\color{red}clear´()
+        ´\color{blue}logging´.´\color{red}info´(f'Power measurement is {pow}.')
+        with lock_cur_pos: 
+            data_pos.´\color{red}append´(cur_pos)
+            data_pow.´\color{red}append´(pow)
+        count += 1
+
+    max_gain: float = ´\color{red}max´(data_pow)
+    with lock_max_pos:
+        max_pos = data_pos[data_pow.´\color{red}index´(max_gain)]
+    ´\color{blue}logging´.´\color{red}info´(f'Max gain measured is {max_gain} at position {max_pos}.')
+    max_pos_event_handler.set() 
+
+    ´\color{blue}logging´.´\color{red}info´(f'VNA thread is closed. {count} measurements made.')
+\end{lstlisting}
+
+The main function has to create the setup for controlling the turntable with the Windows API in a \textit{Python} thread, the VNA instance, the two threads, event handlers, start the threads and ensure that both threads close correctly when finished by using the \verb+.join()+ function on each thread. 
+\begin{lstlisting}[language=Python, caption=Main function.]
+def main():
+    ´\color{blue}logging´.´\color{red}basicConfig´(filename=f'./tests/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
+    
+    ´\color{red}CoInitialize´()
+    ttc = ´\color{red}Dispatch´("TurnTableControlLib.TurnTableControl")
+    ttc_id = ´\color{red}CoMarshalInterThreadInterfaceInStream´(IID_IDispatch, ttc)
+    vna = ´\color{blue}NetworkAnalyzer´(trace_id='trc1', s_param='s21', freq=5.65)
+    ´\color{blue}logging´.´\color{red}info´(f'VNA with trace id {vna.trace_id} is created. Measuring {vna.s_param}.')
+    ´\color{blue}logging´.´\color{red}info´(f'Settings are: {vna.get_settings()}')
+
+    turntable_event_handler = ´\color{blue}Event´()
+    vna_event_handler_handler = ´\color{blue}Event´()
+    end = ´\color{blue}Event´()
+
+    turntable_thread = ´\color{blue}Thread´(target=´\color{red}run\_tt\_in\_thread´, kwargs={'ttc_id': ttc_id, 'ttc': ttc, 'turntable_event_handler': turntable_event_handler, 'vna_event_handler': vna_event_handler_handler, 'end': end})
+    turntable_event_handler.clear()
+
+    vna_thread = ´\color{blue}Thread´(target=´\color{red}run\_vna\_in\_thread´, kwargs={'vna': vna, 'turntable_event_handler': turntable_event_handler, 'vna_event_handler': vna_event_handler_handler, 'end': end})
+    
+    turntable_thread.´\color{red}start´()
+    vna_thread.´\color{red}start´()
+
+    turntable_thread.´\color{red}join´()
+    vna_thread.´\color{red}join´()
+\end{lstlisting}
+Calling the \verb+main+ function ensures that the entire setup meaning the turning of the turntable and the measuring of magnitude of the received signal by the VNA runs automatically before saving the data to a text file for further analysis.

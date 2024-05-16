@@ -67,7 +67,7 @@ Different antenna designs have different radiation patterns and polarization. Ta
 
 Polarization describes the classification of the plane propagated wave, which is a electromagnetic wave that propagates with constant velocity in a specific direction. The direction of the propagation of the electromagnetic wave is always perpendicular to the direction of the electric field \textbf{E} and both are perpendicular to the direction of the magnetic field \textbf{H}. If the direction of the electric field is constant with time and position, the polarization of the propagated wave is classified as linear. If the direction of the electric field changes by rotating uniformly around the axis of the propagated wave, the wave has circular polarization. The polarization of the receiving and transmitting antennas affects how the signal is detected. The signal is best received when the polarization of the receiving antenna is the same as the polarization for the transmitting antenna. Mismatch in polarization will result is less received signal power or more signal noise~\cite[p. 82-84]{direct_energy}. 
 
-\subsection{Radiation Characteristics}
+\subsection{Radiation Characteristics} \label{ss:rad_char}
 The electromagnetic waves are radiated to the near field and then far field. The far field is mathematically described as the distance $r>R_2$, with $R_2$ defined as
 \begin{equation} \label{eq:far_field}
     R_2 = \frac{2 D^2}{\lambda}
@@ -188,7 +188,7 @@ Using the reflection coefficient the output flow of the system's port one is equ
     \tagaddtext{[\si{\decibel}]}
 \end{equation}
 
-\subsection{Antenna Designs}
+\subsection{Antenna Designs} \label{ss:antenna_design}
 The design of the antenna affect the radiation characteristics, the bandwidth and the range of frequencies that the antenna is able to transmit or receive~\cite[p. 76]{direct_energy}. Bandwidth is the range of frequencies on which the antenna is expected to operate in the wanted manner. There are several criterias that can be used to decide on the bandwidth for an antenna, for example the range where the reflection coefficient (see \ref{ss:s_params}) is less than a specified value or when the polarization fits a certain shape (see \ref{ss:polarization}). The antenna design affects the operating frequency range of the antenna and so an antenna can also be designed to operate with a given bandwidth. The radiation pattern of an antenna varies with the frequency but the general shape is primarily decided by the design of the antenna~\cite{bandwidth}. The antenna types described in table \ref{tab:antenna_types} are some typical design types along with the isotropic antenna which is a theoretical antenna~\cite[p. 11]{ant_beam_form}.
 
 A center-driven dipole antenna is two wires or rods pointing at the opposite direction of each other, for example towards positive and negative \textit{z} in the spherical coordinate system. In the Azimuth plane the radiation pattern is a circle centered at the centre of the dipole antenna, whereas in the elevation plane, the radiation pattern is two ears extending from the centre to either side (see figure \ref{fig:dipole_1})~\cite[pp. 12-14]{ant_beam_form}. The figure \ref{fig:dipole_1} shows a typical radiation pattern for a one-wavelength dipole antenna. As seen, the dipole antenna has a very uniform pattern, but increasing the length of the dipole can increase the directiveness. However, the length also affects the input impedance. The dipole antenna will always have linear polarization~\cite{dipole}. 
@@ -247,14 +247,23 @@ A helical antenna is one or several conductors in a helical shape connected to a
     \label{fig:helical_1}
 \end{figure}
 
-Antennas can also be put together in arrays. This changes the characteristics of the radiation pattern and ??
-\todo[inline,color=red]{arrays}
-
 \section{Beam Steering Methods}
-Although the design of the antenna or antenna arrays decide the pattern of radiation, it is possible to modify this pattern or the direction of the pattern to achieve different directivities for other applications. The beam of the antenna can be steered in different directions for example, in order to cover a larger physical area with a single or few antennas. Beam steering can be done manually, mechanically or electrically.
+Although the design of the antenna or antenna arrays decide the pattern of radiation, it is possible to modify this pattern or the direction of the pattern to achieve different directivities for other applications. The beam of the antenna can be steered in different directions for example, in order to cover a larger physical area with a single or few antennas or to focus a beam in a certain direction. Beam steering can be done manually, mechanically or electrically.
+
+\subsection{Electrical Steering}
+Electrical beam steering is the conventional steering method which builds upon beam forming methods. Beam forming is performed by having an array of multiple antennas and changing their XX
 
 \subsection{Manual and Mechanical Steering}
+Manual or mechanical steering differs from electrical steering in that it is not the beam that is steered but the antenna as a whole. For mechanical steering the antenna can be mounted on a rotating platform that is controlled by a motor. There are several motor types that can rotate a platform holding an antenna, for example a step motor or a servo motor. 
+
+A Step motor 
+
+Servo motors are able to hold their position and rotate precisely to a location. 
+
+
+
+
 \todo[inline,color=green]{explain motor control and types of motors with type of control loops}
 %https://eu.aspina-group.com/en/learning-zone/columns/what-is/017/
 
-\subsection{Electrical Steering}
+

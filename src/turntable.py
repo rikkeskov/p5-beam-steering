@@ -50,7 +50,7 @@ class TurnTableController():
             logger.error("No turntable is connected.")
             exit()
         elif self.connect() == EConnectionState.ecsConnectedOn.value:
-            self.set(rpm=2, func=EAccelerationFunction.afImpulse, start_pos=self.start_pos)
+            self.turntable_set(rpm=2, func=EAccelerationFunction.afImpulse, start_pos=self.start_pos)
         else:
             logger.error("Unknown error in startup sequence.")
             exit()
@@ -68,7 +68,7 @@ class TurnTableController():
             logger.info(f"Turntable {self.instance} connected.")
         return self.tt.ConnectionState
         
-    def set(self, rpm: int, func: EAccelerationFunction, start_pos: float) -> None:
+    def turntable_set(self, rpm: int, func: EAccelerationFunction, start_pos: float) -> None:
         """ Establish basic settings: rpm, acceleration function and start position. """
         cur_pos: int = round(self.position)
         try:
@@ -87,10 +87,8 @@ class TurnTableController():
             logger.info(f"Current position is {cur_pos} not start position {round(start_pos)}. Moving {self.instance} to start position.")
             if self.clockwise:
                 self.go_to_CW(start_pos)
-                self.wait_while_driving()
             else:
                 self.go_to_CCW(start_pos)
-                self.wait_while_driving()
             cur_pos = round(self.position)
         logger.info(f"Settings are velocity: {round(self.tt.Velocity)}, function: {EAccelerationFunction(self.tt.AccelerationFunction)}.")
         logger.info(f"Current position for {self.instance} is {cur_pos}.")
@@ -100,10 +98,8 @@ class TurnTableController():
         cur_pos: float = self.position
         if self.clockwise:
             self.step_CCW(inc)
-            self.wait_while_driving()
         else:
             self.step_CW(inc)
-            self.wait_while_driving()
         if (self.angle_min > cur_pos > self.angle_max):
                 logger.error(f"Current position is illegal. Resetting: {self.instance}")
                 self.reset(self.instance, self.clockwise)
@@ -113,10 +109,8 @@ class TurnTableController():
         self.stop()
         if clockwise:
             self.go_to_CCW(self.start_pos)
-            self.wait_while_driving()
         else:
             self.go_to_CW(self.start_pos)
-            self.wait_while_driving()
 
     def stop(self) -> None:
         """ Stop turning. """
@@ -132,7 +126,7 @@ class TurnTableController():
             time.sleep(0.5)
             seconds_waited += 0.5
             if seconds_waited > 120:
-                print('Timeout while waiting for turntable to stop')
+                logger.warning('Timeout while waiting for turntable to stop')
                 break
 
     def step_CW(self, degrees, wait: bool = True) -> None:

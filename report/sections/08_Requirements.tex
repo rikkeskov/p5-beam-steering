@@ -1,13 +1,13 @@
 \chapter{Requirements and Delimitations} \label{ch:req}
-The purpose of this project is to develop a setup where a receiving antenna is able to detect a transmitting antenna at a abitrary point in space and testing this setup. Detection of radio waves can for example be used for intruder detection or can be further developed to include data transmission and thereby achieving higher troughput if the transmitting antenna is able to locate and focus on the receiving device. 
+The purpose of this project is to develop a setup where a receiving antenna is able to detect a transmitting antenna at a abitrary point in space and testing this setup. Detection of radio waves can for example be used for intruder detection or can be further developed to include data transmission and thereby achieving higher troughput if the receiving antenna is able to locate and focus on the transmitting device. 
 
 Concluding on these two scenarios, it is required that the receiving antenna must be able to be controlled ie. steered in any direction and the electromagnetic radiation in the area must be read. 
 
 \section{Delimitations} \label{sec:delimitations}
-The setup developed in this project will only be designed to be able to work in a two-dimensional plane. Moreover, in order to be able to reproduce the test results, the environmental variables such as objects in the space, size of space, temperature and humidity must be controlled and measurable. 
+The setup developed in this project will only be designed to work in a two-dimensional plane. This limits the neeed for beam steering in all directions. Moreover, the choice of antenna will affect the discrete measurement points in the plane because of how the 3dB bandwidth will limit the accuracy of measurements. This means that the project will focus on beam steering with mechanical turning, because electrical steering is above the scope and requirements of the project.
 
 \section{Functional Requirements}
-The following table \ref{tab:func_req} outlines the functional requirements:
+The following table \ref{tab:func_req} outlines the functional requirements. The requirements in this section describe the functionality of the setup.
 \begin{table}[H]
     \centering
     \begin{tabular}{p{0.1\textwidth}|>{\raggedright}p{0.4\textwidth}|p{0.3\textwidth}}
@@ -17,23 +17,23 @@ The following table \ref{tab:func_req} outlines the functional requirements:
         F.1 & Mechanically controlled turning along Azimuth angle $\phi$ & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
         F.2 & Data reading of electromagnetic radiation in the surrounding space & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
         F.3 & Controlled test environmental variables & Section \ref{sec:delimitations} \\
+        F.4 & Automatic control of turning and measuring & Necessary to be able to reproduce test \\
     \end{tabular}
     \caption{Table of functional requirements.}
     \label{tab:func_req}
 \end{table}
 
 \section{Technical Requirements}
-\todo[inline,color=orange]{outline in table technical requirements. Remember environmental requirements temp and hum}
+The table \ref{tab:tech_req} below outlines the technical requirements. The requirements in this section describe the technical needs of the setup.
 \begin{table}[H]
     \centering
     \begin{tabular}{p{0.1\textwidth}|>{\raggedright}p{0.4\textwidth}|p{0.3\textwidth}}
         \textbf{ID} & \textbf{Requirement} & \textbf{Traceability} \\
         \hline
         \hline
-        T.1 & Operating temperature of ?? & ? \\
-        T.2 & Operating humidity of ?? & ? \\
-        T.3 & Matching antenna polarization & ? \\
-        T.4 & Automatic, (speed?) control & ? \\
+        T.1 & Operational turning angle of \SI{0}{\degree} to \SI{360}{\degree} & Chapter \ref{ch:req} introduction \\
+        T.2 & High antenna directivity & Section \ref{ss:antenna_design} \\
+        T.3 & Matching antenna polarization & Section \ref{ss:polarization} \\
     \end{tabular}
     \caption{Table of technical requirements.}
     \label{tab:tech_req}
