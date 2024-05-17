@@ -12,10 +12,35 @@ The system composes of three integrated modules and two antennas. The first ante
 \section{Antenna Design}
 The most important characteristics of the antenna chosen for the design is that it is directional. The antenna must be directional in order to detect transmission from another antenna. The receiver and transmitter antenna must have the same phase characteristics to ensure that this does not introduce loss in the system. Therefore, both antennas must be designed to match in this aspect. The receiver antenna and the transmitter antenna is chosen to be the same type of antenna with the exact same shape. This means that all antenna parameters are the same. 
 
-The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cross-section, straight curvature of the side walls and therefore a linear polarization. The aperture of the antenna is XX by XX.
-\todo[inline,color=red]{make figure of antenna+insert image}
-\todo[inline,color=red]{consider adding calculations of gaina at different frequencies}
+The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cross-section, straight curvature of the side walls and therefore a linear polarization. The size of the antenna is \SI{10}{\centi\meter} by \SI{7.65}{\centi\meter} giving an aperture area of \SI{0.00765}{\meter\squared}. The remaining measurements of the sides can be seen on figure \ref{fig:horn_design} on the right with a picture of the antenna on its mount on the left.
 
+\begin{figure}[H]
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/IMG_2430.JPEG} % first figure itself
+    \end{minipage}\hfill
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/horn_diagram.png} % second figure itself
+    \end{minipage}
+    \caption{Horn antenna. Picture and diagram with measurements of horn antenna (not to scale).}
+    \label{fig:horn_design}
+\end{figure}
+
+In section \ref{ss:friis} the effective aperture of an antenna is given in equation \ref{eq:effectivate_area}. Rewriting this equation to isolate the gain gives
+\begin{equation} \label{eq:max_gain}
+    G_{r,dBi} = 10 \log_{10}\left( \frac{4 \pi}{\lambda^2} A_r \right)
+    \tagaddtext{[\si{\decibel}]}
+\end{equation}
+Which, in the case of an aperture efficiency of 1, the highest possible efficiency, the maximum theoretical gain at \SI{4.75}{\giga\hertz} and \SI{5.65}{\giga\hertz} (these frequencies come from the test results of S-parameter test in section \ref{s:sparam_test}) is 
+\begin{equation} \label{eq:max_gain_475}
+    G_{r,dBi,4.75} = 10 \log_{10}\left( \frac{4 \pi}{\left(\frac{300E6}{4.75E9}\right)^2} 0.00765 \right) = 13.82
+    \tagaddtext{[\si{\decibel}]}
+\end{equation}
+\begin{equation} \label{eq:max_gain_565}
+    G_{r,dBi,5.65} = 10 \log_{10}\left( \frac{4 \pi}{\left(\frac{300E6}{5.65E9}\right)^2} 0.00765 \right) = 15.33
+    \tagaddtext{[\si{\decibel}]}
+\end{equation}
 
 % --------------------------------------------------------------------------
 
