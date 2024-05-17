@@ -112,7 +112,7 @@ The test results can be found in table \ref{tab:a2_2a} and \ref{tab:a2_2b}.
 The test is made with the transmitting antenna pointing Perpendicular to the receiver antenna. The distance between the antennas is $d=\SI{5.4}{\meter}$. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_3} shows the setup:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/test.JPG}
+    \includegraphics[width=0.7\textwidth]{figures/test_los_perpendicular.JPG}
     \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna.} \label{fig:a2_3}
 \end{figure}
 
@@ -161,10 +161,108 @@ The test results can be found in table \ref{tab:a2_3a} and \ref{tab:a2_3b}.
     \label{tab:a2_3b}
 \end{table}
 
-
 \section{Straight Line-of-Sight with Table Intruder}
+The test is made with the transmitting antenna pointing in the direction of the receiver antenna, with the antennas each in an opposite corner. The distance between the antennas is not measured. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_4} shows the setup:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/test_intruder_table.JPG}
+    \caption{View from receiver antenna at position \SI{70}{\degree} towards transmitter antenna.} \label{fig:a2_4}
+\end{figure}
 
+The test results can be found in table \ref{tab:a2_4a} and \ref{tab:a2_4b}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 4.75 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & \textcolor{red}{-57.75}    & \textcolor{red}{-57.52}    & \textcolor{red}{-57.40} \\
+        30      & -59.87    & -59.68    & -59.57 \\
+        50      & -65.42    & -65.22    & -65.14 \\
+        70      & -62.53    & -62.40    & -62.26 \\
+        90      & -59.81    & -59.60    & -59.49 \\
+        110     & -64.94    & -64.81    & -64.74 \\
+        130     & -68.94    & -68.80    & -68.63 \\
+        150     & -62.11    & -61.96    & -61.85
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{4.75}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_4a}
+\end{table}
 
-
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 5.65 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & -42.72    & -42.68    & -42.61 \\
+        30      & -47.23    & -47.15    & -47.10 \\
+        50      & \textcolor{red}{-35.61}    & \textcolor{red}{-35.55}    & \textcolor{red}{-35.49} \\
+        70      & -35.83    & -35.75    & -35.69 \\
+        90      & -41.75    & -41.68    & -41.61 \\
+        110     & -54.32    & -54.25    & -54.20 \\
+        130     & -77.38    & -76.43    & -76.11 \\
+        150     & -57.60    & -57.49    & -57.27
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{5.65}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_4b}
+\end{table}
 
 \section{Straight Line-of-Sight with Person Intruder}
+The test is made with the antennas pointing directly towards each other. The distance between the antennas is $d=\SI{5.4}{\meter}$ and the object, the person, is placed \SI{2}{\meter} from the transmitter and \SI{3.4}{\meter} from the receiver. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_5} shows the setup:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/test_intruder_person.JPG}
+    \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna. The green arrow points towards the location on the where the person is.} \label{fig:a2_5}
+\end{figure}
+
+The test results can be found in table \ref{tab:a2_5a} and \ref{tab:a2_5b}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 4.75 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & \textcolor{red}{-53.88}    & \textcolor{red}{-51.03}    & \textcolor{red}{-53.15} \\
+        30      & -65.65    & -62.04    & -58.07 \\
+        50      & -60.18    & -60.21    & -63.31 \\
+        70      & -60.91    & -61.45    & -63.88 \\
+        90      & -68.03    & -64.38    & -67.73 \\
+        110     & -78.76    & -67.41    & -85.01 \\
+        130     & -68.04    & -86.78    & -72.53 \\
+        150     & -65.90    & -66.63    & -64.46
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{4.75}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_5a}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 5.65 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & -48.58    & \textcolor{red}{-44.45}    & -44.61 \\
+        30      & -49.91    & -55.05    & -49.71 \\
+        50      & \textcolor{red}{-43.50}    & -45.52    & \textcolor{red}{-39.29} \\
+        70      & -44.11    & -45.39    & -40.85 \\
+        90      & -54.07    & -62.36    & -50.56 \\
+        110     & -63.50    & -74.10    & -59.50 \\
+        130     & -52.11    & -53.01    & -52.56 \\
+        150     & -60.54    & -57.75    & -58.38
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{5.65}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_5b}
+\end{table}
