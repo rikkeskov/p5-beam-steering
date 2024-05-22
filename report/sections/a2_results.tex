@@ -1,7 +1,7 @@
-\chapter{Accept Test Logs} \label{a:results}
+\chapter{Accept Test Results} \label{a:results}
 This appendix includes a condensed version of the logs printed with every test of the full setup. The different test scenarios are distinguished in each section.
 
-\section{Straight Line-of-Sight}
+\section{Straight Line-of-Sight} \label{s:test1}
 The test is made with the antennas pointing directly towards each other. The distance between the antennas is $d=\SI{5.4}{\meter}$. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_1} shows the setup:
 \begin{figure}[H]
     \centering
@@ -54,7 +54,60 @@ The test results can be found in table \ref{tab:a2_1a} and \ref{tab:a2_1b}.
     \label{tab:a2_1b}
 \end{table}
 
-\section{Corner-to-Corner Line-of-Sight}
+\section{Straight with Person Intruder} \label{s:test5}
+The test is made with the antennas pointing directly towards each other. The distance between the antennas is $d=\SI{5.4}{\meter}$ and the object, the person, is placed \SI{2}{\meter} from the transmitter and \SI{3.4}{\meter} from the receiver. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_5} shows the setup:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/test_intruder_person.JPG}
+    \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna. The green arrow points towards the location on the where the person is.} \label{fig:a2_5}
+\end{figure}
+
+The test results can be found in table \ref{tab:a2_5a} and \ref{tab:a2_5b}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 4.75 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & \textcolor{red}{-53.88}    & \textcolor{red}{-51.03}    & \textcolor{red}{-53.15} \\
+        30      & -65.65    & -62.04    & -58.07 \\
+        50      & -60.18    & -60.21    & -63.31 \\
+        70      & -60.91    & -61.45    & -63.88 \\
+        90      & -68.03    & -64.38    & -67.73 \\
+        110     & -78.76    & -67.41    & -85.01 \\
+        130     & -68.04    & -86.78    & -72.53 \\
+        150     & -65.90    & -66.63    & -64.46
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{4.75}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_5a}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|l|l}
+        \multicolumn{4}{l}{\textbf{Frequency = 5.65 GHz}}         \\
+        \hline
+        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
+        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
+        \hline
+        \hline
+        10      & -48.58    & \textcolor{red}{-44.45}    & -44.61 \\
+        30      & -49.91    & -55.05    & -49.71 \\
+        50      & \textcolor{red}{-43.50}    & -45.52    & \textcolor{red}{-39.29} \\
+        70      & -44.11    & -45.39    & -40.85 \\
+        90      & -54.07    & -62.36    & -50.56 \\
+        110     & -63.50    & -74.10    & -59.50 \\
+        130     & -52.11    & -53.01    & -52.56 \\
+        150     & -60.54    & -57.75    & -58.38
+        \end{tabular}
+    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{5.65}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
+    \label{tab:a2_5b}
+\end{table}
+
+\section{Corner-to-Corner Line-of-Sight} \label{s:test2}
 The test is made with the antennas pointing directly towards each other from a skew angle in each their own corner of the room. The distance between the antennas is not measured. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_2} shows the setup:
 \begin{figure}[H]
     \centering
@@ -107,61 +160,7 @@ The test results can be found in table \ref{tab:a2_2a} and \ref{tab:a2_2b}.
     \label{tab:a2_2b}
 \end{table}
 
-
-\section{Antennas Perpendicular to Each Other}
-The test is made with the transmitting antenna pointing Perpendicular to the receiver antenna. The distance between the antennas is $d=\SI{5.4}{\meter}$. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_3} shows the setup:
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/test_los_perpendicular.JPG}
-    \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna.} \label{fig:a2_3}
-\end{figure}
-
-The test results can be found in table \ref{tab:a2_3a} and \ref{tab:a2_3b}.
-\begin{table}[H]
-    \centering
-    \begin{tabular}{l|l|l|l}
-        \multicolumn{4}{l}{\textbf{Frequency = 4.75 GHz}}         \\
-        \hline
-        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
-        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
-        \hline
-        \hline
-        10      & -74.27    & -74.29    & -74.33 \\
-        30      & -72.12    & -72.13    & -72.21 \\
-        50      & -77.03    & -76.04    & -75.61 \\
-        70      & -71.35    & -71.17    & -70.58 \\
-        90      & -69.45    & -69.47    & -69.71 \\
-        110     & \textcolor{red}{-68.42}    & \textcolor{red}{-68.28}    & \textcolor{red}{-68.15} \\
-        130     & -79.83    & -80.25    & -79.30 \\
-        150     & -75.04    & -75.25    & -75.23
-        \end{tabular}
-    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{4.75}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
-    \label{tab:a2_3a}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{l|l|l|l}
-        \multicolumn{4}{l}{\textbf{Frequency = 5.65 GHz}}         \\
-        \hline
-        \textbf{Position} & \multicolumn{3}{l}{\textbf{Power Measurement (dB)}} \\
-        \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
-        \hline
-        \hline
-        10      & -58.25    & -58.25    & -58.34 \\
-        30      & -55.13    & -55.12    & -54.97 \\
-        50      & \textcolor{red}{-49.13}    & \textcolor{red}{-49.11}    & \textcolor{red}{-49.08} \\
-        70      & -52.44    & -52.40    & -52.43 \\
-        90      & -50.17    & -50.10    & -50.10 \\
-        110     & -49.77    & -49.73    & -49.81 \\
-        130     & -52.26    & -52.20    & -52.26 \\
-        150     & -58.72    & -59.04    & -58.64
-        \end{tabular}
-    \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{5.65}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
-    \label{tab:a2_3b}
-\end{table}
-
-\section{Corner-to-Corner with Table Intruder}
+\section{Corner-to-Corner with Table Intruder} \label{s:test4}
 The test is made with the transmitting antenna pointing in the direction of the receiver antenna, with the antennas each in an opposite corner. The distance between the antennas is not measured. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_4} shows the setup:
 \begin{figure}[H]
     \centering
@@ -214,15 +213,15 @@ The test results can be found in table \ref{tab:a2_4a} and \ref{tab:a2_4b}.
     \label{tab:a2_4b}
 \end{table}
 
-\section{Straight with Person Intruder}
-The test is made with the antennas pointing directly towards each other. The distance between the antennas is $d=\SI{5.4}{\meter}$ and the object, the person, is placed \SI{2}{\meter} from the transmitter and \SI{3.4}{\meter} from the receiver. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_5} shows the setup:
+\section{Antennas Perpendicular to Each Other} \label{s:test3}
+The test is made with the transmitting antenna pointing Perpendicular to the receiver antenna. The distance between the antennas is $d=\SI{5.4}{\meter}$. The start position is \SI{10}{\degree}, the end position is \SI{150}{\degree} and the increase is \SI{20}{\degree}. The following figure \ref{fig:a2_3} shows the setup:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/test_intruder_person.JPG}
-    \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna. The green arrow points towards the location on the where the person is.} \label{fig:a2_5}
+    \includegraphics[width=0.7\textwidth]{figures/test_los_perpendicular.JPG}
+    \caption{View from receiver antenna at position \SI{50}{\degree} towards transmitter antenna.} \label{fig:a2_3}
 \end{figure}
 
-The test results can be found in table \ref{tab:a2_5a} and \ref{tab:a2_5b}.
+The test results can be found in table \ref{tab:a2_3a} and \ref{tab:a2_3b}.
 \begin{table}[H]
     \centering
     \begin{tabular}{l|l|l|l}
@@ -232,17 +231,17 @@ The test results can be found in table \ref{tab:a2_5a} and \ref{tab:a2_5b}.
         \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
         \hline
         \hline
-        10      & \textcolor{red}{-53.88}    & \textcolor{red}{-51.03}    & \textcolor{red}{-53.15} \\
-        30      & -65.65    & -62.04    & -58.07 \\
-        50      & -60.18    & -60.21    & -63.31 \\
-        70      & -60.91    & -61.45    & -63.88 \\
-        90      & -68.03    & -64.38    & -67.73 \\
-        110     & -78.76    & -67.41    & -85.01 \\
-        130     & -68.04    & -86.78    & -72.53 \\
-        150     & -65.90    & -66.63    & -64.46
+        10      & -74.27    & -74.29    & -74.33 \\
+        30      & -72.12    & -72.13    & -72.21 \\
+        50      & -77.03    & -76.04    & -75.61 \\
+        70      & -71.35    & -71.17    & -70.58 \\
+        90      & -69.45    & -69.47    & -69.71 \\
+        110     & \textcolor{red}{-68.42}    & \textcolor{red}{-68.28}    & \textcolor{red}{-68.15} \\
+        130     & -79.83    & -80.25    & -79.30 \\
+        150     & -75.04    & -75.25    & -75.23
         \end{tabular}
     \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{4.75}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
-    \label{tab:a2_5a}
+    \label{tab:a2_3a}
 \end{table}
 
 \begin{table}[H]
@@ -254,15 +253,15 @@ The test results can be found in table \ref{tab:a2_5a} and \ref{tab:a2_5b}.
         \textbf{(degrees)}  & Test 1    & Test 2  & Test 3  \\
         \hline
         \hline
-        10      & -48.58    & \textcolor{red}{-44.45}    & -44.61 \\
-        30      & -49.91    & -55.05    & -49.71 \\
-        50      & \textcolor{red}{-43.50}    & -45.52    & \textcolor{red}{-39.29} \\
-        70      & -44.11    & -45.39    & -40.85 \\
-        90      & -54.07    & -62.36    & -50.56 \\
-        110     & -63.50    & -74.10    & -59.50 \\
-        130     & -52.11    & -53.01    & -52.56 \\
-        150     & -60.54    & -57.75    & -58.38
+        10      & -58.25    & -58.25    & -58.34 \\
+        30      & -55.13    & -55.12    & -54.97 \\
+        50      & \textcolor{red}{-49.13}    & \textcolor{red}{-49.11}    & \textcolor{red}{-49.08} \\
+        70      & -52.44    & -52.40    & -52.43 \\
+        90      & -50.17    & -50.10    & -50.10 \\
+        110     & -49.77    & -49.73    & -49.81 \\
+        130     & -52.26    & -52.20    & -52.26 \\
+        150     & -58.72    & -59.04    & -58.64
         \end{tabular}
     \caption{Table of power measurements at each position repeated three times at frequency $f=\SI{5.65}{\giga\hertz}$. The maximum gain of each test is highlighted in red.}
-    \label{tab:a2_5b}
+    \label{tab:a2_3b}
 \end{table}
