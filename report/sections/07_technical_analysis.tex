@@ -76,12 +76,12 @@ with $D$ being the largest dimension of the antenna or antenna array and $\lambd
 
 The radiation characteristics of an antenna can be described by the directivity, which is defined as the ratio of the maximum power density $S\left( \theta, \phi \right)_{max}$ radiated to the average power density $S\left( \theta, \phi \right)_{avg}$ radiated by an antenna. The directivity is unitless~\cite[p. 63]{direct_energy}. An isotropic antenna is a theoretical antenna which radiates homogeneously in all directions, meaning that the magnitude of the power density vector \textbf{S} at a distance vector \textbf{r} is constant~\cite[p. 11]{ant_beam_form}
 \begin{equation} \label{eq:isotropic_radiation}
-    D_{iso}\left(r, \theta, \phi \right) = \left| \frac{S \left(r, \theta, \phi \right)}{S_{max}} \right|=1
+    D_{iso}\left( \theta, \phi \right) = \left| \frac{S\left( \theta, \phi \right)_{max}}{S\left( \theta, \phi \right)_{avg}} \right|=1
 \end{equation}
 
 It is this theoretical isotropic radiator that the gain of antennas are in respect to. The directivity does not depend on the distance, $r$, in the far field, meaning that at the receiver, the relation $r \gg  R_2$ is assumed. The directivity can then be described by~\cite[p. 10]{ant_beam_form}
 \begin{equation} \label{eq:directivity1}
-    D \left( \theta, \phi \right) = \frac{S \left( \theta, \phi \right)_{max}}{S_{\theta, \phi}}
+    D \left( \theta, \phi \right) = \frac{S\left( \theta, \phi \right)_{max}}{S\left( \theta, \phi \right)_{avg}}
 \end{equation}
 
 The total radiated power $P_{r}$ is found by the surface integral of the power density. Assuming a spherical surface, the total radiated power is described as~\cite[p. 1-9]{ant_eng_hk}
@@ -94,7 +94,7 @@ The average radiated power over every direction in the sphere is given by~\cite[
     P_{avg} = \frac{P_{r}}{4 \pi r^2}
     \tagaddtext{[\si{\watt\per\meter\squared}]}
 \end{equation}
-Replacing the power density $S_{ \theta, \phi }$ in equation \ref{eq:directivity1} with the average radiated power, the directivity of an antenna $D \left(\theta, \phi \right)$ can be defined as~\cite[p. 10]{ant_beam_form}
+Replacing the average power density $S\left( \theta, \phi \right)_{avg}$ in equation \ref{eq:directivity1} with the average radiated power, the directivity of an antenna $D \left(\theta, \phi \right)$ can be defined as~\cite[p. 10]{ant_beam_form}
 \begin{equation} \label{eq:directivity}
     D\left(\theta, \phi\right) = 4 \pi r^2 \frac{S \left(\theta, \phi\right)_{max}}{P_{r}}
 \end{equation}
@@ -146,12 +146,12 @@ S-parameters are used to describe the input and output relationship of a system'
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{figures/1p_system.png} % first figure itself
+        \includegraphics[width=0.7\textwidth]{figures/1p_system.pdf} % first figure itself
         \caption{One-port system.} \label{fig:1p_sys}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{figures/2p_system.png} % second figure itself
+        \includegraphics[width=0.9\textwidth]{figures/2p_system.pdf} % second figure itself
         \caption{Two-port system.} \label{fig:2p_sys}
     \end{minipage}
 \end{figure}
@@ -277,7 +277,7 @@ Servo motors use a radially magnetized rotor, which means the number of poles de
     \caption{Closed loop motor control block diagram~\cite{loop}.} \label{fig:closed_loop}
 \end{figure}
 
-Mathematically, the closed loop configuration can be described by the closed loop transfer function
+Mathematically, the closed loop configuration, with feedback denoted $H(s)$, can be described by the closed loop transfer function
 \begin{equation}
     \frac{Y(s)}{R(s)} = \frac{G(s)D(s)M(s)}{1+G(s)D(s)M(s)H(s)}
 \end{equation}

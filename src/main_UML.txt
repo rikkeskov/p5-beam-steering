@@ -1,0 +1,40 @@
+@startuml
+skinparam groupInheritance 4
+
+metaclass "main module" {
+    {static}START_POS
+    {static}END_POS
+    {static}INCREASE
+    cur_pos
+    ...
+    main()
+    run_vna_in_thread()
+    run_tt_in_thread()
+}
+
+class NetworkAnalyzer {
+    connect()
+    vna_set()
+    run()
+    {method} ...
+    port
+    vna
+    ch
+    trace_id
+    s_param
+}
+"main module"<|-- NetworkAnalyzer
+
+class TurnTableController {
+    connect()
+    turntable_set()
+    run()
+    {method} ...
+    clockwise
+    start_pos
+    angle_min
+    angle_max
+    ...
+}
+"main module"<|-- TurnTableController
+@enduml

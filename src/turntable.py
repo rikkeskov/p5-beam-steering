@@ -35,7 +35,7 @@ class EPolarity(enum.Enum):
     epolUnipolar = 0
     epolBipolar = 1
 
-class TurnTableController():
+class TurnTableController(object):
     def __init__(self, instance: str, ttc, clockwise: bool = False, 
                  start_pos: float = 0.0, angle_min: float = 
                  ANGLE_MIN, angle_max: float = ANGLE_MAX) -> None:

@@ -2,7 +2,7 @@
 The full system includes a VNA, a turntable, two directional antennas and a computer. This chapter describes the interfaces between the individual parts and their functionalities. In order to get an overview of the full system consider figure \ref{fig:system_design}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/system_design.png}
+    \includegraphics[width=0.8\textwidth]{figures/system_design.pdf}
     \caption{Overview of system design.} \label{fig:system_design}
 \end{figure}
 The system is composed of three integrated modules and two directional antennas. The first antenna is a transmitter antenna and the second antenna is a receiver antenna meant to rotate and measure gainm in different directions. These different directions are determined by the turning of the turntable on which the receiver antenna is mounted. Both the transmitter antenna and receiver antenna are connected to a VNA, but for the transmitter antenna, the functionality of the VNA used is the RF generator. For the receiver antenna, the received signal measured by the VNA is then further sent to the computer for data analysis. The computer controls the turntable and the VNA. This includes defining settings before the analysis and taking decisions based on the returned data; the position of the turntable and the measured antenna signal from the VNA. 
@@ -12,7 +12,7 @@ The system is composed of three integrated modules and two directional antennas.
 \section{Antenna Design} \label{s:ant_design}
 The most important characteristics of the antenna chosen for the design is that it is directional. The antenna must be directional in order to detect the direction of transmission. The receiver and transmitter antenna must have the same polarization to ensure that this does not introduce loss in the system. The receiver antenna and the transmitter antenna are chosen to be the same type of antenna with the exact same shape for convenience. This means that all antenna parameters are the same. 
 
-The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cross-section, straight curvature of the side walls and therefore a linear polarization. The size of the antenna is \SI{10}{\centi\meter} by \SI{7.65}{\centi\meter} giving an aperture area of \SI{0.00765}{\meter\squared}. The remaining measurements of the sides can be seen on figure \ref{fig:horn_design} on the right and a picture of the antenna on its mount on the left.
+The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cross-section, straight curvature of the side walls and therefore a linear polarization. The size of the antenna is \SI{10}{\centi\meter} by \SI{7.65}{\centi\meter} giving an aperture area of \SI{0.00765}{\meter\squared}. The remaining measurements can be seen on figure \ref{fig:horn_design} on the right and a picture of the antenna on its mount on the left.
 
 \begin{figure}[H]
     \begin{minipage}{0.35\textwidth}
@@ -21,7 +21,7 @@ The chosen antenna is a homemade, pyramidal horn antenna. It has a rectangle cro
     \end{minipage}\hfill
     \begin{minipage}{0.6\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{figures/horn_diagram.png} % second figure itself
+        \includegraphics[width=0.9\textwidth]{figures/horn_diagram.pdf} % second figure itself
     \end{minipage}
     \caption{Horn antenna. Picture and diagram with measurements of horn antenna (not to scale).}
     \label{fig:horn_design}
