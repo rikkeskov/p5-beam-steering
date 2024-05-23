@@ -1,41 +1,47 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T14:18:57.063Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="eVKlI8ET-BYW55koS54n" version="24.4.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-23T19:09:18.261Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="H9EYSJTEXVTFGgoGCBqQ" version="24.4.6" type="device">
   <diagram name="Side-1" id="hIDSkNg_BTb7kJ9Grw0A">
-    <mxGraphModel dx="683" dy="332" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="459" pageHeight="120" math="0" shadow="0">
+    <mxGraphModel dx="724" dy="365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="500" pageHeight="120" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Uee_9gHTmNSp_vXNz4nx-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-4" target="Uee_9gHTmNSp_vXNz4nx-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-WASD9VjwCFsw7QrdPu2-5" value="input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" edge="1" parent="1" source="Uee_9gHTmNSp_vXNz4nx-4">
+        <mxCell id="-WASD9VjwCFsw7QrdPu2-5" value="input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontFamily=Times New Roman;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-4" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="20" y="50" as="targetPoint" />
+            <mxPoint x="40" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Uee_9gHTmNSp_vXNz4nx-4" value="Controller" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="80" y="30" width="80" height="40" as="geometry" />
+        <mxCell id="Uee_9gHTmNSp_vXNz4nx-4" value="&lt;div&gt;Controller&lt;/div&gt;G(s)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="100" y="30" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Uee_9gHTmNSp_vXNz4nx-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-5" target="Uee_9gHTmNSp_vXNz4nx-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Uee_9gHTmNSp_vXNz4nx-5" value="Driver" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="200" y="30" width="80" height="40" as="geometry" />
+        <mxCell id="Uee_9gHTmNSp_vXNz4nx-5" value="&lt;div&gt;Driver&lt;/div&gt;D(s)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="220" y="30" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Uee_9gHTmNSp_vXNz4nx-9" value="feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-6" target="Uee_9gHTmNSp_vXNz4nx-4" edge="1">
+        <mxCell id="Uee_9gHTmNSp_vXNz4nx-9" value="feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontFamily=Times New Roman;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-6" target="Uee_9gHTmNSp_vXNz4nx-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="350" y="100" />
-              <mxPoint x="120" y="100" />
+              <mxPoint x="370" y="100" />
+              <mxPoint x="140" y="100" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="-WASD9VjwCFsw7QrdPu2-2" value="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" edge="1" parent="1" source="Uee_9gHTmNSp_vXNz4nx-6">
+        <mxCell id="-WASD9VjwCFsw7QrdPu2-2" value="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontFamily=Times New Roman;" parent="1" source="Uee_9gHTmNSp_vXNz4nx-6" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="440" y="50" as="targetPoint" />
+            <mxPoint x="460" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Uee_9gHTmNSp_vXNz4nx-6" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="320" y="20" width="60" height="60" as="geometry" />
+        <mxCell id="Uee_9gHTmNSp_vXNz4nx-6" value="&lt;div&gt;Motor&lt;/div&gt;M(s)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="340" y="20" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-6HrGvSVHbX0JWB2t6SX-1" value="&lt;font face=&quot;Times New Roman&quot;&gt;R(s)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry y="35" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-6HrGvSVHbX0JWB2t6SX-2" value="&lt;font face=&quot;Times New Roman&quot;&gt;Y(s)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="35" width="50" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

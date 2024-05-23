@@ -1,10 +1,10 @@
 \chapter{Requirement Specification} \label{ch:req}
-The purpose of this project is to develop a setup where a receiving antenna is able to detect a transmitting antenna at a abitrary point in space and testing this setup. Detection of radio waves can for example be used for intruder detection or can be further developed to include data transmission and thereby achieving higher troughput if the receiving antenna is able to locate and focus on the transmitting device. 
+The purpose of this project is to develop a setup where a receiving antenna is able to detect a transmitting antenna at an abitrary point in space, redirect its beam towards that direction and to determine if it is possible to detect an intruder. Detection of electromagnetic waves can for example be used for intruder detection or can be further developed to include data transmission and thereby achieving higher troughput if the receiving antenna is able to locate and focus on the transmitting antenna. 
 
-Concluding on these two scenarios, it is required that the receiving antenna must be able to be controlled ie. steered in any direction and the electromagnetic radiation in the area must be read. 
+Concluding on these two scenarios, it is required that the receiving antenna must be able to be controlled ie. steered in any direction and the electromagnetic radiation in the area must be measured. 
 
 \section{Delimitations} \label{sec:delimitations}
-The setup developed in this project will only be designed to work in a two-dimensional plane and also cover the \SI{3}{\decibel} bandwidth in the elevation plane. This limits the neeed for beam steering in all directions. Moreover, the choice of antenna will affect the discrete measurement points in the plane because of how the 3dB bandwidth will limit the accuracy of measurements. This means that the project will focus on beam steering with mechanical turning, because electrical steering is above the scope and requirements of the project.
+The setup developed in this project is only designed to work in a two-dimensional, horizontal plane and also cover the \SI{3}{\decibel} bandwidth in the elevation plane. Moreover, the choice of antenna will affect the discrete measurement points in the plane because of how the 3dB bandwidth will limit the accuracy of measurements. The project will focus on beam steering with mechanical turning, because electrical steering is outside the scope and requirements of the project.
 
 \section{Functional Requirements}
 The following table \ref{tab:func_req} outlines the functional requirements. The requirements in this section describe the functionality of the setup.
@@ -14,8 +14,8 @@ The following table \ref{tab:func_req} outlines the functional requirements. The
         \textbf{ID} & \textbf{Requirement} & \textbf{Traceability} \\
         \hline
         \hline
-        F.1 & Mechanically controlled turning along Azimuth angle $\phi$ & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
-        F.2 & Data reading of electromagnetic radiation in the surrounding space & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
+        F.1 & Mechanically controlled turning along azimuth angle $\phi$ & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
+        F.2 & Data reading of electromagnetic radiation in the measurement space & Chapter \ref{ch:req} introduction, section \ref{sec:delimitations} \\
         F.3 & Controlled test environmental variables & Section \ref{sec:delimitations} \\
         F.4 & Automatic control of turning and measuring & Necessary to be able to reproduce test \\
     \end{tabular}
@@ -31,9 +31,9 @@ The table \ref{tab:tech_req} below outlines the technical requirements. The requ
         \textbf{ID} & \textbf{Requirement} & \textbf{Traceability} \\
         \hline
         \hline
-        T.1 & Operational turning angle of \SI{0}{\degree} to \SI{360}{\degree} & Chapter \ref{ch:req} introduction \\
-        T.2 & High antenna directivity & Section \ref{ss:antenna_design} \\
-        T.3 & Matching antenna polarization & Section \ref{ss:polarization} \\
+        T.1 & Operational turning angle of $\phi = \SI{0}{\degree}$ to $\phi = \SI{360}{\degree}$ & Chapter \ref{ch:req} introduction \\
+        T.2 & Antenna gain $>\SI{7}{dBi}$ & Section \ref{ss:antenna_design} \\
+        T.3 & Matching linear polarization & Section \ref{ss:polarization} \\
     \end{tabular}
     \caption{Table of technical requirements.}
     \label{tab:tech_req}
