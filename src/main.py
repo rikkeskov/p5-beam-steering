@@ -10,14 +10,14 @@
 import logging
 import time
 from threading import Thread, Event, Lock
-from pythoncom import CoInitialize, CoGetInterfaceAndReleaseStream, CoMarshalInterThreadInterfaceInStream, IID_IDispatch
+from pythoncom import CoInitialize, CoGetInterfaceAndReleaseStream, CoMarshalInterThreadInterfaceInStream, IID_IDispatch, CLSCTX_LOCAL_SERVER
 from win32com.client import Dispatch, CDispatch
 from network_analyzer import NetworkAnalyzer
 from turntable import TurnTableController
 
-START_POS = 10.0
-END_POS = 150.0
-INCREASE = 20.0
+START_POS = 350.0
+END_POS = 210.0
+INCREASE = 1.0
 
 lock_cur_pos = Lock()
 cur_pos: int = None
@@ -38,7 +38,7 @@ def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_h
     with lock_cur_pos:
         cur_pos = round(turntable.position)
 
-    while START_POS <= cur_pos < END_POS:
+    while START_POS >= cur_pos > END_POS:
         turntable_event_handler.set()
         turntable_event_handler.clear()
         vna_event_handler.wait()
@@ -54,9 +54,9 @@ def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_h
     max_pos_event_handler.wait()
     with lock_max_pos:
         if turntable.clockwise:
-            turntable.go_to_CW(max_pos)
-        else:
             turntable.go_to_CCW(max_pos)
+        else:
+            turntable.go_to_CW(max_pos)
 
     logging.info(f'Turntable thread is closed. {count} positions measured.')
 
@@ -89,7 +89,7 @@ def main():
     logging.basicConfig(filename=f'./tests/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
     
     CoInitialize()
-    ttc = Dispatch("TurnTableControlLib.TurnTableControl")
+    ttc = Dispatch("TurnTableControlLib.TurnTableControl", clsctx=CLSCTX_LOCAL_SERVER)
     ttc_id = CoMarshalInterThreadInterfaceInStream(IID_IDispatch, ttc)
     
     vna = NetworkAnalyzer(trace_id='trc1', s_param='s21', freq=5.65)

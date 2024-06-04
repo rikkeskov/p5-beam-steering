@@ -8,6 +8,7 @@
 """
 
 import logging
+import sys
 from rohdeschwarz.instruments.vna import Vna, TraceFormat, Channel
 logger = logging.getLogger(__name__)
 
@@ -37,7 +38,7 @@ class NetworkAnalyzer(object):
             sock.open_tcp(ip_address, port)
         except Exception as e:
             logger.error(f'Cannot connect to VNA because {e}.')
-            exit()
+            raise Exception(f'Cannot connect to VNA because {e}.')
         else:
             logger.info(f'Connection established to VNA. Creating channel {ch}.')
             channel = sock.channel(ch)
@@ -67,7 +68,7 @@ class NetworkAnalyzer(object):
         except Exception as e:
             logger.error(f'Cannot disconnect from VNA because {e}.')
         finally:
-            exit()
+            sys.exit()
 
     def get_settings(self) -> dict:
         settings = {}

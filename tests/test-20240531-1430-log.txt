@@ -1,0 +1,291 @@
+2024-05-31 14:30:23:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-05-31 14:30:24:root: VNA with trace id trc1 is created. Measuring s21.
+2024-05-31 14:30:24:root: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '1.0', 'power dbm': '10.0'}
+2024-05-31 14:30:24:turntable: Turntable hrt i (64980128) connected.
+2024-05-31 14:30:24:turntable: Current position is 272 not start position 350. Moving hrt i (64980128) to start position.
+2024-05-31 14:30:31:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-05-31 14:30:32:turntable: Current position for hrt i (64980128) is 350.
+2024-05-31 14:30:34:root: Power measurement is [-48.31870233].
+2024-05-31 14:30:34:root: Current position for hrt i (64980128) is 349.
+2024-05-31 14:30:37:root: Power measurement is [-48.94281341].
+2024-05-31 14:30:37:root: Current position for hrt i (64980128) is 348.
+2024-05-31 14:30:39:root: Power measurement is [-49.69300414].
+2024-05-31 14:30:40:root: Current position for hrt i (64980128) is 347.
+2024-05-31 14:30:42:root: Power measurement is [-50.63623268].
+2024-05-31 14:30:43:root: Current position for hrt i (64980128) is 346.
+2024-05-31 14:30:45:root: Power measurement is [-51.78746345].
+2024-05-31 14:30:46:root: Current position for hrt i (64980128) is 345.
+2024-05-31 14:30:48:root: Power measurement is [-53.12165144].
+2024-05-31 14:30:49:root: Current position for hrt i (64980128) is 344.
+2024-05-31 14:30:51:root: Power measurement is [-54.70979675].
+2024-05-31 14:30:51:root: Current position for hrt i (64980128) is 343.
+2024-05-31 14:30:53:root: Power measurement is [-56.59752759].
+2024-05-31 14:30:54:root: Current position for hrt i (64980128) is 342.
+2024-05-31 14:30:56:root: Power measurement is [-58.67796581].
+2024-05-31 14:30:57:root: Current position for hrt i (64980128) is 341.
+2024-05-31 14:30:59:root: Power measurement is [-61.11912952].
+2024-05-31 14:31:00:root: Current position for hrt i (64980128) is 340.
+2024-05-31 14:31:02:root: Power measurement is [-63.99339809].
+2024-05-31 14:31:03:root: Current position for hrt i (64980128) is 339.
+2024-05-31 14:31:05:root: Power measurement is [-66.87006546].
+2024-05-31 14:31:06:root: Current position for hrt i (64980128) is 338.
+2024-05-31 14:31:08:root: Power measurement is [-69.88914704].
+2024-05-31 14:31:08:root: Current position for hrt i (64980128) is 337.
+2024-05-31 14:31:10:root: Power measurement is [-70.14484172].
+2024-05-31 14:31:11:root: Current position for hrt i (64980128) is 336.
+2024-05-31 14:31:13:root: Power measurement is [-69.22897609].
+2024-05-31 14:31:14:root: Current position for hrt i (64980128) is 335.
+2024-05-31 14:31:16:root: Power measurement is [-66.18571998].
+2024-05-31 14:31:17:root: Current position for hrt i (64980128) is 334.
+2024-05-31 14:31:19:root: Power measurement is [-63.86761831].
+2024-05-31 14:31:20:root: Current position for hrt i (64980128) is 333.
+2024-05-31 14:31:22:root: Power measurement is [-61.72574088].
+2024-05-31 14:31:22:root: Current position for hrt i (64980128) is 332.
+2024-05-31 14:31:24:root: Power measurement is [-59.90114862].
+2024-05-31 14:31:25:root: Current position for hrt i (64980128) is 331.
+2024-05-31 14:31:27:root: Power measurement is [-58.27937372].
+2024-05-31 14:31:28:root: Current position for hrt i (64980128) is 330.
+2024-05-31 14:31:30:root: Power measurement is [-57.05825636].
+2024-05-31 14:31:31:root: Current position for hrt i (64980128) is 329.
+2024-05-31 14:31:33:root: Power measurement is [-55.98477009].
+2024-05-31 14:31:34:root: Current position for hrt i (64980128) is 328.
+2024-05-31 14:31:36:root: Power measurement is [-55.28308558].
+2024-05-31 14:31:37:root: Current position for hrt i (64980128) is 327.
+2024-05-31 14:31:39:root: Power measurement is [-54.69563287].
+2024-05-31 14:31:39:root: Current position for hrt i (64980128) is 326.
+2024-05-31 14:31:41:root: Power measurement is [-54.43041427].
+2024-05-31 14:31:42:root: Current position for hrt i (64980128) is 325.
+2024-05-31 14:31:44:root: Power measurement is [-54.20824804].
+2024-05-31 14:31:45:root: Current position for hrt i (64980128) is 324.
+2024-05-31 14:31:47:root: Power measurement is [-54.25069334].
+2024-05-31 14:31:48:root: Current position for hrt i (64980128) is 323.
+2024-05-31 14:31:50:root: Power measurement is [-54.35973434].
+2024-05-31 14:31:51:root: Current position for hrt i (64980128) is 322.
+2024-05-31 14:31:53:root: Power measurement is [-54.61555655].
+2024-05-31 14:31:54:root: Current position for hrt i (64980128) is 321.
+2024-05-31 14:31:56:root: Power measurement is [-54.91581456].
+2024-05-31 14:31:57:root: Current position for hrt i (64980128) is 320.
+2024-05-31 14:31:58:root: Power measurement is [-55.45863717].
+2024-05-31 14:31:59:root: Current position for hrt i (64980128) is 319.
+2024-05-31 14:32:01:root: Power measurement is [-56.21729562].
+2024-05-31 14:32:02:root: Current position for hrt i (64980128) is 318.
+2024-05-31 14:32:04:root: Power measurement is [-57.31135414].
+2024-05-31 14:32:05:root: Current position for hrt i (64980128) is 317.
+2024-05-31 14:32:07:root: Power measurement is [-59.11195404].
+2024-05-31 14:32:08:root: Current position for hrt i (64980128) is 316.
+2024-05-31 14:32:10:root: Power measurement is [-60.56078847].
+2024-05-31 14:32:11:root: Current position for hrt i (64980128) is 315.
+2024-05-31 14:32:13:root: Power measurement is [-59.4979588].
+2024-05-31 14:32:13:root: Current position for hrt i (64980128) is 314.
+2024-05-31 14:32:15:root: Power measurement is [-56.4940291].
+2024-05-31 14:32:16:root: Current position for hrt i (64980128) is 313.
+2024-05-31 14:32:18:root: Power measurement is [-53.21941424].
+2024-05-31 14:32:19:root: Current position for hrt i (64980128) is 312.
+2024-05-31 14:32:21:root: Power measurement is [-50.48786658].
+2024-05-31 14:32:22:root: Current position for hrt i (64980128) is 311.
+2024-05-31 14:32:24:root: Power measurement is [-48.07483601].
+2024-05-31 14:32:25:root: Current position for hrt i (64980128) is 310.
+2024-05-31 14:32:27:root: Power measurement is [-46.06347693].
+2024-05-31 14:32:28:root: Current position for hrt i (64980128) is 309.
+2024-05-31 14:32:30:root: Power measurement is [-44.2573284].
+2024-05-31 14:32:30:root: Current position for hrt i (64980128) is 308.
+2024-05-31 14:32:32:root: Power measurement is [-42.69707526].
+2024-05-31 14:32:33:root: Current position for hrt i (64980128) is 307.
+2024-05-31 14:32:35:root: Power measurement is [-41.28905766].
+2024-05-31 14:32:36:root: Current position for hrt i (64980128) is 306.
+2024-05-31 14:32:38:root: Power measurement is [-40.03980319].
+2024-05-31 14:32:39:root: Current position for hrt i (64980128) is 305.
+2024-05-31 14:32:41:root: Power measurement is [-38.90190411].
+2024-05-31 14:32:42:root: Current position for hrt i (64980128) is 304.
+2024-05-31 14:32:44:root: Power measurement is [-37.87623054].
+2024-05-31 14:32:45:root: Current position for hrt i (64980128) is 303.
+2024-05-31 14:32:47:root: Power measurement is [-36.93999715].
+2024-05-31 14:32:47:root: Current position for hrt i (64980128) is 302.
+2024-05-31 14:32:50:root: Power measurement is [-36.08064614].
+2024-05-31 14:32:50:root: Current position for hrt i (64980128) is 301.
+2024-05-31 14:32:53:root: Power measurement is [-35.28652525].
+2024-05-31 14:32:53:root: Current position for hrt i (64980128) is 300.
+2024-05-31 14:32:55:root: Power measurement is [-34.56473788].
+2024-05-31 14:32:56:root: Current position for hrt i (64980128) is 299.
+2024-05-31 14:32:58:root: Power measurement is [-33.89562565].
+2024-05-31 14:32:59:root: Current position for hrt i (64980128) is 298.
+2024-05-31 14:33:01:root: Power measurement is [-33.27351324].
+2024-05-31 14:33:02:root: Current position for hrt i (64980128) is 297.
+2024-05-31 14:33:04:root: Power measurement is [-32.69760941].
+2024-05-31 14:33:04:root: Current position for hrt i (64980128) is 296.
+2024-05-31 14:33:07:root: Power measurement is [-32.16598488].
+2024-05-31 14:33:07:root: Current position for hrt i (64980128) is 295.
+2024-05-31 14:33:09:root: Power measurement is [-31.67671921].
+2024-05-31 14:33:10:root: Current position for hrt i (64980128) is 294.
+2024-05-31 14:33:12:root: Power measurement is [-31.22470366].
+2024-05-31 14:33:13:root: Current position for hrt i (64980128) is 293.
+2024-05-31 14:33:15:root: Power measurement is [-30.81452949].
+2024-05-31 14:33:16:root: Current position for hrt i (64980128) is 292.
+2024-05-31 14:33:18:root: Power measurement is [-30.43567615].
+2024-05-31 14:33:19:root: Current position for hrt i (64980128) is 291.
+2024-05-31 14:33:21:root: Power measurement is [-30.09622594].
+2024-05-31 14:33:21:root: Current position for hrt i (64980128) is 290.
+2024-05-31 14:33:24:root: Power measurement is [-29.7819342].
+2024-05-31 14:33:24:root: Current position for hrt i (64980128) is 289.
+2024-05-31 14:33:26:root: Power measurement is [-29.50650977].
+2024-05-31 14:33:27:root: Current position for hrt i (64980128) is 288.
+2024-05-31 14:33:29:root: Power measurement is [-29.24682897].
+2024-05-31 14:33:30:root: Current position for hrt i (64980128) is 287.
+2024-05-31 14:33:32:root: Power measurement is [-29.02240333].
+2024-05-31 14:33:33:root: Current position for hrt i (64980128) is 286.
+2024-05-31 14:33:35:root: Power measurement is [-28.81562392].
+2024-05-31 14:33:36:root: Current position for hrt i (64980128) is 285.
+2024-05-31 14:33:38:root: Power measurement is [-28.63883303].
+2024-05-31 14:33:38:root: Current position for hrt i (64980128) is 284.
+2024-05-31 14:33:41:root: Power measurement is [-28.47644865].
+2024-05-31 14:33:41:root: Current position for hrt i (64980128) is 283.
+2024-05-31 14:33:43:root: Power measurement is [-28.33635253].
+2024-05-31 14:33:44:root: Current position for hrt i (64980128) is 282.
+2024-05-31 14:33:46:root: Power measurement is [-28.21119255].
+2024-05-31 14:33:47:root: Current position for hrt i (64980128) is 281.
+2024-05-31 14:33:49:root: Power measurement is [-28.10984405].
+2024-05-31 14:33:50:root: Current position for hrt i (64980128) is 280.
+2024-05-31 14:33:52:root: Power measurement is [-28.01437817].
+2024-05-31 14:33:53:root: Current position for hrt i (64980128) is 279.
+2024-05-31 14:33:55:root: Power measurement is [-27.94126444].
+2024-05-31 14:33:55:root: Current position for hrt i (64980128) is 278.
+2024-05-31 14:33:57:root: Power measurement is [-27.87516942].
+2024-05-31 14:33:58:root: Current position for hrt i (64980128) is 277.
+2024-05-31 14:34:00:root: Power measurement is [-27.82930856].
+2024-05-31 14:34:01:root: Current position for hrt i (64980128) is 276.
+2024-05-31 14:34:03:root: Power measurement is [-27.80160207].
+2024-05-31 14:34:04:root: Current position for hrt i (64980128) is 275.
+2024-05-31 14:34:06:root: Power measurement is [-27.78211207].
+2024-05-31 14:34:07:root: Current position for hrt i (64980128) is 274.
+2024-05-31 14:34:09:root: Power measurement is [-27.77076694].
+2024-05-31 14:34:10:root: Current position for hrt i (64980128) is 273.
+2024-05-31 14:34:12:root: Power measurement is [-27.77635167].
+2024-05-31 14:34:13:root: Current position for hrt i (64980128) is 272.
+2024-05-31 14:34:15:root: Power measurement is [-27.78617194].
+2024-05-31 14:34:15:root: Current position for hrt i (64980128) is 271.
+2024-05-31 14:34:17:root: Power measurement is [-27.81599293].
+2024-05-31 14:34:18:root: Current position for hrt i (64980128) is 270.
+2024-05-31 14:34:20:root: Power measurement is [-27.84915695].
+2024-05-31 14:34:21:root: Current position for hrt i (64980128) is 269.
+2024-05-31 14:34:23:root: Power measurement is [-27.90067196].
+2024-05-31 14:34:24:root: Current position for hrt i (64980128) is 268.
+2024-05-31 14:34:26:root: Power measurement is [-27.96115121].
+2024-05-31 14:34:27:root: Current position for hrt i (64980128) is 267.
+2024-05-31 14:34:29:root: Power measurement is [-28.03873634].
+2024-05-31 14:34:29:root: Current position for hrt i (64980128) is 266.
+2024-05-31 14:34:31:root: Power measurement is [-28.12344558].
+2024-05-31 14:34:32:root: Current position for hrt i (64980128) is 265.
+2024-05-31 14:34:34:root: Power measurement is [-28.22676853].
+2024-05-31 14:34:35:root: Current position for hrt i (64980128) is 264.
+2024-05-31 14:34:37:root: Power measurement is [-28.33351601].
+2024-05-31 14:34:38:root: Current position for hrt i (64980128) is 263.
+2024-05-31 14:34:40:root: Power measurement is [-28.46020234].
+2024-05-31 14:34:41:root: Current position for hrt i (64980128) is 262.
+2024-05-31 14:34:42:root: Power measurement is [-28.58957425].
+2024-05-31 14:34:43:root: Current position for hrt i (64980128) is 261.
+2024-05-31 14:34:45:root: Power measurement is [-28.73860633].
+2024-05-31 14:34:46:root: Current position for hrt i (64980128) is 260.
+2024-05-31 14:34:48:root: Power measurement is [-28.89521836].
+2024-05-31 14:34:49:root: Current position for hrt i (64980128) is 259.
+2024-05-31 14:34:51:root: Power measurement is [-29.0661983].
+2024-05-31 14:34:52:root: Current position for hrt i (64980128) is 258.
+2024-05-31 14:34:54:root: Power measurement is [-29.24449278].
+2024-05-31 14:34:54:root: Current position for hrt i (64980128) is 257.
+2024-05-31 14:34:56:root: Power measurement is [-29.42467401].
+2024-05-31 14:34:57:root: Current position for hrt i (64980128) is 256.
+2024-05-31 14:34:59:root: Power measurement is [-29.63121868].
+2024-05-31 14:35:00:root: Current position for hrt i (64980128) is 255.
+2024-05-31 14:35:02:root: Power measurement is [-29.85565657].
+2024-05-31 14:35:03:root: Current position for hrt i (64980128) is 254.
+2024-05-31 14:35:05:root: Power measurement is [-30.08914464].
+2024-05-31 14:35:05:root: Current position for hrt i (64980128) is 253.
+2024-05-31 14:35:07:root: Power measurement is [-30.35270581].
+2024-05-31 14:35:08:root: Current position for hrt i (64980128) is 252.
+2024-05-31 14:35:10:root: Power measurement is [-30.62808437].
+2024-05-31 14:35:11:root: Current position for hrt i (64980128) is 251.
+2024-05-31 14:35:13:root: Power measurement is [-30.93790446].
+2024-05-31 14:35:14:root: Current position for hrt i (64980128) is 250.
+2024-05-31 14:35:16:root: Power measurement is [-31.26320078].
+2024-05-31 14:35:17:root: Current position for hrt i (64980128) is 249.
+2024-05-31 14:35:19:root: Power measurement is [-31.63061381].
+2024-05-31 14:35:20:root: Current position for hrt i (64980128) is 248.
+2024-05-31 14:35:22:root: Power measurement is [-32.02359928].
+2024-05-31 14:35:22:root: Current position for hrt i (64980128) is 247.
+2024-05-31 14:35:24:root: Power measurement is [-32.46073915].
+2024-05-31 14:35:25:root: Current position for hrt i (64980128) is 246.
+2024-05-31 14:35:27:root: Power measurement is [-32.93640284].
+2024-05-31 14:35:28:root: Current position for hrt i (64980128) is 245.
+2024-05-31 14:35:30:root: Power measurement is [-33.44330984].
+2024-05-31 14:35:31:root: Current position for hrt i (64980128) is 244.
+2024-05-31 14:35:33:root: Power measurement is [-34.01527545].
+2024-05-31 14:35:34:root: Current position for hrt i (64980128) is 243.
+2024-05-31 14:35:36:root: Power measurement is [-34.63491253].
+2024-05-31 14:35:37:root: Current position for hrt i (64980128) is 242.
+2024-05-31 14:35:39:root: Power measurement is [-35.30786345].
+2024-05-31 14:35:39:root: Current position for hrt i (64980128) is 241.
+2024-05-31 14:35:41:root: Power measurement is [-36.05182524].
+2024-05-31 14:35:42:root: Current position for hrt i (64980128) is 240.
+2024-05-31 14:35:44:root: Power measurement is [-36.87400536].
+2024-05-31 14:35:45:root: Current position for hrt i (64980128) is 239.
+2024-05-31 14:35:47:root: Power measurement is [-37.75338859].
+2024-05-31 14:35:48:root: Current position for hrt i (64980128) is 238.
+2024-05-31 14:35:50:root: Power measurement is [-38.73774753].
+2024-05-31 14:35:51:root: Current position for hrt i (64980128) is 237.
+2024-05-31 14:35:53:root: Power measurement is [-39.80298402].
+2024-05-31 14:35:53:root: Current position for hrt i (64980128) is 236.
+2024-05-31 14:35:55:root: Power measurement is [-40.99120823].
+2024-05-31 14:35:56:root: Current position for hrt i (64980128) is 235.
+2024-05-31 14:35:58:root: Power measurement is [-42.27971703].
+2024-05-31 14:35:59:root: Current position for hrt i (64980128) is 234.
+2024-05-31 14:36:01:root: Power measurement is [-43.74791069].
+2024-05-31 14:36:02:root: Current position for hrt i (64980128) is 233.
+2024-05-31 14:36:04:root: Power measurement is [-45.37290468].
+2024-05-31 14:36:05:root: Current position for hrt i (64980128) is 232.
+2024-05-31 14:36:07:root: Power measurement is [-47.28431847].
+2024-05-31 14:36:08:root: Current position for hrt i (64980128) is 231.
+2024-05-31 14:36:10:root: Power measurement is [-49.41288039].
+2024-05-31 14:36:11:root: Current position for hrt i (64980128) is 230.
+2024-05-31 14:36:13:root: Power measurement is [-52.07314757].
+2024-05-31 14:36:13:root: Current position for hrt i (64980128) is 229.
+2024-05-31 14:36:15:root: Power measurement is [-55.32251099].
+2024-05-31 14:36:16:root: Current position for hrt i (64980128) is 228.
+2024-05-31 14:36:18:root: Power measurement is [-59.81848737].
+2024-05-31 14:36:19:root: Current position for hrt i (64980128) is 227.
+2024-05-31 14:36:21:root: Power measurement is [-65.19372954].
+2024-05-31 14:36:22:root: Current position for hrt i (64980128) is 226.
+2024-05-31 14:36:24:root: Power measurement is [-64.75498837].
+2024-05-31 14:36:25:root: Current position for hrt i (64980128) is 225.
+2024-05-31 14:36:26:root: Power measurement is [-60.86798926].
+2024-05-31 14:36:27:root: Current position for hrt i (64980128) is 224.
+2024-05-31 14:36:29:root: Power measurement is [-58.03828106].
+2024-05-31 14:36:30:root: Current position for hrt i (64980128) is 223.
+2024-05-31 14:36:32:root: Power measurement is [-56.38694626].
+2024-05-31 14:36:33:root: Current position for hrt i (64980128) is 222.
+2024-05-31 14:36:35:root: Power measurement is [-55.23927106].
+2024-05-31 14:36:36:root: Current position for hrt i (64980128) is 221.
+2024-05-31 14:36:38:root: Power measurement is [-54.57349852].
+2024-05-31 14:36:39:root: Current position for hrt i (64980128) is 220.
+2024-05-31 14:36:41:root: Power measurement is [-54.06984691].
+2024-05-31 14:36:41:root: Current position for hrt i (64980128) is 219.
+2024-05-31 14:36:43:root: Power measurement is [-53.86345506].
+2024-05-31 14:36:44:root: Current position for hrt i (64980128) is 218.
+2024-05-31 14:36:46:root: Power measurement is [-53.65000006].
+2024-05-31 14:36:47:root: Current position for hrt i (64980128) is 217.
+2024-05-31 14:36:49:root: Power measurement is [-53.56384189].
+2024-05-31 14:36:50:root: Current position for hrt i (64980128) is 216.
+2024-05-31 14:36:52:root: Power measurement is [-53.38979641].
+2024-05-31 14:36:53:root: Current position for hrt i (64980128) is 215.
+2024-05-31 14:36:55:root: Power measurement is [-53.30472015].
+2024-05-31 14:36:56:root: Current position for hrt i (64980128) is 214.
+2024-05-31 14:36:58:root: Power measurement is [-53.25240349].
+2024-05-31 14:36:59:root: Current position for hrt i (64980128) is 213.
+2024-05-31 14:37:01:root: Power measurement is [-53.16074681].
+2024-05-31 14:37:01:root: Current position for hrt i (64980128) is 212.
+2024-05-31 14:37:03:root: Power measurement is [-53.06636943].
+2024-05-31 14:37:04:root: Current position for hrt i (64980128) is 211.
+2024-05-31 14:37:06:root: Power measurement is [-53.06228108].
+2024-05-31 14:37:07:root: Current position for hrt i (64980128) is 210.
+2024-05-31 14:37:09:root: Power measurement is [-52.910068].
+2024-05-31 14:37:09:root: Max gain measured is [-27.77076694] at position 274.
+2024-05-31 14:37:09:root: VNA thread is closed. 141 measurements made.
+2024-05-31 14:37:15:root: Turntable thread is closed. 141 positions measured.

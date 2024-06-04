@@ -1,0 +1,27 @@
+2024-05-31 14:12:17:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-05-31 14:12:17:root: VNA with trace id trc1 is created. Measuring s21.
+2024-05-31 14:12:17:root: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '1.0', 'power dbm': '10.0'}
+2024-05-31 14:12:17:turntable: Turntable hrt i (64980128) connected.
+2024-05-31 14:12:18:turntable: Current position is 290 not start position 350. Moving hrt i (64980128) to start position.
+2024-05-31 14:12:26:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-05-31 14:12:26:turntable: Current position for hrt i (64980128) is 350.
+2024-05-31 14:12:28:root: Power measurement is [-48.57230247].
+2024-05-31 14:12:28:root: Current position for hrt i (64980128) is 350.
+2024-05-31 14:12:30:root: Power measurement is [-56.00933324].
+2024-05-31 14:12:31:root: Current position for hrt i (64980128) is 330.
+2024-05-31 14:12:33:root: Power measurement is [-55.57055294].
+2024-05-31 14:12:33:root: Current position for hrt i (64980128) is 310.
+2024-05-31 14:12:35:root: Power measurement is [-36.33434221].
+2024-05-31 14:12:35:root: Current position for hrt i (64980128) is 290.
+2024-05-31 14:12:37:root: Power measurement is [-28.54400466].
+2024-05-31 14:12:37:root: Current position for hrt i (64980128) is 270.
+2024-05-31 14:12:39:root: Power measurement is [-28.61139559].
+2024-05-31 14:12:40:root: Current position for hrt i (64980128) is 250.
+2024-05-31 14:12:42:root: Power measurement is [-35.41155972].
+2024-05-31 14:12:42:root: Current position for hrt i (64980128) is 230.
+2024-05-31 14:12:44:root: Power measurement is [-57.22142316].
+2024-05-31 14:12:44:root: Current position for hrt i (64980128) is 210.
+2024-05-31 14:12:46:root: Power measurement is [-52.48350748].
+2024-05-31 14:12:46:root: Max gain measured is [-28.54400466] at position 290.
+2024-05-31 14:12:46:root: VNA thread is closed. 9 measurements made.
+2024-05-31 14:12:46:root: Turntable thread is closed. 9 positions measured.

@@ -48,22 +48,22 @@ class TurnTableController(object):
         self.angle_max = angle_max
         if self.ttc.Count == 0:
             logger.error("No turntable is connected.")
-            exit()
+            raise Exception("No turntable is connected.")
         elif self.connect() == EConnectionState.ecsConnectedOn.value:
             self.turntable_set(rpm=2, func=EAccelerationFunction.afImpulse, start_pos=self.start_pos)
         else:
             logger.error("Unknown error in startup sequence.")
-            exit()
+            raise Exception("Unknown error in startup sequence.")
 
     def connect(self) -> int:
         """ Connect to TurnTable and check correct connection state. """
         self.tt = self.ttc.TurnTables(0)
         if self.tt.ConnectionState == EConnectionState.ecsUnconnected.value:
             logger.error("No CUD III cable is connected.")
-            exit()
+            raise Exception("No CUD III cable is connected.")
         elif self.tt.ConnectionState == EConnectionState.ecsConnectedOff.value:
             logger.error("The Turntable is switched off or not connected to CUD III. Try opening Turntable Control.")
-            exit()
+            raise Exception("The Turntable is switched off or not connected to CUD III. Try opening Turntable Control.")
         elif self.tt.ConnectionState == EConnectionState.ecsConnectedOn.value:
             logger.info(f"Turntable {self.instance} connected.")
         return self.tt.ConnectionState
@@ -76,7 +76,7 @@ class TurnTableController(object):
             self.tt.AccelerationFunction = func.value
         except Exception as e:
             logger.error(f"Unable to set settings for turntable {self.instance}, exiting with error code {e}.")
-            exit()
+            raise Exception(f"Unable to set settings for turntable {self.instance}, exiting with error code {e}.")
         if self.tt.DisplayPolarity == EPolarity.epolBipolar.value:
             try:
                 self.tt.DisplayPolarity = EPolarity.epolUnipolar.value
@@ -129,27 +129,27 @@ class TurnTableController(object):
                 logger.warning('Timeout while waiting for turntable to stop')
                 break
 
-    def step_CW(self, degrees, wait: bool = False) -> None:
+    def step_CW(self, degrees, wait: bool = True) -> None:
         """ Step [degrees] in clockwise direction. """
         self.tt.StepSize = float(degrees)
         self.tt.StepCW()
         if wait:
             self.wait_while_driving()
 
-    def step_CCW(self, degrees: float, wait: bool = False) -> None:
+    def step_CCW(self, degrees: float, wait: bool = True) -> None:
         """ Step [degrees] in counter-clockwise direction. """
         self.tt.StepSize = float(degrees)
         self.tt.StepCCW()
         if wait:
             self.wait_while_driving()
 
-    def go_to_CW(self, degrees: float, wait: bool = False) -> None:
+    def go_to_CW(self, degrees: float, wait: bool = True) -> None:
         """ Go to [degrees] while moving in clockwise direction. """
         self.tt.GotoCW(float(degrees))
         if wait:
             self.wait_while_driving()
 
-    def go_to_CCW(self, degrees: float, wait: bool = False) -> None:
+    def go_to_CCW(self, degrees: float, wait: bool = True) -> None:
         """ Go to [degrees] while moving in counter-clockwise direction. """
         self.tt.GotoCCW(degrees)
         if wait:
