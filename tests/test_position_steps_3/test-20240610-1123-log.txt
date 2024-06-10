@@ -1,0 +1,49 @@
+2024-06-10 11:23:38:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-06-10 11:23:39:__main__: VNA with trace id trc1 is created. Measuring s21.
+2024-06-10 11:23:39:__main__: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '10000.0', 'power dbm': '10.0'}
+2024-06-10 11:23:39:turntable: Turntable hrt i (64980128) connected.
+2024-06-10 11:23:39:turntable: Current position is 110 not start position 0. Moving hrt i (64980128) to start position.
+2024-06-10 11:23:49:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-06-10 11:23:49:turntable: Current position for hrt i (64980128) is 0.
+2024-06-10 11:23:50:__main__: Power measurement is [-57.37904865].
+2024-06-10 11:23:52:__main__: Current position for hrt i (64980128) is 10.
+2024-06-10 11:23:53:__main__: Power measurement is [-54.86252381].
+2024-06-10 11:23:54:__main__: Current position for hrt i (64980128) is 20.
+2024-06-10 11:23:56:__main__: Power measurement is [-54.42153439].
+2024-06-10 11:23:57:__main__: Current position for hrt i (64980128) is 30.
+2024-06-10 11:23:58:__main__: Power measurement is [-50.05863254].
+2024-06-10 11:24:00:__main__: Current position for hrt i (64980128) is 40.
+2024-06-10 11:24:01:__main__: Power measurement is [-50.01801962].
+2024-06-10 11:24:02:__main__: Current position for hrt i (64980128) is 50.
+2024-06-10 11:24:03:__main__: Power measurement is [-51.56965529].
+2024-06-10 11:24:05:__main__: Current position for hrt i (64980128) is 60.
+2024-06-10 11:24:06:__main__: Power measurement is [-56.68956237].
+2024-06-10 11:24:07:__main__: Current position for hrt i (64980128) is 70.
+2024-06-10 11:24:09:__main__: Power measurement is [-55.72837077].
+2024-06-10 11:24:10:__main__: Current position for hrt i (64980128) is 80.
+2024-06-10 11:24:11:__main__: Power measurement is [-51.26054869].
+2024-06-10 11:24:13:__main__: Current position for hrt i (64980128) is 90.
+2024-06-10 11:24:14:__main__: Power measurement is [-43.15485022].
+2024-06-10 11:24:15:__main__: Current position for hrt i (64980128) is 100.
+2024-06-10 11:24:16:__main__: Power measurement is [-38.93238811].
+2024-06-10 11:24:17:__main__: Current position for hrt i (64980128) is 110.
+2024-06-10 11:24:19:__main__: Power measurement is [-38.74842457].
+2024-06-10 11:24:20:__main__: Current position for hrt i (64980128) is 120.
+2024-06-10 11:24:21:__main__: Power measurement is [-41.42724406].
+2024-06-10 11:24:22:__main__: Current position for hrt i (64980128) is 130.
+2024-06-10 11:24:23:__main__: Power measurement is [-50.30486437].
+2024-06-10 11:24:25:__main__: Current position for hrt i (64980128) is 140.
+2024-06-10 11:24:26:__main__: Power measurement is [-66.25289774].
+2024-06-10 11:24:27:__main__: Current position for hrt i (64980128) is 150.
+2024-06-10 11:24:28:__main__: Power measurement is [-51.81031587].
+2024-06-10 11:24:29:__main__: Current position for hrt i (64980128) is 160.
+2024-06-10 11:24:31:__main__: Power measurement is [-50.02791602].
+2024-06-10 11:24:32:__main__: Current position for hrt i (64980128) is 170.
+2024-06-10 11:24:33:__main__: Power measurement is [-53.05531162].
+2024-06-10 11:24:35:__main__: Current position for hrt i (64980128) is 180.
+2024-06-10 11:24:36:__main__: Power measurement is [-50.09710872].
+2024-06-10 11:24:36:__main__: Max gain measured is -38.748424565895874 at position 110.
+2024-06-10 11:24:36:__main__: Positions: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180]
+2024-06-10 11:24:36:__main__: Power measurements: [-57.37904864684638, -54.862523809828325, -54.42153439267524, -50.058632539708896, -50.0180196242346, -51.56965528967023, -56.68956236651038, -55.72837076745324, -51.26054869082337, -43.154850223889724, -38.9323881108344, -38.748424565895874, -41.42724406272693, -50.304864371876505, -66.25289774174796, -51.81031586757273, -50.02791601750813, -53.05531161560096, -50.09710871571689]
+2024-06-10 11:24:36:__main__: VNA thread is closed. 19 measurements made.
+2024-06-10 11:24:42:__main__: Turntable thread is closed. 19 positions measured.

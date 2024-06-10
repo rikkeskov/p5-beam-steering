@@ -1,0 +1,373 @@
+2024-06-10 11:13:30:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-06-10 11:13:30:__main__: VNA with trace id trc1 is created. Measuring s21.
+2024-06-10 11:13:31:__main__: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '10000.0', 'power dbm': '10.0'}
+2024-06-10 11:13:31:turntable: Turntable hrt i (64980128) connected.
+2024-06-10 11:13:31:turntable: Current position is 100 not start position 0. Moving hrt i (64980128) to start position.
+2024-06-10 11:13:41:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-06-10 11:13:41:turntable: Current position for hrt i (64980128) is 0.
+2024-06-10 11:13:42:__main__: Power measurement is [-57.78390193].
+2024-06-10 11:13:43:__main__: Current position for hrt i (64980128) is 1.
+2024-06-10 11:13:44:__main__: Power measurement is [-58.17617611].
+2024-06-10 11:13:45:__main__: Current position for hrt i (64980128) is 2.
+2024-06-10 11:13:46:__main__: Power measurement is [-59.03039114].
+2024-06-10 11:13:47:__main__: Current position for hrt i (64980128) is 3.
+2024-06-10 11:13:48:__main__: Power measurement is [-58.71424704].
+2024-06-10 11:13:49:__main__: Current position for hrt i (64980128) is 4.
+2024-06-10 11:13:50:__main__: Power measurement is [-58.49872249].
+2024-06-10 11:13:51:__main__: Current position for hrt i (64980128) is 5.
+2024-06-10 11:13:52:__main__: Power measurement is [-57.8840052].
+2024-06-10 11:13:53:__main__: Current position for hrt i (64980128) is 6.
+2024-06-10 11:13:54:__main__: Power measurement is [-56.10365226].
+2024-06-10 11:13:55:__main__: Current position for hrt i (64980128) is 7.
+2024-06-10 11:13:56:__main__: Power measurement is [-55.54680357].
+2024-06-10 11:13:57:__main__: Current position for hrt i (64980128) is 8.
+2024-06-10 11:13:58:__main__: Power measurement is [-55.18550034].
+2024-06-10 11:13:59:__main__: Current position for hrt i (64980128) is 9.
+2024-06-10 11:14:00:__main__: Power measurement is [-54.95972956].
+2024-06-10 11:14:01:__main__: Current position for hrt i (64980128) is 10.
+2024-06-10 11:14:02:__main__: Power measurement is [-55.23113181].
+2024-06-10 11:14:03:__main__: Current position for hrt i (64980128) is 11.
+2024-06-10 11:14:04:__main__: Power measurement is [-54.48205677].
+2024-06-10 11:14:05:__main__: Current position for hrt i (64980128) is 12.
+2024-06-10 11:14:06:__main__: Power measurement is [-54.43758618].
+2024-06-10 11:14:07:__main__: Current position for hrt i (64980128) is 13.
+2024-06-10 11:14:08:__main__: Power measurement is [-54.08643368].
+2024-06-10 11:14:09:__main__: Current position for hrt i (64980128) is 14.
+2024-06-10 11:14:10:__main__: Power measurement is [-54.17730152].
+2024-06-10 11:14:11:__main__: Current position for hrt i (64980128) is 15.
+2024-06-10 11:14:12:__main__: Power measurement is [-54.35181176].
+2024-06-10 11:14:13:__main__: Current position for hrt i (64980128) is 16.
+2024-06-10 11:14:14:__main__: Power measurement is [-54.01269334].
+2024-06-10 11:14:15:__main__: Current position for hrt i (64980128) is 17.
+2024-06-10 11:14:16:__main__: Power measurement is [-54.13393673].
+2024-06-10 11:14:16:__main__: Current position for hrt i (64980128) is 18.
+2024-06-10 11:14:18:__main__: Power measurement is [-53.96351697].
+2024-06-10 11:14:18:__main__: Current position for hrt i (64980128) is 19.
+2024-06-10 11:14:20:__main__: Power measurement is [-53.75986778].
+2024-06-10 11:14:20:__main__: Current position for hrt i (64980128) is 20.
+2024-06-10 11:14:22:__main__: Power measurement is [-53.27789097].
+2024-06-10 11:14:22:__main__: Current position for hrt i (64980128) is 21.
+2024-06-10 11:14:24:__main__: Power measurement is [-52.91710723].
+2024-06-10 11:14:24:__main__: Current position for hrt i (64980128) is 22.
+2024-06-10 11:14:26:__main__: Power measurement is [-52.76025657].
+2024-06-10 11:14:26:__main__: Current position for hrt i (64980128) is 23.
+2024-06-10 11:14:28:__main__: Power measurement is [-51.98563595].
+2024-06-10 11:14:28:__main__: Current position for hrt i (64980128) is 24.
+2024-06-10 11:14:30:__main__: Power measurement is [-51.52443087].
+2024-06-10 11:14:30:__main__: Current position for hrt i (64980128) is 25.
+2024-06-10 11:14:32:__main__: Power measurement is [-51.25249122].
+2024-06-10 11:14:32:__main__: Current position for hrt i (64980128) is 26.
+2024-06-10 11:14:34:__main__: Power measurement is [-50.77990302].
+2024-06-10 11:14:34:__main__: Current position for hrt i (64980128) is 27.
+2024-06-10 11:14:36:__main__: Power measurement is [-50.68481701].
+2024-06-10 11:14:36:__main__: Current position for hrt i (64980128) is 28.
+2024-06-10 11:14:38:__main__: Power measurement is [-50.47906287].
+2024-06-10 11:14:38:__main__: Current position for hrt i (64980128) is 29.
+2024-06-10 11:14:40:__main__: Power measurement is [-50.37592601].
+2024-06-10 11:14:40:__main__: Current position for hrt i (64980128) is 30.
+2024-06-10 11:14:42:__main__: Power measurement is [-50.33751672].
+2024-06-10 11:14:42:__main__: Current position for hrt i (64980128) is 31.
+2024-06-10 11:14:44:__main__: Power measurement is [-50.14702022].
+2024-06-10 11:14:44:__main__: Current position for hrt i (64980128) is 32.
+2024-06-10 11:14:46:__main__: Power measurement is [-49.47029067].
+2024-06-10 11:14:46:__main__: Current position for hrt i (64980128) is 33.
+2024-06-10 11:14:48:__main__: Power measurement is [-49.62570292].
+2024-06-10 11:14:48:__main__: Current position for hrt i (64980128) is 34.
+2024-06-10 11:14:50:__main__: Power measurement is [-49.3204575].
+2024-06-10 11:14:50:__main__: Current position for hrt i (64980128) is 35.
+2024-06-10 11:14:52:__main__: Power measurement is [-49.09975505].
+2024-06-10 11:14:52:__main__: Current position for hrt i (64980128) is 36.
+2024-06-10 11:14:54:__main__: Power measurement is [-49.12974476].
+2024-06-10 11:14:54:__main__: Current position for hrt i (64980128) is 37.
+2024-06-10 11:14:56:__main__: Power measurement is [-49.34777893].
+2024-06-10 11:14:56:__main__: Current position for hrt i (64980128) is 38.
+2024-06-10 11:14:58:__main__: Power measurement is [-49.50519849].
+2024-06-10 11:14:58:__main__: Current position for hrt i (64980128) is 39.
+2024-06-10 11:15:00:__main__: Power measurement is [-49.70327163].
+2024-06-10 11:15:00:__main__: Current position for hrt i (64980128) is 40.
+2024-06-10 11:15:02:__main__: Power measurement is [-50.04549949].
+2024-06-10 11:15:02:__main__: Current position for hrt i (64980128) is 41.
+2024-06-10 11:15:04:__main__: Power measurement is [-50.6598406].
+2024-06-10 11:15:04:__main__: Current position for hrt i (64980128) is 42.
+2024-06-10 11:15:06:__main__: Power measurement is [-50.6729244].
+2024-06-10 11:15:06:__main__: Current position for hrt i (64980128) is 43.
+2024-06-10 11:15:08:__main__: Power measurement is [-51.17361228].
+2024-06-10 11:15:08:__main__: Current position for hrt i (64980128) is 44.
+2024-06-10 11:15:10:__main__: Power measurement is [-51.61872894].
+2024-06-10 11:15:10:__main__: Current position for hrt i (64980128) is 45.
+2024-06-10 11:15:12:__main__: Power measurement is [-51.71495666].
+2024-06-10 11:15:12:__main__: Current position for hrt i (64980128) is 46.
+2024-06-10 11:15:14:__main__: Power measurement is [-51.77238062].
+2024-06-10 11:15:14:__main__: Current position for hrt i (64980128) is 47.
+2024-06-10 11:15:16:__main__: Power measurement is [-51.41529322].
+2024-06-10 11:15:16:__main__: Current position for hrt i (64980128) is 48.
+2024-06-10 11:15:18:__main__: Power measurement is [-51.24852063].
+2024-06-10 11:15:18:__main__: Current position for hrt i (64980128) is 49.
+2024-06-10 11:15:20:__main__: Power measurement is [-51.11736375].
+2024-06-10 11:15:20:__main__: Current position for hrt i (64980128) is 50.
+2024-06-10 11:15:22:__main__: Power measurement is [-51.60404316].
+2024-06-10 11:15:22:__main__: Current position for hrt i (64980128) is 51.
+2024-06-10 11:15:24:__main__: Power measurement is [-51.69461964].
+2024-06-10 11:15:24:__main__: Current position for hrt i (64980128) is 52.
+2024-06-10 11:15:26:__main__: Power measurement is [-51.5382517].
+2024-06-10 11:15:26:__main__: Current position for hrt i (64980128) is 53.
+2024-06-10 11:15:28:__main__: Power measurement is [-51.52189804].
+2024-06-10 11:15:28:__main__: Current position for hrt i (64980128) is 54.
+2024-06-10 11:15:30:__main__: Power measurement is [-51.2798191].
+2024-06-10 11:15:30:__main__: Current position for hrt i (64980128) is 55.
+2024-06-10 11:15:32:__main__: Power measurement is [-51.67393261].
+2024-06-10 11:15:32:__main__: Current position for hrt i (64980128) is 56.
+2024-06-10 11:15:34:__main__: Power measurement is [-51.86544045].
+2024-06-10 11:15:34:__main__: Current position for hrt i (64980128) is 57.
+2024-06-10 11:15:36:__main__: Power measurement is [-51.72021584].
+2024-06-10 11:15:36:__main__: Current position for hrt i (64980128) is 58.
+2024-06-10 11:15:38:__main__: Power measurement is [-52.26394753].
+2024-06-10 11:15:38:__main__: Current position for hrt i (64980128) is 59.
+2024-06-10 11:15:40:__main__: Power measurement is [-52.39780612].
+2024-06-10 11:15:40:__main__: Current position for hrt i (64980128) is 60.
+2024-06-10 11:15:42:__main__: Power measurement is [-53.40672543].
+2024-06-10 11:15:42:__main__: Current position for hrt i (64980128) is 61.
+2024-06-10 11:15:44:__main__: Power measurement is [-53.62807567].
+2024-06-10 11:15:44:__main__: Current position for hrt i (64980128) is 62.
+2024-06-10 11:15:46:__main__: Power measurement is [-53.20244102].
+2024-06-10 11:15:46:__main__: Current position for hrt i (64980128) is 63.
+2024-06-10 11:15:48:__main__: Power measurement is [-53.76134265].
+2024-06-10 11:15:48:__main__: Current position for hrt i (64980128) is 64.
+2024-06-10 11:15:50:__main__: Power measurement is [-54.09891726].
+2024-06-10 11:15:50:__main__: Current position for hrt i (64980128) is 65.
+2024-06-10 11:15:52:__main__: Power measurement is [-54.00453003].
+2024-06-10 11:15:52:__main__: Current position for hrt i (64980128) is 66.
+2024-06-10 11:15:54:__main__: Power measurement is [-53.83913253].
+2024-06-10 11:15:55:__main__: Current position for hrt i (64980128) is 67.
+2024-06-10 11:15:56:__main__: Power measurement is [-53.56290046].
+2024-06-10 11:15:56:__main__: Current position for hrt i (64980128) is 68.
+2024-06-10 11:15:58:__main__: Power measurement is [-54.40318598].
+2024-06-10 11:15:58:__main__: Current position for hrt i (64980128) is 69.
+2024-06-10 11:16:00:__main__: Power measurement is [-54.86564476].
+2024-06-10 11:16:00:__main__: Current position for hrt i (64980128) is 70.
+2024-06-10 11:16:01:__main__: Power measurement is [-54.2439775].
+2024-06-10 11:16:02:__main__: Current position for hrt i (64980128) is 71.
+2024-06-10 11:16:03:__main__: Power measurement is [-53.6774284].
+2024-06-10 11:16:04:__main__: Current position for hrt i (64980128) is 72.
+2024-06-10 11:16:05:__main__: Power measurement is [-53.28872857].
+2024-06-10 11:16:06:__main__: Current position for hrt i (64980128) is 73.
+2024-06-10 11:16:07:__main__: Power measurement is [-52.93869634].
+2024-06-10 11:16:08:__main__: Current position for hrt i (64980128) is 74.
+2024-06-10 11:16:09:__main__: Power measurement is [-53.13225253].
+2024-06-10 11:16:10:__main__: Current position for hrt i (64980128) is 75.
+2024-06-10 11:16:11:__main__: Power measurement is [-52.66917575].
+2024-06-10 11:16:12:__main__: Current position for hrt i (64980128) is 76.
+2024-06-10 11:16:13:__main__: Power measurement is [-52.58590053].
+2024-06-10 11:16:14:__main__: Current position for hrt i (64980128) is 77.
+2024-06-10 11:16:15:__main__: Power measurement is [-51.9009425].
+2024-06-10 11:16:15:__main__: Current position for hrt i (64980128) is 78.
+2024-06-10 11:16:17:__main__: Power measurement is [-51.77407056].
+2024-06-10 11:16:18:__main__: Current position for hrt i (64980128) is 79.
+2024-06-10 11:16:19:__main__: Power measurement is [-50.08180835].
+2024-06-10 11:16:20:__main__: Current position for hrt i (64980128) is 80.
+2024-06-10 11:16:21:__main__: Power measurement is [-49.50926123].
+2024-06-10 11:16:22:__main__: Current position for hrt i (64980128) is 81.
+2024-06-10 11:16:23:__main__: Power measurement is [-48.59695975].
+2024-06-10 11:16:24:__main__: Current position for hrt i (64980128) is 82.
+2024-06-10 11:16:25:__main__: Power measurement is [-48.025431].
+2024-06-10 11:16:26:__main__: Current position for hrt i (64980128) is 83.
+2024-06-10 11:16:27:__main__: Power measurement is [-47.23463423].
+2024-06-10 11:16:28:__main__: Current position for hrt i (64980128) is 84.
+2024-06-10 11:16:29:__main__: Power measurement is [-46.46855746].
+2024-06-10 11:16:30:__main__: Current position for hrt i (64980128) is 85.
+2024-06-10 11:16:31:__main__: Power measurement is [-45.63575745].
+2024-06-10 11:16:32:__main__: Current position for hrt i (64980128) is 86.
+2024-06-10 11:16:33:__main__: Power measurement is [-44.93730648].
+2024-06-10 11:16:34:__main__: Current position for hrt i (64980128) is 87.
+2024-06-10 11:16:35:__main__: Power measurement is [-44.05252298].
+2024-06-10 11:16:36:__main__: Current position for hrt i (64980128) is 88.
+2024-06-10 11:16:37:__main__: Power measurement is [-43.54300727].
+2024-06-10 11:16:38:__main__: Current position for hrt i (64980128) is 89.
+2024-06-10 11:16:39:__main__: Power measurement is [-42.74634672].
+2024-06-10 11:16:40:__main__: Current position for hrt i (64980128) is 90.
+2024-06-10 11:16:41:__main__: Power measurement is [-42.15606291].
+2024-06-10 11:16:42:__main__: Current position for hrt i (64980128) is 91.
+2024-06-10 11:16:43:__main__: Power measurement is [-41.61815825].
+2024-06-10 11:16:44:__main__: Current position for hrt i (64980128) is 92.
+2024-06-10 11:16:45:__main__: Power measurement is [-41.0797976].
+2024-06-10 11:16:46:__main__: Current position for hrt i (64980128) is 93.
+2024-06-10 11:16:47:__main__: Power measurement is [-40.69971383].
+2024-06-10 11:16:48:__main__: Current position for hrt i (64980128) is 94.
+2024-06-10 11:16:49:__main__: Power measurement is [-40.18511869].
+2024-06-10 11:16:50:__main__: Current position for hrt i (64980128) is 95.
+2024-06-10 11:16:51:__main__: Power measurement is [-40.03549905].
+2024-06-10 11:16:52:__main__: Current position for hrt i (64980128) is 96.
+2024-06-10 11:16:53:__main__: Power measurement is [-39.55218858].
+2024-06-10 11:16:54:__main__: Current position for hrt i (64980128) is 97.
+2024-06-10 11:16:55:__main__: Power measurement is [-39.27621407].
+2024-06-10 11:16:56:__main__: Current position for hrt i (64980128) is 98.
+2024-06-10 11:16:57:__main__: Power measurement is [-38.99081465].
+2024-06-10 11:16:58:__main__: Current position for hrt i (64980128) is 99.
+2024-06-10 11:16:59:__main__: Power measurement is [-38.75148322].
+2024-06-10 11:17:00:__main__: Current position for hrt i (64980128) is 100.
+2024-06-10 11:17:01:__main__: Power measurement is [-38.6248888].
+2024-06-10 11:17:02:__main__: Current position for hrt i (64980128) is 101.
+2024-06-10 11:17:03:__main__: Power measurement is [-38.34628405].
+2024-06-10 11:17:04:__main__: Current position for hrt i (64980128) is 102.
+2024-06-10 11:17:05:__main__: Power measurement is [-38.71385743].
+2024-06-10 11:17:06:__main__: Current position for hrt i (64980128) is 103.
+2024-06-10 11:17:07:__main__: Power measurement is [-38.65792989].
+2024-06-10 11:17:08:__main__: Current position for hrt i (64980128) is 104.
+2024-06-10 11:17:09:__main__: Power measurement is [-38.49752214].
+2024-06-10 11:17:10:__main__: Current position for hrt i (64980128) is 105.
+2024-06-10 11:17:11:__main__: Power measurement is [-38.18319841].
+2024-06-10 11:17:12:__main__: Current position for hrt i (64980128) is 106.
+2024-06-10 11:17:13:__main__: Power measurement is [-38.2428654].
+2024-06-10 11:17:14:__main__: Current position for hrt i (64980128) is 107.
+2024-06-10 11:17:15:__main__: Power measurement is [-38.2670474].
+2024-06-10 11:17:16:__main__: Current position for hrt i (64980128) is 108.
+2024-06-10 11:17:17:__main__: Power measurement is [-38.42147108].
+2024-06-10 11:17:18:__main__: Current position for hrt i (64980128) is 109.
+2024-06-10 11:17:19:__main__: Power measurement is [-38.39172795].
+2024-06-10 11:17:20:__main__: Current position for hrt i (64980128) is 110.
+2024-06-10 11:17:21:__main__: Power measurement is [-38.59272948].
+2024-06-10 11:17:22:__main__: Current position for hrt i (64980128) is 111.
+2024-06-10 11:17:23:__main__: Power measurement is [-38.78984393].
+2024-06-10 11:17:24:__main__: Current position for hrt i (64980128) is 112.
+2024-06-10 11:17:25:__main__: Power measurement is [-38.73881341].
+2024-06-10 11:17:26:__main__: Current position for hrt i (64980128) is 113.
+2024-06-10 11:17:27:__main__: Power measurement is [-38.81243546].
+2024-06-10 11:17:28:__main__: Current position for hrt i (64980128) is 114.
+2024-06-10 11:17:29:__main__: Power measurement is [-39.0170902].
+2024-06-10 11:17:30:__main__: Current position for hrt i (64980128) is 115.
+2024-06-10 11:17:31:__main__: Power measurement is [-39.32655033].
+2024-06-10 11:17:32:__main__: Current position for hrt i (64980128) is 116.
+2024-06-10 11:17:33:__main__: Power measurement is [-39.56943428].
+2024-06-10 11:17:34:__main__: Current position for hrt i (64980128) is 117.
+2024-06-10 11:17:35:__main__: Power measurement is [-39.91328612].
+2024-06-10 11:17:36:__main__: Current position for hrt i (64980128) is 118.
+2024-06-10 11:17:37:__main__: Power measurement is [-40.43945692].
+2024-06-10 11:17:38:__main__: Current position for hrt i (64980128) is 119.
+2024-06-10 11:17:39:__main__: Power measurement is [-40.66237278].
+2024-06-10 11:17:40:__main__: Current position for hrt i (64980128) is 120.
+2024-06-10 11:17:41:__main__: Power measurement is [-41.18971892].
+2024-06-10 11:17:42:__main__: Current position for hrt i (64980128) is 121.
+2024-06-10 11:17:43:__main__: Power measurement is [-41.67022978].
+2024-06-10 11:17:44:__main__: Current position for hrt i (64980128) is 122.
+2024-06-10 11:17:45:__main__: Power measurement is [-42.37614061].
+2024-06-10 11:17:46:__main__: Current position for hrt i (64980128) is 123.
+2024-06-10 11:17:47:__main__: Power measurement is [-43.02779668].
+2024-06-10 11:17:48:__main__: Current position for hrt i (64980128) is 124.
+2024-06-10 11:17:49:__main__: Power measurement is [-43.66147013].
+2024-06-10 11:17:50:__main__: Current position for hrt i (64980128) is 125.
+2024-06-10 11:17:51:__main__: Power measurement is [-44.5323678].
+2024-06-10 11:17:52:__main__: Current position for hrt i (64980128) is 126.
+2024-06-10 11:17:53:__main__: Power measurement is [-45.53296275].
+2024-06-10 11:17:54:__main__: Current position for hrt i (64980128) is 127.
+2024-06-10 11:17:55:__main__: Power measurement is [-46.5576792].
+2024-06-10 11:17:56:__main__: Current position for hrt i (64980128) is 128.
+2024-06-10 11:17:57:__main__: Power measurement is [-47.61532026].
+2024-06-10 11:17:58:__main__: Current position for hrt i (64980128) is 129.
+2024-06-10 11:17:59:__main__: Power measurement is [-49.0365702].
+2024-06-10 11:18:00:__main__: Current position for hrt i (64980128) is 130.
+2024-06-10 11:18:01:__main__: Power measurement is [-50.38402654].
+2024-06-10 11:18:02:__main__: Current position for hrt i (64980128) is 131.
+2024-06-10 11:18:03:__main__: Power measurement is [-52.19553933].
+2024-06-10 11:18:04:__main__: Current position for hrt i (64980128) is 132.
+2024-06-10 11:18:05:__main__: Power measurement is [-53.8851856].
+2024-06-10 11:18:06:__main__: Current position for hrt i (64980128) is 133.
+2024-06-10 11:18:07:__main__: Power measurement is [-55.12237067].
+2024-06-10 11:18:08:__main__: Current position for hrt i (64980128) is 134.
+2024-06-10 11:18:09:__main__: Power measurement is [-59.38942914].
+2024-06-10 11:18:10:__main__: Current position for hrt i (64980128) is 135.
+2024-06-10 11:18:11:__main__: Power measurement is [-63.84143682].
+2024-06-10 11:18:12:__main__: Current position for hrt i (64980128) is 136.
+2024-06-10 11:18:13:__main__: Power measurement is [-71.77318844].
+2024-06-10 11:18:14:__main__: Current position for hrt i (64980128) is 137.
+2024-06-10 11:18:15:__main__: Power measurement is [-81.99734557].
+2024-06-10 11:18:16:__main__: Current position for hrt i (64980128) is 138.
+2024-06-10 11:18:17:__main__: Power measurement is [-73.19732469].
+2024-06-10 11:18:18:__main__: Current position for hrt i (64980128) is 139.
+2024-06-10 11:18:19:__main__: Power measurement is [-64.92024985].
+2024-06-10 11:18:20:__main__: Current position for hrt i (64980128) is 140.
+2024-06-10 11:18:21:__main__: Power measurement is [-62.47854139].
+2024-06-10 11:18:22:__main__: Current position for hrt i (64980128) is 141.
+2024-06-10 11:18:23:__main__: Power measurement is [-60.34610619].
+2024-06-10 11:18:24:__main__: Current position for hrt i (64980128) is 142.
+2024-06-10 11:18:25:__main__: Power measurement is [-58.63938009].
+2024-06-10 11:18:26:__main__: Current position for hrt i (64980128) is 143.
+2024-06-10 11:18:27:__main__: Power measurement is [-56.91411472].
+2024-06-10 11:18:28:__main__: Current position for hrt i (64980128) is 144.
+2024-06-10 11:18:29:__main__: Power measurement is [-55.20398304].
+2024-06-10 11:18:30:__main__: Current position for hrt i (64980128) is 145.
+2024-06-10 11:18:31:__main__: Power measurement is [-53.85332163].
+2024-06-10 11:18:32:__main__: Current position for hrt i (64980128) is 146.
+2024-06-10 11:18:33:__main__: Power measurement is [-53.1479176].
+2024-06-10 11:18:34:__main__: Current position for hrt i (64980128) is 147.
+2024-06-10 11:18:35:__main__: Power measurement is [-52.10997618].
+2024-06-10 11:18:36:__main__: Current position for hrt i (64980128) is 148.
+2024-06-10 11:18:37:__main__: Power measurement is [-51.38129758].
+2024-06-10 11:18:38:__main__: Current position for hrt i (64980128) is 149.
+2024-06-10 11:18:39:__main__: Power measurement is [-50.79428056].
+2024-06-10 11:18:40:__main__: Current position for hrt i (64980128) is 150.
+2024-06-10 11:18:41:__main__: Power measurement is [-50.71080251].
+2024-06-10 11:18:42:__main__: Current position for hrt i (64980128) is 151.
+2024-06-10 11:18:43:__main__: Power measurement is [-50.31802799].
+2024-06-10 11:18:44:__main__: Current position for hrt i (64980128) is 152.
+2024-06-10 11:18:45:__main__: Power measurement is [-49.59471325].
+2024-06-10 11:18:46:__main__: Current position for hrt i (64980128) is 153.
+2024-06-10 11:18:47:__main__: Power measurement is [-49.06135749].
+2024-06-10 11:18:48:__main__: Current position for hrt i (64980128) is 154.
+2024-06-10 11:18:49:__main__: Power measurement is [-48.79100304].
+2024-06-10 11:18:50:__main__: Current position for hrt i (64980128) is 155.
+2024-06-10 11:18:51:__main__: Power measurement is [-48.57223733].
+2024-06-10 11:18:52:__main__: Current position for hrt i (64980128) is 156.
+2024-06-10 11:18:53:__main__: Power measurement is [-48.47390296].
+2024-06-10 11:18:54:__main__: Current position for hrt i (64980128) is 157.
+2024-06-10 11:18:55:__main__: Power measurement is [-48.36433929].
+2024-06-10 11:18:56:__main__: Current position for hrt i (64980128) is 158.
+2024-06-10 11:18:57:__main__: Power measurement is [-48.19114542].
+2024-06-10 11:18:58:__main__: Current position for hrt i (64980128) is 159.
+2024-06-10 11:18:59:__main__: Power measurement is [-48.64015927].
+2024-06-10 11:19:00:__main__: Current position for hrt i (64980128) is 160.
+2024-06-10 11:19:01:__main__: Power measurement is [-48.72375995].
+2024-06-10 11:19:02:__main__: Current position for hrt i (64980128) is 161.
+2024-06-10 11:19:03:__main__: Power measurement is [-48.8374154].
+2024-06-10 11:19:04:__main__: Current position for hrt i (64980128) is 162.
+2024-06-10 11:19:05:__main__: Power measurement is [-49.04106428].
+2024-06-10 11:19:06:__main__: Current position for hrt i (64980128) is 163.
+2024-06-10 11:19:07:__main__: Power measurement is [-49.54308687].
+2024-06-10 11:19:08:__main__: Current position for hrt i (64980128) is 164.
+2024-06-10 11:19:09:__main__: Power measurement is [-50.05573299].
+2024-06-10 11:19:10:__main__: Current position for hrt i (64980128) is 165.
+2024-06-10 11:19:11:__main__: Power measurement is [-50.17543963].
+2024-06-10 11:19:12:__main__: Current position for hrt i (64980128) is 166.
+2024-06-10 11:19:13:__main__: Power measurement is [-50.9542965].
+2024-06-10 11:19:14:__main__: Current position for hrt i (64980128) is 167.
+2024-06-10 11:19:15:__main__: Power measurement is [-51.07707507].
+2024-06-10 11:19:15:__main__: Current position for hrt i (64980128) is 168.
+2024-06-10 11:19:17:__main__: Power measurement is [-51.29032255].
+2024-06-10 11:19:17:__main__: Current position for hrt i (64980128) is 169.
+2024-06-10 11:19:19:__main__: Power measurement is [-51.76576435].
+2024-06-10 11:19:19:__main__: Current position for hrt i (64980128) is 170.
+2024-06-10 11:19:21:__main__: Power measurement is [-51.88722735].
+2024-06-10 11:19:21:__main__: Current position for hrt i (64980128) is 171.
+2024-06-10 11:19:23:__main__: Power measurement is [-52.17280586].
+2024-06-10 11:19:23:__main__: Current position for hrt i (64980128) is 172.
+2024-06-10 11:19:25:__main__: Power measurement is [-52.33152117].
+2024-06-10 11:19:25:__main__: Current position for hrt i (64980128) is 173.
+2024-06-10 11:19:27:__main__: Power measurement is [-51.92413268].
+2024-06-10 11:19:27:__main__: Current position for hrt i (64980128) is 174.
+2024-06-10 11:19:29:__main__: Power measurement is [-51.77185779].
+2024-06-10 11:19:29:__main__: Current position for hrt i (64980128) is 175.
+2024-06-10 11:19:31:__main__: Power measurement is [-51.43268742].
+2024-06-10 11:19:31:__main__: Current position for hrt i (64980128) is 176.
+2024-06-10 11:19:33:__main__: Power measurement is [-51.33211818].
+2024-06-10 11:19:33:__main__: Current position for hrt i (64980128) is 177.
+2024-06-10 11:19:35:__main__: Power measurement is [-50.66234267].
+2024-06-10 11:19:35:__main__: Current position for hrt i (64980128) is 178.
+2024-06-10 11:19:37:__main__: Power measurement is [-50.69838029].
+2024-06-10 11:19:37:__main__: Current position for hrt i (64980128) is 179.
+2024-06-10 11:19:39:__main__: Power measurement is [-50.31590876].
+2024-06-10 11:19:39:__main__: Current position for hrt i (64980128) is 180.
+2024-06-10 11:19:41:__main__: Power measurement is [-50.25360369].
+2024-06-10 11:19:41:__main__: Max gain measured is -38.18319840998919 at position 105.
+2024-06-10 11:19:41:__main__: Positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180]
+2024-06-10 11:19:41:__main__: Power measurements: [-57.78390192735618, -58.17617610507007, -59.030391143974384, -58.714247044507864, -58.498722489014185, -57.884005202680065, -56.10365226037863, -55.54680356840779, -55.18550033883438, -54.959729557890576, -55.23113180713609, -54.48205676510155, -54.43758617518585, -54.08643367542541, -54.17730151978364, -54.351811763586035, -54.012693343199125, -54.13393672669267, -53.96351696793538, -53.75986777537371, -53.27789096704829, -52.917107228483374, -52.76025657217109, -51.98563595291301, -51.52443087026019, -51.252491221298634, -50.77990301707391, -50.684817006011194, -50.47906286835203, -50.375926012143026, -50.33751671974147, -50.14702021962269, -49.47029067212851, -49.625702919101535, -49.32045750296158, -49.09975504779644, -49.12974475587772, -49.347778931969465, -49.50519849085907, -49.703271628544314, -50.04549949104283, -50.65984059859283, -50.67292440306519, -51.17361227590487, -51.61872893992254, -51.71495666117867, -51.772380616783856, -51.41529321969461, -51.2485206348317, -51.117363748408245, -51.60404316089419, -51.69461963565905, -51.53825170226839, -51.52189803808015, -51.27981910097472, -51.6739326072151, -51.86544044998144, -51.72021583614799, -52.26394753354044, -52.39780612300653, -53.406725427630874, -53.62807567310678, -53.2024410175932, -53.761342652054616, -54.09891725749838, -54.004530033539154, -53.8391325303857, -53.56290046040593, -54.403185984631826, -54.86564476340699, -54.24397749931958, -53.67742840435116, -53.288728570371376, -52.93869633533053, -53.13225252800863, -52.669175751655494, -52.585900528366004, -51.900942504048764, -51.774070559078105, -50.08180834830029, -49.50926122591339, -48.59695975277367, -48.025431003649814, -47.23463422578092, -46.46855745968914, -45.635757454241876, -44.937306475151026, -44.052522984692274, -43.5430072704372, -42.74634672187259, -42.15606291362981, -41.61815824641705, -41.079797600481676, -40.699713834580365, -40.185118685536565, -40.035499051531296, -39.55218858247503, -39.27621406530718, -38.9908146472192, -38.75148322441804, -38.62488879688019, -38.34628405034132, -38.71385742521706, -38.65792988943389, -38.49752214098968, -38.18319840998919, -38.24286539683408, -38.26704740153691, -38.421471081916835, -38.39172795013299, -38.5927294756328, -38.789843925212196, -38.738813409780846, -38.81243545778051, -39.01709020162578, -39.32655033497488, -39.569434276547625, -39.91328611695334, -40.43945692307559, -40.66237277795469, -41.18971891555366, -41.67022978352082, -42.37614060716959, -43.027796682881934, -43.661470134860764, -44.532367796007996, -45.532962746313984, -46.557679195369076, -47.615320255485905, -49.036570202314756, -50.38402654093193, -52.195539333428556, -53.885185599591296, -55.12237066885357, -59.38942914356932, -63.841436817373946, -71.77318844252312, -81.99734557498215, -73.1973246897049, -64.92024985147758, -62.478541388841904, -60.34610618960548, -58.639380094707526, -56.91411472397398, -55.203983041157116, -53.85332162948128, -53.14791759774948, -52.109976184760015, -51.38129758008402, -50.794280564644644, -50.710802513948444, -50.31802799478722, -49.594713246160474, -49.06135748744596, -48.791003038910354, -48.57223732646792, -48.47390295996609, -48.36433928942315, -48.19114542048549, -48.64015926664297, -48.72375995410754, -48.83741540345513, -49.04106428424441, -49.54308687289559, -50.05573298995092, -50.17543962874335, -50.95429649731187, -51.077075072381966, -51.29032255243892, -51.7657643456677, -51.88722735344978, -52.17280586467657, -52.331521166635035, -51.92413267855337, -51.771857791334696, -51.43268742347419, -51.332118181524805, -50.662342670763614, -50.69838028940427, -50.31590875660414, -50.25360368734679]
+2024-06-10 11:19:41:__main__: VNA thread is closed. 181 measurements made.
+2024-06-10 11:19:47:__main__: Turntable thread is closed. 181 positions measured.

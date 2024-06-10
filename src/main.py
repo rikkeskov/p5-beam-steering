@@ -15,9 +15,11 @@ from win32com.client import Dispatch, CDispatch
 from network_analyzer import NetworkAnalyzer
 from turntable import TurnTableController
 
-START_POS = 350.0
-END_POS = 210.0
-INCREASE = 1.0
+logger = logging.getLogger(__name__)
+
+START_POS = 0.0
+END_POS = 180.0
+INCREASE = 50.0
 
 lock_cur_pos = Lock()
 cur_pos: int = None
@@ -29,7 +31,7 @@ max_pos: int = None
 def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_handler: Event, end: Event, ttc_id) -> None:
     CoInitialize()
     ttc = Dispatch(CoGetInterfaceAndReleaseStream(ttc_id, IID_IDispatch))
-    turntable = TurnTableController(instance="hrt i (64980128)", ttc=ttc, clockwise=True, start_pos=START_POS)
+    turntable = TurnTableController(instance="hrt i (64980128)", ttc=ttc, clockwise=False, start_pos=START_POS)
     
     global cur_pos
     global max_pos
@@ -38,14 +40,14 @@ def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_h
     with lock_cur_pos:
         cur_pos = round(turntable.position)
 
-    while START_POS >= cur_pos > END_POS:
+    while START_POS <= cur_pos < END_POS:
         turntable_event_handler.set()
         turntable_event_handler.clear()
         vna_event_handler.wait()
         turntable.run(INCREASE)
         with lock_cur_pos:
             cur_pos = round(turntable.position) 
-            logging.info(f"Current position for {turntable.instance} is {cur_pos}.")
+            logger.info(f"Current position for {turntable.instance} is {cur_pos}.")
         count += 1
     turntable_event_handler.set()
     turntable_event_handler.clear()
@@ -58,7 +60,7 @@ def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_h
         else:
             turntable.go_to_CW(max_pos)
 
-    logging.info(f'Turntable thread is closed. {count} positions measured.')
+    logger.info(f'Turntable thread is closed. {count} positions measured.')
 
 def run_vna_in_thread(vna: NetworkAnalyzer, turntable_event_handler: Event, vna_event_handler: Event, end: Event) -> None:
     global cur_pos 
@@ -72,21 +74,23 @@ def run_vna_in_thread(vna: NetworkAnalyzer, turntable_event_handler: Event, vna_
         _, pow = vna.run()
         vna_event_handler.set() 
         vna_event_handler.clear()
-        logging.info(f'Power measurement is {pow}.')
+        logger.info(f'Power measurement is {pow}.')
         with lock_cur_pos: 
             data_pos.append(cur_pos)
-            data_pow.append(pow)
+            data_pow.append(pow[0])
         count += 1
     max_gain: float = max(data_pow)
     with lock_max_pos:
         max_pos = data_pos[data_pow.index(max_gain)]
-    logging.info(f'Max gain measured is {max_gain} at position {max_pos}.')
+    logger.info(f'Max gain measured is {max_gain} at position {max_pos}.')
     max_pos_event_handler.set() 
 
-    logging.info(f'VNA thread is closed. {count} measurements made.')
+    logger.info(f'Positions: {data_pos}')
+    logger.info(f'Power measurements: {data_pow}')
+    logger.info(f'VNA thread is closed. {count} measurements made.')
 
 def main():
-    logging.basicConfig(filename=f'./tests/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
+    logging.basicConfig(filename=f'./tests/test_position_steps_3/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
     
     CoInitialize()
     ttc = Dispatch("TurnTableControlLib.TurnTableControl", clsctx=CLSCTX_LOCAL_SERVER)
@@ -94,8 +98,8 @@ def main():
     
     vna = NetworkAnalyzer(trace_id='trc1', s_param='s21', freq=5.65)
     vna.vna_set()
-    logging.info(f'VNA with trace id {vna.trace_id} is created. Measuring {vna.s_param}.')
-    logging.info(f'Settings are: {vna.get_settings()}')
+    logger.info(f'VNA with trace id {vna.trace_id} is created. Measuring {vna.s_param}.')
+    logger.info(f'Settings are: {vna.get_settings()}')
 
     turntable_event_handler = Event()
     vna_event_handler_handler = Event()
