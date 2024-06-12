@@ -8,6 +8,7 @@
 """
 
 import logging
+import matplotlib.pyplot as plt
 import time
 from threading import Thread, Event, Lock
 from pythoncom import CoInitialize, CoGetInterfaceAndReleaseStream, CoMarshalInterThreadInterfaceInStream, IID_IDispatch, CLSCTX_LOCAL_SERVER
@@ -17,9 +18,9 @@ from turntable import TurnTableController
 
 logger = logging.getLogger(__name__)
 
-START_POS = 0.0
-END_POS = 180.0
-INCREASE = 50.0
+START_POS = 20.0
+END_POS = 160.0
+INCREASE = 20.0
 
 lock_cur_pos = Lock()
 cur_pos: int = None
@@ -27,6 +28,26 @@ cur_pos: int = None
 max_pos_event_handler = Event()
 lock_max_pos = Lock()
 max_pos: int = None
+
+def plot_graph(positions, gain):
+    # Check if the length of both lists is the same
+    if len(positions) != len(gain):
+        raise ValueError("The length of positions and gain lists must be the same.")
+
+    # Plot the graph
+    plt.figure(figsize=(10, 6))
+    plt.plot(positions, gain, marker='o', linestyle='-', color='b')
+    
+    # Adding title and labels
+    plt.title('Position vs Gain')
+    plt.xlabel('Position')
+    plt.ylabel('Gain')
+    
+    # Display the grid
+    plt.grid(True)
+    
+    # Show the plot
+    plt.show()
 
 def run_tt_in_thread(ttc: CDispatch, turntable_event_handler: Event, vna_event_handler: Event, end: Event, ttc_id) -> None:
     CoInitialize()
@@ -87,10 +108,11 @@ def run_vna_in_thread(vna: NetworkAnalyzer, turntable_event_handler: Event, vna_
 
     logger.info(f'Positions: {data_pos}')
     logger.info(f'Power measurements: {data_pow}')
+    plot_graph(data_pos, data_pow)
     logger.info(f'VNA thread is closed. {count} measurements made.')
 
 def main():
-    logging.basicConfig(filename=f'./tests/test_position_steps_3/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
+    logging.basicConfig(filename=f'./tests/test-{time.strftime("%Y%m%d-%H%M")}-log.txt', filemode='a', format="%(asctime)s:%(name)s: %(message)s", level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
     
     CoInitialize()
     ttc = Dispatch("TurnTableControlLib.TurnTableControl", clsctx=CLSCTX_LOCAL_SERVER)

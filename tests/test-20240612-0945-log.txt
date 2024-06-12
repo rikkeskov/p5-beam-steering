@@ -1,0 +1,16 @@
+2024-06-12 09:45:38:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-06-12 09:45:38:__main__: VNA with trace id trc1 is created. Measuring s21.
+2024-06-12 09:45:38:__main__: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '10000.0', 'power dbm': '10.0'}
+2024-06-12 09:45:38:turntable: Turntable hrt i (64980128) connected.
+2024-06-12 09:45:39:turntable: Current position is 0 not start position 20. Moving hrt i (64980128) to start position.
+2024-06-12 09:45:41:turntable: Current position is 19 not start position 20. Moving hrt i (64980128) to start position.
+2024-06-12 09:45:41:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-06-12 09:45:41:turntable: Current position for hrt i (64980128) is 20.
+2024-06-12 09:45:42:__main__: Power measurement is [-58.13342599].
+2024-06-12 09:45:45:__main__: Current position for hrt i (64980128) is 0.
+2024-06-12 09:45:46:__main__: Power measurement is [-63.11723067].
+2024-06-12 09:45:46:__main__: Max gain measured is -58.13342598575017 at position 20.
+2024-06-12 09:45:46:__main__: Positions: [20, 0]
+2024-06-12 09:45:46:__main__: Power measurements: [-58.13342598575017, -63.11723066950359]
+2024-06-12 09:45:48:__main__: Turntable thread is closed. 2 positions measured.
+2024-06-12 09:46:07:__main__: VNA thread is closed. 2 measurements made.

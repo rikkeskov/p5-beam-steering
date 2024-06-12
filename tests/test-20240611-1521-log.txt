@@ -1,0 +1,28 @@
+2024-06-11 15:21:20:network_analyzer: Connection established to VNA. Creating channel 1.
+2024-06-11 15:21:21:__main__: VNA with trace id trc1 is created. Measuring s21.
+2024-06-11 15:21:21:__main__: Settings are: {'sweep type': 'LIN', 'start freq': '5650000000.0', 'stop freq': '5650000000.0', 'points': '1', 'meas bw': '10000.0', 'power dbm': '10.0'}
+2024-06-11 15:21:21:turntable: Turntable hrt i (64980128) connected.
+2024-06-11 15:21:22:turntable: Settings are velocity: 2, function: EAccelerationFunction.afImpulse.
+2024-06-11 15:21:22:turntable: Current position for hrt i (64980128) is 0.
+2024-06-11 15:21:23:__main__: Power measurement is [-53.29627253].
+2024-06-11 15:21:25:__main__: Current position for hrt i (64980128) is 20.
+2024-06-11 15:21:26:__main__: Power measurement is [-56.12439981].
+2024-06-11 15:21:28:__main__: Current position for hrt i (64980128) is 40.
+2024-06-11 15:21:29:__main__: Power measurement is [-56.67044436].
+2024-06-11 15:21:31:__main__: Current position for hrt i (64980128) is 60.
+2024-06-11 15:21:33:__main__: Power measurement is [-48.22231261].
+2024-06-11 15:21:35:__main__: Current position for hrt i (64980128) is 80.
+2024-06-11 15:21:36:__main__: Power measurement is [-46.26576326].
+2024-06-11 15:21:38:__main__: Current position for hrt i (64980128) is 100.
+2024-06-11 15:21:39:__main__: Power measurement is [-44.97636218].
+2024-06-11 15:21:41:__main__: Current position for hrt i (64980128) is 120.
+2024-06-11 15:21:42:__main__: Power measurement is [-39.65888445].
+2024-06-11 15:21:44:__main__: Current position for hrt i (64980128) is 140.
+2024-06-11 15:21:45:__main__: Power measurement is [-43.0330284].
+2024-06-11 15:21:47:__main__: Current position for hrt i (64980128) is 160.
+2024-06-11 15:21:49:__main__: Power measurement is [-47.38942577].
+2024-06-11 15:21:49:__main__: Max gain measured is -39.65888445456925 at position 120.
+2024-06-11 15:21:49:__main__: Positions: [0, 20, 40, 60, 80, 100, 120, 140, 160]
+2024-06-11 15:21:49:__main__: Power measurements: [-53.29627252971596, -56.124399814239396, -56.67044436091085, -48.222312611193026, -46.26576325553939, -44.97636217815862, -39.65888445456925, -43.03302839990519, -47.38942577341619]
+2024-06-11 15:21:52:__main__: Turntable thread is closed. 9 positions measured.
+2024-06-11 15:21:53:__main__: VNA thread is closed. 9 measurements made.

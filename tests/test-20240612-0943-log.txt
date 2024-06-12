@@ -1,0 +1,2 @@
+2024-06-12 09:43:24:network_analyzer: Cannot connect to VNA because timed out.
+2024-06-12 09:43:58:network_analyzer: Cannot connect to VNA because timed out.
